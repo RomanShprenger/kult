@@ -1,0 +1,28 @@
+{
+  "name": "kult",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanShprenger/kult.git"
+  },
+  "author": "Roman Shprenger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomanShprenger/kult/issues"
+  },
+  "homepage": "https://github.com/RomanShprenger/kult#readme",
+  "dependencies": {
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.35.2"
+  }
+}
