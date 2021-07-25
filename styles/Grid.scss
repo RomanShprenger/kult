@@ -40,7 +40,8 @@
   @media(max-width: 767px) {
     display: block;
     font-size: 16px;
-    padding: 16px;
+    padding: 0 16px 16px;
+    border-top: none;
   }
   &__item {
     position: relative;
@@ -189,6 +190,28 @@
       flex-direction: row;
       padding: 12px;
       width: 100%;
+      position: relative;
+      &:before {
+        content: '';
+        display: block;
+        border-bottom: 1px solid #333;
+        position: absolute;
+        right: -20px;
+        left: -20px;
+        bottom: 0;
+      }
+    }
+    &--art &-footer {
+      position: relative;
+      &:before {
+        content: '';
+        display: block;
+        border-bottom: 1px solid #333;
+        position: absolute;
+        right: -20px;
+        left: -20px;
+        top: 0;
+      }
     }
     &-footer {
       padding: 20px 12px;
