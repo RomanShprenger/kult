@@ -1,0 +1,128 @@
+@import 'variables.scss';
+
+.header {
+  padding: 10px 0;
+  height: 56px;
+  position: relative;
+  z-index: 1000;
+  @media(max-width: 767px) {
+    border-bottom: 1px solid $border;
+  }
+  &__logo {
+    display: inline-block;
+    height: 36px;
+    width: 36px;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  &__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    @media(max-width: 767px) {
+      visibility: hidden;
+      opacity: 0;
+      background-color: $black;
+      position: fixed;
+      left: 0;
+      top: 56px;
+      width: 100%;
+      bottom: 0;
+      align-items: center;
+      justify-content: center;
+    }
+    &-item {
+      margin: 4px 5px;
+      @media(max-width: 767px) {
+        margin: 18px auto;
+      }
+    }
+    &-link {
+      border: 1px solid $white;
+      background-color: $white;
+      color: $black;
+      padding: 0px 15px;
+      font-size: 12px;
+      line-height: 30px;
+      letter-spacing: 0.06em;
+      border-radius: 200px;
+      text-decoration: none;
+      text-transform: uppercase;
+      height: 27px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &--bordered {
+        color: $white;
+        background-color: transparent;
+      }
+    }
+  }
+  &__burger {
+    display: none;
+    &:checked + & {
+      &-label {
+        &:before {
+          background-color: #fff;
+          box-shadow: 0 0 0 #fff, 0 0 0 #fff;
+          transform: rotate(-225deg);
+          transition-delay: 0s;
+        }
+        &:after {
+          opacity: 1;
+          transform: rotate(45deg);
+          transition-delay: 0.2s;
+          transition-timing-function: cubic-bezier(0.45, 0.20, 0.35, 2.26);
+        }
+      }
+    }
+    &-label {
+      display: none;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      cursor: pointer;
+      z-index: 1;
+      width: 24px;
+      height: 24px;
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+        height: 1px;
+        border-radius: 1px;
+        transition: all 0.3s;
+      }
+      &:before {
+        box-shadow: 0 6px 0 $white, 0 -6px 0 $white;
+        transition-delay: 0.2s;
+      }
+      &:after {
+        opacity: 0;
+        transform: rotate(135deg);
+        background-color: #fff;
+      }
+      @media(max-width: 767px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.header__burger:checked ~ .header__menu {
+  display: flex;
+  flex-direction: column;
+  float: none;
+  transition-delay: 0.2s;
+  visibility: visible;
+  opacity: 1;
+}

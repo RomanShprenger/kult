@@ -1,0 +1,251 @@
+{
+  "posts": [
+    {
+      "type": "art",
+      "size": "1x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "followers": 25890,
+        "nickname": "williamhaze",
+        "price": 2.00,
+        "message": "Abstract horizons sunset on the mountains",
+        "imgUrl": "/assets/post-1x1-2.png",
+        "slug": "/"
+      },
+      "index": 1
+    },
+    {
+      "type": "artist",
+      "size": "1x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "longread": "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night.",
+        "followers": 25890,
+        "nickname": "williamhaze"
+      },
+      "index": 2
+    },
+    {
+      "type": "art",
+      "size": "2x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "followers": 25890,
+        "nickname": "williamhaze",
+        "price": 2,
+        "message": "Abstract horizons sunset on the mountains",
+        "imgUrl": "/assets/post-2x1.png",
+        "slug": "/"
+      },
+      "index": 3
+    },
+    {
+      "type": "artist",
+      "size": "2x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "longread": "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night.",
+        "followers": 25890,
+        "nickname": "williamhaze"
+      },
+      "index": 4
+    },
+    {
+      "type": "bids",
+      "size": "1x1",
+      "data": {
+        "bids": [
+          {
+            "photo": "/assets/author-1x1.png",
+            "hash": "023x45...56G2",
+            "value": 0.5
+          },
+          {
+            "photo": "/assets/author-1x1.png",
+            "hash": "023x45...56G2",
+            "value": 0.5
+          },
+          {
+            "photo": "/assets/author-1x1.png",
+            "hash": "023x45...56G2",
+            "value": 0.5
+          },
+          {
+            "photo": "/assets/author-1x1.png",
+            "hash": "023x45...56G2",
+            "value": 0.5
+          }
+        ]
+      },
+      "index": 5
+    },
+    {
+      "type": "art",
+      "size": "1x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "followers": 25890,
+        "nickname": "williamhaze",
+        "price": 2,
+        "message": "Abstract horizons sunset on the mountains",
+        "imgUrl": "/assets/post-1x1-2.png",
+        "slug": "/"
+      },
+      "index": 6
+    },
+    {
+      "type": "art",
+      "size": "1x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "followers": 25890,
+        "nickname": "williamhaze",
+        "price": 2,
+        "message": "Abstract horizons sunset on the mountains",
+        "imgUrl": "/assets/post-1x1-2.png",
+        "slug": "/"
+      },
+      "index": 7
+    },
+    {
+      "type": "tags",
+      "size": "1x1",
+      "data": {
+        "tags": [
+          "Visual", "3D", "conteprorary", "graphic", "design", "object", "network", "neon", "collectible", "installations", "gtf", "motions", "interractive"
+        ]
+      },
+      "index": 8
+    },
+    {
+      "type": "art",
+      "size": "1x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "followers": 25890,
+        "nickname": "williamhaze",
+        "price": 2,
+        "message": "Abstract horizons sunset on the mountains",
+        "imgUrl": "/assets/post-1x1-2.png",
+        "slug": "/"
+      },
+      "index": 9
+    },
+    {
+      "type": "artist",
+      "size": "1x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "longread": "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night.",
+        "followers": 25890,
+        "nickname": "williamhaze"
+      },
+      "index": 10
+    },
+    {
+      "type": "art",
+      "size": "2x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "followers": 25890,
+        "nickname": "williamhaze",
+        "price": 2,
+        "message": "Abstract horizons sunset on the mountains",
+        "imgUrl": "/assets/post-2x1.png",
+        "slug": "/"
+      },
+      "index": 11
+    },
+    {
+      "type": "artist",
+      "size": "1x2",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "longread": "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night.",
+        "followers": 25890,
+        "nickname": "williamhaze"
+      },
+      "index": 12
+    },
+    {
+      "type": "art",
+      "size": "1x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "followers": 25890,
+        "nickname": "williamhaze",
+        "price": 2,
+        "message": "Abstract horizons sunset on the mountains",
+        "imgUrl": "/assets/post-1x1-2.png",
+        "slug": "/"
+      },
+      "index": 13
+    },
+    {
+      "type": "artist",
+      "size": "1x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "longread": "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night.",
+        "followers": 25890,
+        "nickname": "williamhaze"
+      },
+      "index": 14
+    },
+    {
+      "type": "art",
+      "size": "1x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "followers": 25890,
+        "nickname": "williamhaze",
+        "price": 2,
+        "message": "Abstract horizons sunset on the mountains",
+        "imgUrl": "/assets/post-1x1-2.png",
+        "slug": "/"
+      },
+      "index": 15
+    },
+    {
+      "type": "art",
+      "size": "1x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "followers": 25890,
+        "nickname": "williamhaze",
+        "price": 2,
+        "message": "Abstract horizons sunset on the mountains",
+        "imgUrl": "/assets/post-1x1-2.png",
+        "slug": "/"
+      },
+      "index": 16
+    }
+  ]
+}

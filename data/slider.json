@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "imgUrl": "/assets/slide.png",
+      "title": "FLORA 001: Anemone",
+      "owner": {
+        "avatar": "/assets/owner1.png",
+        "name": "M329X...0X532"
+      },
+      "price": "1.00 ETH",
+      "id": "000001"
+    },
+    {
+      "imgUrl": "/assets/slide.png",
+      "title": "Solitude original",
+      "owner": {
+        "avatar": "/assets/owner2.png",
+        "name": "M111X...0X214"
+      },
+      "price": "2.00 ETH",
+      "id": "000002"
+    },
+    {
+      "imgUrl": "/assets/slide.png",
+      "title": "Some awesome picture",
+      "owner": {
+        "avatar": "/assets/owner3.png",
+        "name": "M767X...0X207"
+      },
+      "price": "1.50 ETH",
+      "id": "000003"
+    },
+    {
+      "imgUrl": "/assets/slide.png",
+      "title": "FLORA 004: Anemone",
+      "owner": {
+        "avatar": "/assets/owner4.png",
+        "name": "M111X...0X001"
+      },
+      "price": "0.50 ETH",
+      "id": "000004"
+    },
+    {
+      "imgUrl": "/assets/slide.png",
+      "title": "FLORA 005: Anemone",
+      "owner": {
+        "avatar": "/assets/owner5.png",
+        "name": "M777X...0X007"
+      },
+      "price": "2.50 ETH",
+      "id": "000005"
+    }
+  ]
+}
