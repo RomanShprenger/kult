@@ -46,6 +46,11 @@ export default function Slider({ data }) {
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={"auto"}
+        freeMode={true}
+        freeModeSticky={true}
+        freeModeMomentumBounceRatio={1}
+        freeModeMomentumRatio={2}
+        freeModeMomentumVelocityRatio={0.5}
         coverflowEffect={{
           rotate: 10,
           stretch: -100,

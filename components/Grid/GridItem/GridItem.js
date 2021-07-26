@@ -58,16 +58,14 @@ const renderArtist = (data, size) => (
       <div className="grid__item-follow">
         <button type="button" className="grid__item-btn grid__item-btn--follow">Unfollow</button>
       </div>
+      <div className="grid__item-gallery">
+        <button type="button" className="grid__item-btn">Gallery</button>
+      </div>
     </header>
     <div className="grid__item-description">{data.description}</div>
     <div className="grid__item-longread">{data.longread}</div>
-    <div className="grid__item-action  grid__item-action--desktop">
-      {
-        size === '1x1' ?
-          <button type="button" className="grid__item-btn">Unfollow</button>
-          :
-          <button type="button" className="grid__item-btn">Gallery</button>
-      }
+    <div className="grid__item-action grid__item-action--desktop">
+      <button type="button" className="grid__item-btn">Unfollow</button>
     </div>
     <div className="grid__item-action grid__item-action--mobile">
 
