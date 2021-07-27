@@ -11,6 +11,10 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  @media(min-width: 1920px) {
+    padding: 0.3125vw;
+    font-size: 0.5vw;
+  }
   @media(max-width: 767px) {
     display: block;
     font-size: 16px;
@@ -22,6 +26,11 @@
     flex-basis: 25%;
     max-width: 25%;
     padding-top: 25vw;
+    @media(min-width: 1920px) {
+      padding-top: 12.5vw;
+      flex-basis: 12.5%;
+      max-width: 12.5%;
+    }
     @media(max-width: 767px) {
       padding-top: 0;
       flex-basis: 100%;
@@ -30,6 +39,10 @@
     &[data-size="2x1"] {
       flex-basis: 50%;
       max-width: 50%;
+      @media(min-width: 1920px) {
+        flex-basis: 25%;
+        max-width: 25%;
+      }
       @media(max-width: 767px) {
         flex-basis: 100%;
         max-width: 100%;
@@ -48,6 +61,12 @@
       height: calc(100% - 1.875vw);
       top: 0.9375vw;
       left: 0.9375vw;
+      @media(min-width: 1920px) {
+        width: calc(100% - 0.625vw);
+        height: calc(100% - 0.625vw);
+        top: 0.3125vw;
+        left: 0.3125vw;
+      }
       @media(max-width: 767px) {
         position: relative;
         width: 100%;
@@ -64,6 +83,10 @@
         left: -1.875vw;
         right: -1.875vw;
         top: 0;
+        @media(min-width: 1920px) {
+          left: -0.625vw;
+          right: -0.625vw;
+        }
         @media(max-width: 767px) {
           left: -32px;
           right: -32px;
@@ -77,6 +100,10 @@
         left: -1.875vw;
         right: -1.875vw;
         bottom: 0;
+        @media(min-width: 1920px) {
+          left: -0.625vw;
+          right: -0.625vw;
+        }
         @media(max-width: 767px) {
           left: -32px;
           right: -32px;
@@ -91,6 +118,11 @@
       left: 0.9375vw;
       top: -0.9375vw;
       bottom: -0.9375vw;
+      @media(min-width: 1920px) {
+        left: 0.3125vw;
+        top: -0.3125vw;
+        bottom: -0.3125vw;
+      }
       @media(max-width: 767px) {
         left: 0;
         top: -16px;
@@ -105,6 +137,11 @@
       right: 0.9375vw;
       top: -0.9375vw;
       bottom: -0.9375vw;
+      @media(min-width: 1920px) {
+        right: 0.3125vw;
+        top: -0.3125vw;
+        bottom: -0.3125vw;
+      }
       @media(max-width: 767px) {
         top: -16px;
         right: 0;
@@ -131,6 +168,10 @@
         right: -0.9375vw;
         left: -0.9375vw;
         bottom: 0;
+        @media(min-width: 1920px) {
+          right: -0.3125vw;
+          left: -0.3125vw;
+        }
         @media(max-width: 767px) {
           right: -16px;
           left: -16px;
@@ -147,6 +188,10 @@
         right: -0.9375vw;
         left: -0.9375vw;
         top: 0;
+        @media(min-width: 1920px) {
+          right: -0.3125vw;
+          left: -0.3125vw;
+        }
         @media(max-width: 767px) {
           right: -16px;
           left: -16px;
@@ -292,6 +337,9 @@
         padding: 1.875vw;
         display: flex;
         flex-direction: column;
+        @media(min-width: 1920px) {
+          padding: 0.9375vw;
+        }
         @media(max-width: 767px) {
           padding: 24px 12px;
         }
@@ -354,6 +402,10 @@
         &:hover {
           color: $white;
         }
+        @media(min-width: 1920px) {
+          bottom: 0.9375vw;
+          left: 0.9375vw;
+        }
         @media(max-width: 767px) {
           position: static;
           font-size: 10px;
@@ -368,6 +420,9 @@
         padding: 1.875vw;
         display: flex;
         flex-direction: column;
+        @media(min-width: 1920px) {
+          padding: 0.9375vw;
+        }
         @media(max-width: 767px) {
           padding: 24px 12px;
         }
@@ -400,6 +455,9 @@
         padding-left: 3.75vw;
         text-decoration: none;
         flex: 1 0 25%;
+        @media(min-width: 1920px) {
+          padding-left: 2vw;
+        }
         @media(max-width: 767px) {
           margin-bottom: 20px;
           padding-left: 56px;
@@ -412,6 +470,9 @@
           position: absolute;
           left: 0;
           top: 0;
+          @media(min-width: 1920px) {
+            height: 1.5625vw;
+          }
           @media(max-width: 767px) {
             height: 44px;
           }
@@ -424,6 +485,9 @@
         &-hash {
           display: block;
           margin: 0 0 0.4vw;
+          @media(min-width: 1920px) {
+            margin: 0 0 0.2vw;
+          }
           @media(max-width: 767px) {
             margin: 4px 0;
           }
@@ -477,6 +541,9 @@
         width: 36%;
         margin: 0 auto 1.4vw;
         border-radius: 50%;
+        @media(min-width: 1920px) {
+          margin: 0 auto 0.7vw;
+        }
         @media(max-width: 767px) {
           width: 100px;
           margin: 0 auto 44px;
@@ -500,6 +567,9 @@
         color: $white;
         opacity: 0.88;
         margin-bottom: 0.8vw;
+        @media(min-width: 1920px) {
+          margin-bottom: 0.4vw;
+        }
         @media(max-width: 767px) {
           margin-bottom: 8px;
         }
@@ -535,6 +605,9 @@
       &-info {
         text-align: center;
         margin-bottom: 2.5vw;
+        @media(min-width: 1920px) {
+          margin-bottom: 1.25vw;
+        }
         @media(max-width: 1023px) {
           margin-bottom: 1.5vw;
         }
@@ -583,6 +656,9 @@
         display: flex;
         flex-direction: column;
         padding: 1.875vw;
+        @media(min-width: 1920px) {
+          padding: 0.9375vw;
+        }
         @media(max-width: 767px) {
           padding: 0;
         }
@@ -637,6 +713,10 @@
         flex: 1 0;
         flex-basis: 5.8vw;
         max-width: 5.8vw;
+        @media(min-width: 1920px) {
+          flex-basis: 2.5vw;
+          max-width: 2.5vw;
+        }
         @media(max-width: 767px) {
           width: 36px;
           height: 36px;
@@ -656,6 +736,11 @@
         padding: 0 1.1vw;
         display: flex;
         flex-direction: column;
+        @media(min-width: 1920px) {
+          flex-basis: 16.5vw;
+          max-width: 16.5vw;
+          padding: 0 0.6vw;
+        }
         @media(max-width: 767px) {
           flex-basis: auto;
           max-width: none;
@@ -681,6 +766,9 @@
         letter-spacing: -0.03em;
         color: $white;
         opacity: 0.88;
+        @media(min-width: 1920px) {
+          margin-top: 1vw;
+        }
         @media(max-width: 1023px) {
           font-size: 1.8em;
         }
@@ -738,6 +826,10 @@
             border-color: $white;
             background-color: transparent;
           }
+        }
+        @media(min-width: 1920px) {
+          padding: 0.3vw 0.42vw;
+          height: 1.25vw;
         }
       }
     }

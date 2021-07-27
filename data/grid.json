@@ -187,6 +187,19 @@
       "index": 12
     },
     {
+      "type": "artist",
+      "size": "2x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "longread": "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night.",
+        "followers": 25890,
+        "nickname": "williamhaze"
+      },
+      "index": 13
+    },
+    {
       "type": "art",
       "size": "1x1",
       "data": {
@@ -200,7 +213,7 @@
         "imgUrl": "/assets/post-1x1-2.png",
         "slug": "/"
       },
-      "index": 13
+      "index": 14
     },
     {
       "type": "artist",
@@ -212,22 +225,6 @@
         "longread": "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night.",
         "followers": 25890,
         "nickname": "williamhaze"
-      },
-      "index": 14
-    },
-    {
-      "type": "art",
-      "size": "1x1",
-      "data": {
-        "photo": "/assets/author-1x1.png",
-        "name": "William Haze",
-        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
-        "followers": 25890,
-        "nickname": "williamhaze",
-        "price": 2,
-        "message": "Abstract horizons sunset on the mountains",
-        "imgUrl": "/assets/post-1x1-2.png",
-        "slug": "/"
       },
       "index": 15
     },
@@ -246,6 +243,37 @@
         "slug": "/"
       },
       "index": 16
+    },
+    {
+      "type": "art",
+      "size": "2x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "followers": 25890,
+        "nickname": "williamhaze",
+        "price": 2,
+        "message": "Abstract horizons sunset on the mountains",
+        "imgUrl": "/assets/post-2x1.png",
+        "slug": "/"
+      },
+      "index": 17
+    },
+    {
+      "type": "art",
+      "size": "1x1",
+      "data": {
+        "photo": "/assets/author-1x1.png",
+        "name": "William Haze",
+        "description": "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
+        "followers": 25890,
+        "nickname": "williamhaze",
+        "price": 2,
+        "message": "Abstract horizons sunset on the mountains",
+        "imgUrl": "/assets/post-1x1-2.png",
+        "slug": "/"
+      },
+      "index": 18
     }
   ]
 }
