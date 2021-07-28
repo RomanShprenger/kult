@@ -157,18 +157,16 @@
   &__item {
     &--art {
       z-index: 1;
-      transition: z-index 0.2s ease;
       &:hover {
         z-index: 10;
       }
     }
 
-    @media(min-width: 1280px) {
-      &--art:hover &-hover-header,
-      &--art:hover &-hover-footer {
-        opacity: 1;
-        visibility: visible;
-      }  
+    &--art:hover &-hover-header,
+    &--art:hover &-hover-footer {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
 
     &--art &-header {
@@ -223,12 +221,18 @@
       background-color: $black;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.2s ease;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
       overflow: hidden;
+      .mobile & {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
     }
     &--art &-hover-footer {
       position: absolute;
-      bottom: 0;
+      bottom: 1px;
       left: 1px;
       right: 1px;
       background-color: $black;
@@ -239,8 +243,14 @@
       padding: 0.6vw 0.6vw 2vw;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.2s ease;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
       overflow: hidden;
+      .mobile & {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
     }
     &--art[data-size="2x1"] &-hover-footer {
       font-size: 2.5em;

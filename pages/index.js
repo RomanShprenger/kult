@@ -7,14 +7,6 @@ import gridData from 'data/grid.json'
 
 function HomePage() {
   const [ dark, setDark ] = useState(false);
-  const gridItemHover = (status) => {
-    const { innerWidth: width } = window;
-    if (width >= 1280) {
-      setDark(status);
-    } else {
-      setDark(false);  
-    }
-  }
 
   const { data } = sliderData;
   const { posts } = gridData;
@@ -24,7 +16,7 @@ function HomePage() {
       <Slider data={data} />
     </div>
     <div className="home__grid">
-      <Grid posts={posts} hoverAction={gridItemHover} />
+      <Grid posts={posts} hoverAction={setDark} />
     </div>
   </div>
 }

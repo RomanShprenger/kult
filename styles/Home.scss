@@ -9,6 +9,11 @@ div {
       content: '';
       opacity: 1;
     }
+    .mobile &:before {
+      content: '';
+      opacity: 0;
+      visibility: hidden;
+    }
   }
   &:before {
     content: '';
