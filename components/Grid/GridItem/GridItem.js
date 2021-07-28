@@ -34,9 +34,24 @@ const renderArt = (data) => (
         </div>
       </footer>
     </div>
+    <div className="grid__item-hover-header">
+      <div className="grid__item-header">
+        <div className="grid__item-photo">
+          <img src={data.photo} alt="author photo"/>
+        </div>
+        <div className="grid__item-info">
+          <div className="grid__item-owner">Owner</div>
+          <div className="grid__item-hash"><span>@</span>{data.hash}</div>
+        </div>
+      </div>
+    </div>
     <Link href={data.slug}>
       <a className="grid__item-link grid__item-desktop">
         <img className="grid__item-img" src={data.imgUrl} alt="Post image"/>
+        <div className="grid__item-hover-footer">
+          <div className="grid__item-title">{data.title}</div>
+          <i className="grid__item-hover-arrow" />
+        </div>
       </a>
     </Link>
   </div>
@@ -125,8 +140,12 @@ const renderBlock = (type, data, size) => {
   }
 }
 
-function GridItem({ type, size, data, index }) {
-  return <div className={`grid__item grid__item--${index} grid__item--${type}`} data-size={size}>
+function GridItem({ type, size, data, index, hoverAction }) {
+  return <div
+      className={`grid__item grid__item--${index} grid__item--${type}`}
+      data-size={size}
+      onMouseEnter={() => type === "art" && hoverAction(true)}
+      onMouseLeave={() => type === "art" && hoverAction(false)}>
       {renderBlock(type, data, size)}
     </div>
 }
