@@ -22,7 +22,9 @@
     &:before {
       content: '';
       background-image: url('/icons/scroll.svg');
-      background-size: cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       display: block;
       position: absolute;
       bottom: 3.8vh;
@@ -194,6 +196,118 @@
         letter-spacing: -0.05em;
         color: $white;
         margin-bottom: 16px;
+      }
+    }
+  }
+  &__grid {
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    @media(max-width: 767px) {
+      flex-wrap: wrap;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: calc(50% - 15px);
+      right: calc(50% - 15px);
+      border-bottom: 1px solid $border;
+      @media(max-width: 767px) {
+        display: none;
+      }
+    }
+    &-column {
+      padding: 15px;
+      flex: 1 0 50%;
+      max-width: 50%;
+      position: relative;
+      @media(max-width: 767px) {
+        flex: 1 0 100%;
+        max-width: 100%;
+      }
+      &:before {
+        content: '';
+        border-left: 1px solid $border;
+        position: absolute;
+        top: -15px;
+        left: 15px;
+        bottom: -15px;
+      }
+      &:after {
+        content: '';
+        border-right: 1px solid $border;
+        position: absolute;
+        top: -15px;
+        right: 15px;
+        bottom: -15px;
+      }
+    }
+    &-column:nth-child(2n) & {
+      &-cell {
+        &:before {
+          content: '';
+          border-top: 1px solid $border;
+          position: absolute;
+          top: 0;
+          right: -30px;
+          left: 0;
+          @media(max-width: 767px) {
+            left: -30px;
+          }
+        }
+        &:after {
+          content: '';
+          border-bottom: 1px solid $border;
+          position: absolute;
+          bottom: 0;
+          right: -30px;
+          left: 0;
+          @media(max-width: 767px) {
+            left: -30px;
+          }
+        }
+      }
+    }
+    &-column:nth-child(2n + 1) & {
+      &-cell {
+        &:before {
+          content: '';
+          border-top: 1px solid $border;
+          position: absolute;
+          top: 0;
+          left: -30px;
+          right: 0;
+          @media(max-width: 767px) {
+            right: -30px;
+          }
+        }
+        &:after {
+          content: '';
+          border-bottom: 1px solid $border;
+          position: absolute;
+          bottom: 0;
+          left: -30px;
+          right: 0;
+          @media(max-width: 767px) {
+            right: -30px;
+          }
+        }
+      }
+    }
+    &-cell {
+      padding-top: 200px;
+      margin-bottom: 30px;
+      position: relative;
+      &:last-child:after {
+        display: none;
+        @media(max-width: 767px) {
+          display: block;
+        }
       }
     }
   }

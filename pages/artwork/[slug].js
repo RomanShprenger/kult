@@ -2,6 +2,13 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Badge from 'components/Badge';
 import BidList from 'components/BidList';
+import {
+  Activity,
+  Info,
+  ChainInfo,
+  Meta,
+  Owner
+} from 'components/ArtworkBlocks';
 
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css"
@@ -107,14 +114,24 @@ const Artwork = ({ data }) => {
       </div>
     </div>
     <div className="artwork__grid">
-      <div className="artwork__column">
-        <div className="artwork__cell"></div>
-        <div className="artwork__cell"></div>
+      <div className="artwork__grid-column">
+        <div className="artwork__grid-cell">
+          <Info />
+        </div>
+        <div className="artwork__grid-cell">
+          <Owner />
+        </div>
       </div>
-      <div className="artwork__column">
-        <div className="artwork__cell"></div>
-        <div className="artwork__cell"></div>
-        <div className="artwork__cell"></div>
+      <div className="artwork__grid-column">
+        <div className="artwork__grid-cell">
+          <Activity />
+        </div>
+        <div className="artwork__grid-cell">
+          <ChainInfo />
+        </div>
+        <div className="artwork__grid-cell">
+          <Meta />
+        </div>
       </div>
     </div>
   </div>
