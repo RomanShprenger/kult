@@ -1,36 +1,38 @@
 @import "variables.scss";
 
-.swiper{
-  &-container {
-    width: 100%;
-    overflow-x: clip !important;
-    overflow-y: visible !important;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  &-slide {
-    background-position: center;
-    background-size: cover;
-    width: 44vw !important;
-    @media(max-width: 767px) {
-      width: 100vw !important;
-      padding: 0 18px;
-      height: auto;
-      &:before {
-        content: '';
-        width: 1px;
-        background-color: $border;
-        position: absolute;
-        left: 50%;
-        top: -30px;
-        transform: translateX(-50%);
-        height: 385px;
-        z-index: -1;
-      }
-    }
-    img {
-      display: block;
+.slider__wrapper {
+  .swiper{
+    &-container {
       width: 100%;
+      overflow-x: clip !important;
+      overflow-y: visible !important;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    &-slide {
+      background-position: center;
+      background-size: cover;
+      width: 44vw !important;
+      @media(max-width: 767px) {
+        width: 100vw !important;
+        padding: 0 18px;
+        height: auto;
+        &:before {
+          content: '';
+          width: 1px;
+          background-color: $border;
+          position: absolute;
+          left: 50%;
+          top: -30px;
+          transform: translateX(-50%);
+          height: 385px;
+          z-index: -1;
+        }
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
     }
   }
 }

@@ -42,3 +42,27 @@ body {
     padding: 0 18px;
   }
 }
+
+.btn {
+  font-family: NeueMachinaBold;
+  text-transform: uppercase;
+  border-radius: 200px;
+  &--bid {
+    background-color: $primary;
+    color: $black;
+    border-color: $primary;
+    height: 50px;
+    font-size: 32px;
+    line-height: 34px;
+    padding: 8px 28px;
+    letter-spacing: 0.06em;
+  }
+}
+
+.at {
+  color: $primary;
+  font-family: NeueMachinaBold;
+  font-size: 14px;
+  line-height: 14px;
+  margin-right: 3px;
+}

@@ -1,0 +1,70 @@
+@import "variables.scss";
+
+.badge {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  &--heading-nick & {
+    &__heading {
+      margin-bottom: 8px;
+    }
+  }
+  &--nick-hash & {
+    &__nickname {
+      margin-bottom: 8px;
+    }
+  }
+  &--hash-bid & {
+    &__hash {
+      font-size: 20px;
+      line-height: 19px;
+      margin-bottom: 8px;
+    }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+  &__photo {
+    height: 50px;
+    flex-basis: 50px;
+    max-width: 50px;
+    margin-right: 15px;
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+  &__hash {
+    font-family: NeueMachina;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.05em;
+    color: $white;
+    opacity: 0.4;
+  }
+  &__nickname {
+    font-family: NeueMachina;
+    font-size: 20px;
+    line-height: 19px;
+    letter-spacing: -0.05em;
+    color: $white;
+  }
+  &__heading {
+    font-family: NeueMachina;
+    font-size: 16px;
+    line-height: 15px;
+    letter-spacing: -0.05em;
+    color: $white;
+    opacity: 0.4;
+  }
+  &__bid {
+    font-family: NeueMachina;
+    font-size: 16px;
+    line-height: 15px;
+    letter-spacing: -0.05em;
+    color: $white;
+  }
+}
