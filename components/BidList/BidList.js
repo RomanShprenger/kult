@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { priceFormat } from "utils/format";
 import Badge from "components/Badge";
 
 const BidList = ({ data }) => {
@@ -17,7 +18,7 @@ const BidList = ({ data }) => {
     {
       list.map(item => (
         <li className="bid-list__item" key={item.hash}>
-          <Badge type="hash-bid" nick={item.nickname} imgUrl={item.photo} hash={item.hash} bid={`${item.bid} ETH`} />
+          <Badge type="hash-bid" nick={item.nickname} imgUrl={item.photo} hash={item.hash} bid={`${priceFormat(item.bid)} ETH`} />
         </li>
       ))
     }

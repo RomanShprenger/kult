@@ -4,7 +4,7 @@ const Badge = ({ imgUrl = '', nick = '', hash = '', text = '', bid = "", type = 
   switch (type) {
     case "heading-nick":
       return (
-        <Link href={`/${{nick}}`}>
+        <Link href={`/user/${nick}`}>
           <a className="badge badge--heading-nick">
             <span className="badge__photo">
               <img src={imgUrl} alt="author photo" />
@@ -18,7 +18,7 @@ const Badge = ({ imgUrl = '', nick = '', hash = '', text = '', bid = "", type = 
       )
     case "nick-hash":
       return (
-        <Link href={`/${{nick}}`}>
+        <Link href={`/user/${nick}`}>
           <a className="badge badge--nick-hash">
             <span className="badge__photo">
               <img src={imgUrl} alt="author photo" />
@@ -32,7 +32,7 @@ const Badge = ({ imgUrl = '', nick = '', hash = '', text = '', bid = "", type = 
       )
     case "hash-bid":
       return (
-        <Link href={`/${{nick}}`}>
+        <Link href={`/user/${nick}`}>
           <a className="badge badge--hash-bid">
             <span className="badge__photo">
               <img src={imgUrl} alt="author photo" />

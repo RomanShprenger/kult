@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Badge from 'components/Badge';
 import BidList from 'components/BidList';
+import { priceFormat } from "utils/format";
 import {
   Activity,
   Info,
@@ -26,11 +27,19 @@ const Artwork = ({ data }) => {
     auction,
     price,
     bids,
+    tags,
+    categories,
+    chainInfo,
+    unlockable,
+    activity,
+    meta,
+    creator,
     creator: {
       photo: creatorPhoto,
       hash: creatorHash,
       nickname: creatorNick
     },
+    owner,
     owner: {
       photo: ownerPhoto,
       hash: ownerHash,
@@ -87,7 +96,7 @@ const Artwork = ({ data }) => {
       </div>
       {/* Auction block at the bottom left */}
       <div className="artwork__slider-auction">
-        { auction ? (
+        { auction.active ? (
           <>
             <div className="artwork__slider-auction-title">Current bids</div>
             <BidList data={bids} />
@@ -95,7 +104,7 @@ const Artwork = ({ data }) => {
         ) : (
           <>
             <div className="artwork__slider-auction-title">Auction Ended</div>
-            <Badge type="hash-bid" nick={ownerNick} imgUrl={ownerPhoto} hash={ownerHash} bid={`${ownerBid} ETH`} />
+            <Badge type="hash-bid" nick={ownerNick} imgUrl={ownerPhoto} hash={ownerHash} bid={`${priceFormat(ownerBid.eth)} ETH`} />
           </>
         ) }
 
@@ -103,11 +112,11 @@ const Artwork = ({ data }) => {
       {/* Price block at the bottom right */}
       <div className={`artwork__slider-price ${auction ? "artwork__slider-price--active" : ''}`}>
         {
-          auction === false && (<div className="artwork__slider-price-title">Last price</div>)
+          auction.active === false && (<div className="artwork__slider-price-title">Last price</div>)
         }
-        <div className="artwork__slider-price-value">{price} ETH</div>
+        <div className="artwork__slider-price-value">{priceFormat(price.eth)} ETH</div>
         {
-          auction && (<div className="artwork__slider-price-btn">
+          auction.active && (<div className="artwork__slider-price-btn">
             <button className="btn btn--bid">Bid in</button>
           </div>)
         }
@@ -116,21 +125,21 @@ const Artwork = ({ data }) => {
     <div className="artwork__grid">
       <div className="artwork__grid-column">
         <div className="artwork__grid-cell">
-          <Info />
+          <Info creator={creator} title={title} description={description} unlockable={unlockable} tags={tags} categories={categories} />
         </div>
         <div className="artwork__grid-cell">
-          <Owner />
+          <Owner price={price} auction={auction} owner={owner} />
         </div>
       </div>
       <div className="artwork__grid-column">
         <div className="artwork__grid-cell">
-          <Activity />
+          <Activity data={activity} auctionActive={auction.active} owner={owner} />
         </div>
         <div className="artwork__grid-cell">
-          <ChainInfo />
+          <ChainInfo data={chainInfo} />
         </div>
         <div className="artwork__grid-cell">
-          <Meta />
+          <Meta data={meta} />
         </div>
       </div>
     </div>
@@ -153,7 +162,62 @@ export async function getServerSideProps({ query }) {
       "/assets/artwork-2.png",
       "/assets/artwork-3.png"
     ],
-    "auction": true,
+    "unlockable": {
+      "status": true,
+      "content": "The piece of art was created by PPSS group - collaboration between Pavel Pepperstein and Sonya Stereostyrski. <a href='https://en.wikipedia.org/wiki/Pavel_Pepperstein' target='_blank'>https://en.wikipedia.org/wiki/Pavel_Pepperstein</a>"
+    },
+    "tags": ["Visual", "3D", "Contemporary", "GraphicDesign", "Objects", "Collectible", "Network", "Neon", "Installations", "GIF", "Motion", "Interactive"],
+    "categories": ["visual design"],
+    "auction": {
+      "active": true,
+      "last_bid": {
+        "eth": 2,
+        "usd": 1464.26
+      },
+      "min_bid": 2.1
+    },
+    "activity": [
+      {
+        "event": "Bid placed",
+        "hash": "0x3d816...a35c",
+        "photo": "/assets/author-1x1.png",
+        "date": 1621430820, // timestamp
+        "bid": {
+          "eth": 2,
+          "usd": 1464.26
+        }
+      },
+      {
+        "event": "Listed by",
+        "hash": "0x3d816...a35c",
+        "photo": "/assets/author-1x1.png",
+        "date": 1621430820,
+        "bid": {
+          "eth": 2,
+          "usd": 1464.26
+        }
+      },
+      {
+        "event": "Reserve Changed",
+        "hash": "0x3d816...a35c",
+        "photo": "/assets/author-1x1.png",
+        "date": 1621430820,
+        "bid": {
+          "eth": 2,
+          "usd": 1464.26
+        }
+      },
+      {
+        "event": "Bid placed",
+        "hash": "0x3d816...a35c",
+        "photo": "/assets/author-1x1.png",
+        "date": 1621430820,
+        "bid": {
+          "eth": 0.5,
+          "usd": 366.07
+        }
+      }
+    ],
     "creator": {
       "photo": "/assets/author-1x1.png",
       "hash": "0x3d816...a34c",
@@ -163,9 +227,17 @@ export async function getServerSideProps({ query }) {
       "photo": "/assets/author-1x1.png",
       "hash": "0x3d816...a35c",
       "nickname": "Kult_Collection",
-      "bid": 3, // Цена, за которую работа была куплена
+      "date": 1621430820, // timestamp, когда работа была куплена
+      "bid": { // цена, за которую работа была куплена
+        "eth": 3,
+        "usd": 1464.26
+      },
     },
-    "price": "3.00",
+    "price": {
+      "eth": 3,
+      "usd": 1464.26
+    },
+    "chainInfo": ["View on Etherscan", "View on IPFS", "View on Opensea"],
     "bids": [
       {
         "nickname": "/",
@@ -186,7 +258,7 @@ export async function getServerSideProps({ query }) {
         "bid": 1,
       }
     ],
-
+    "meta": `{"name":"Bitwise Archetypes: CHILD ","description":"ESFP\n\n#1 in a series of 16 Archetypes\n\n“77. Even a highly differentiated consciousness has not by any means finished with CHILDISH things”\n\nA collaboration between IX SHELLS and KAI. Drawing on a lifetime of influences, from Carl Jung to the I CHING.  From Afro-Caribbean masks to Goethe's Theory of Colors. The Archetypes represent the conscious architectures that unite us as a single being of many people.\n\nSound design remixed from ByteBeat #169\n\nCollection also found at: foundation.app/kaigani\n","image":"ipfs://QmbENPncVeBBfxW2UEQdU5DUQdhtm6aR58ps1kEEJrqJZn/nft.mp4"}`
   }
 
   if (!data) {

@@ -1,0 +1,130 @@
+@import "variables.scss";
+
+.activity {
+  &__title {
+    font-family: NeueMachinaBold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: $primary;
+    margin-bottom: 20px;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &-item {
+      font-family: NeueMachinaBold;
+      font-size: 0.83vw;
+      line-height: 0.83vw;
+      letter-spacing: -0.05em;
+      color: $white;
+      min-height: 85px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-top: 1px solid #1E1E1E;
+      padding: 0 1.25vw;
+    }
+  }
+  &__winner {
+    font-family: NeueMachina;
+    font-size: 1.145vw;
+    line-height: 1.823vw;
+    letter-spacing: -0.03em;
+    color: #666666;
+    margin-bottom: 0.833vw;
+    &-user {
+      margin-bottom: 0.417vw;
+    }
+    &-link {
+      color: $white;
+      margin-right: 8px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $primary;
+      }
+    }
+    &-expense {
+      color: $white;
+      margin-right: 24px;
+    }
+  }
+  &-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    &__photo {
+      width: 36px;
+      height: 36px;
+      flex-basis: 36px;
+      max-width: 36px;
+      img {
+        width: 100%;
+      }
+    }
+    &__details {
+      padding-left: 10px;
+      flex-basis: calc(100% - 216px);
+      max-width: calc(100% - 216px);
+      &-event {
+        margin-bottom: 8px;
+        font-size: 16px;
+        line-height: 15px;
+        font-family: NeueMachinaBold;
+      }
+      &-hash {
+        margin-left: 8px;
+        opacity: 0.5;
+        font-family: NeueMachina;
+        @media(max-width: 1366px) {
+          display: block;
+          margin-left: 0;
+          margin-top: 8px;
+        }
+      }
+      &-date {
+        opacity: 0.4;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: -0.05em;
+      }
+    }
+    &__bid {
+      flex-basis: 140px;
+      max-width: 140px;
+      text-align: right;
+      padding-right: 16px;
+      &-eth {
+        font-family: NeueMachinaBold;
+        font-size: 16px;
+        line-height: 15px;
+        letter-spacing: -0.05em;
+        margin-top: 4px;
+        margin-bottom: 8px;
+      }
+      &-usd {
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: -0.05em;
+        color: $white;
+        opacity: 0.4;
+      }
+    }
+    &__action {
+      flex-basis: 32px;
+      max-width: 32px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      &-link {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+}

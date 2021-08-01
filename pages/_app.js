@@ -9,6 +9,10 @@ import "styles/Home.scss";
 import "styles/Slider.scss";
 import "styles/Grid.scss";
 import "styles/Artwork.scss";
+import "styles/Activity.scss";
+import "styles/Info.scss";
+import "styles/Owner.scss";
+import "styles/ChainInfo.scss";
 
 export default function MyApp({ Component, pageProps }) {
   return (

@@ -300,7 +300,7 @@
       }
     }
     &-cell {
-      padding-top: 200px;
+      padding: 30px 20px;
       margin-bottom: 30px;
       position: relative;
       &:last-child:after {
@@ -310,5 +310,28 @@
         }
       }
     }
+  }
+}
+
+.meta {
+  &__title {
+    font-family: NeueMachinaBold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: $primary;
+    margin-bottom: 20px;
+  }
+  &__content {
+    font-family: IBM Plex Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.833vw;
+    line-height: 1.51vw;
+    letter-spacing: -0.05em;
+    color: $white;
+    border-top: 1px solid #1E1E1E;
+    padding-top: 1.36vw;
   }
 }
