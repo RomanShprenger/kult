@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from 'next/link';
 import Badge from 'components/Badge';
 import BidList from 'components/BidList';
 import { priceFormat } from "utils/format";
@@ -76,21 +77,38 @@ const Artwork = ({ data }) => {
           </SwiperSlide>)
         }
       </Swiper>
-      {/* Elements at the top left */}
+      {/* Elements at the top right */}
       <div className="artwork__slider-creations">@{creatorNick} / Creations</div>
       <div className="artwork__slider-nav">
         <button onClick={() => slide("left")} className="artwork__slider-nav-btn artwork__slider-nav-btn--left">
-          <i className="icon icon--left"></i>
+          <i className="icon icon-arrow-left"></i>
         </button>
         <button onClick={() => slide("right")} className="artwork__slider-nav-btn artwork__slider-nav-btn--left">
-          <i className="icon icon--right"></i>
+          <i className="icon icon-arrow-right"></i>
         </button>
       </div>
       {/* Text block at the top left */}
       <div className="artwork__slider-info">
+        <div className="artwork__slider-badge artwork__slider-badge--mobile">
+
+          <div className="artwork__slider-badge-creator">
+            <div className="artwork__slider-badge-creator-photo">
+              <img src={creatorPhoto} alt={creatorNick} />
+            </div>
+            <div className="artwork__slider-badge-creator-info">
+              <span className="artwork__slider-badge-creator-title">Creator</span>
+              <Link href="/">
+                <a className="artwork__slider-badge-creator-link">
+                  <span className="at">@</span>{creatorNick}
+                </a>
+              </Link>
+            </div>
+          </div>
+
+        </div>
         <h1 className="artwork__slider-name">{title}</h1>
         <div className="artwork__slider-description">{description}</div>
-        <div className="artwork__slider-badge">
+        <div className="artwork__slider-badge artwork__slider-badge--desktop">
           <Badge type="heading-nick" imgUrl={creatorPhoto} nick={creatorNick} text="Created by" />
         </div>
       </div>
@@ -155,7 +173,7 @@ export async function getServerSideProps({ query }) {
 
   // Схема запроса
   const data = {
-    "title": "abstract horizons - sunset on the mountains",
+    "title": "abstract horizons sunset on the mountains",
     "description": 'The "New World" is a map of the world, and, apparently, it is a version of an entirely new world with incomprehensible borders, where all the territories are covered with flowers.',
     "assets": [
       "/assets/artwork-1.png",
@@ -169,7 +187,7 @@ export async function getServerSideProps({ query }) {
     "tags": ["Visual", "3D", "Contemporary", "GraphicDesign", "Objects", "Collectible", "Network", "Neon", "Installations", "GIF", "Motion", "Interactive"],
     "categories": ["visual design"],
     "auction": {
-      "active": true,
+      "active": false,
       "last_bid": {
         "eth": 2,
         "usd": 1464.26

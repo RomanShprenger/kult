@@ -258,11 +258,8 @@
     }
     &--art &-hover-arrow {
       display: block;
-      background-image: url('/icons/hoverArrow.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      height: 1.3vw;
-      width: 1.3vw;
+      font-size: 1.35vw;
+      color: $primary;
       position: absolute;
       bottom: 0;
       right: 0;

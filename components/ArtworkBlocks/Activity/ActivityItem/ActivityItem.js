@@ -17,7 +17,9 @@ const ActivityItem = ({ event, hash, date, bid, photo }) => {
     </div>
     <div className="activity-item__action">
       <Link href={`/`}>
-        <a className="activity-item__action-link">X</a>
+        <a className="activity-item__action-link">
+          <i className="icon icon-share"></i>
+        </a>
       </Link>
     </div>
   </div>

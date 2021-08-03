@@ -37,7 +37,9 @@
     &-item {
       margin: 4px 5px;
       &:last-child {
-        margin-right: 0;
+        @media(min-width: 768px) {
+          margin-right: 0;
+        }
       }
       @media(max-width: 767px) {
         margin: 18px auto;

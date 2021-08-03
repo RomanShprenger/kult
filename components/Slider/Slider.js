@@ -132,10 +132,10 @@ export default function Slider({ data }) {
       </Swiper>
       <div className="slider__nav">
         <button onClick={() => slide("left")} className="slider__nav-btn slider__nav-btn--left">
-          <i className="icon icon--left"></i>
+          <i className="icon icon-arrow-left"></i>
         </button>
         <button onClick={() => slide("right")} className="slider__nav-btn slider__nav-btn--left">
-          <i className="icon icon--right"></i>
+          <i className="icon icon-arrow-right"></i>
         </button>
       </div>
     </div>

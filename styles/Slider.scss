@@ -194,7 +194,7 @@
   &__pagination-fraction {
     position: absolute;
     font-family: NeueMachina;
-    bottom: -108px;
+    bottom: -58px;
     left: 10.8vw;
     color: $white;
     font-size: 22px;
@@ -208,7 +208,7 @@
   }
   &__nav {
     position: absolute;
-    bottom: -120px;
+    bottom: -72px;
     right: 10.8vw;
     color: $white;
     display: flex;
@@ -218,7 +218,7 @@
     }
     @media(max-width: 767px) {
       position: absolute;
-      bottom: 0;
+      bottom: 50px;
       right: 44px;
       left: 44px;
       justify-content: space-between;
@@ -236,6 +236,8 @@
       border: 1px solid #474747;
       margin: 0 8px;
       cursor: pointer;
+      color: $white;
+      font-size: 12px;
       @media(max-width: 1023px) {
         width: 36px;
         height: 36px;
@@ -321,11 +323,11 @@
       margin-right: 12px;
       @media(max-width: 1365px) {
         font-size: 14px;
-        margin: 0 0 30px;
       }
       @media(max-width: 767px) {
         color: $primary;
         font-size: 16px;
+        margin: 0 0 30px;
       }
     }
     &-btn {
