@@ -64,14 +64,18 @@
   }
   &__auction {
     &-btn {
-      margin-top: 0.417vw;
-      margin-bottom: 1.67vw;
+      margin-bottom: 1.117vw;
+      font-size: 2.17vw;
+      line-height: 2.61vw;
+      padding: 8px 28px;
+      height: 3.41vw;
+      padding: 0.5vw 1.45vw;
       @media(max-width: 767px) {
         height: 40px;
         font-size: 22px;
         line-height: 22px;
-        margin-top: 0;
         margin-bottom: 12px;
+        padding: 10px 28px;
       }
     }
     &-min {

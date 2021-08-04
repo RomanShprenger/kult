@@ -88,6 +88,9 @@
           background-repeat: no-repeat;
           background-position: center;
           background-size: contain;
+          @media(max-width: 1023px) {
+            width: 70%;
+          }
           @media(max-width: 767px) {
             width: calc(100% - 32px);
             height: 100%;
