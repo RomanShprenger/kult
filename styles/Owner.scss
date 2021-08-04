@@ -3,8 +3,14 @@
 .owner {
   display: flex;
   flex-direction: row;
+  @media(max-width: 767px) {
+    flex-wrap: wrap;
+  }
   &__column {
     flex: 1 0 50%;
+    @media(max-width: 767px) {
+      flex: 1 0 100%;
+    }
   }
   &__title {
     font-family: NeueMachinaBold;
@@ -14,8 +20,15 @@
     text-transform: uppercase;
     color: $primary;
     margin-bottom: 20px;
+    @media(max-width: 767px) {
+      font-size: 10px;
+      line-height: 10px;
+    }
   }
   &__price {
+    @media(max-width: 767px) {
+      margin-bottom: 24px;
+    }
     &-eth {
       font-family: NeueMachinaBold;
       font-size: 4.17vw;
@@ -23,6 +36,11 @@
       letter-spacing: -0.05em;
       color: $primary;
       margin-bottom: 0.417vw;
+      @media(max-width: 767px) {
+        font-size: 32px;
+        line-height: 32px;
+        margin-bottom: 4px;
+      }
     }
     &-usd {
       font-family: NeueMachina;
@@ -31,16 +49,30 @@
       letter-spacing: -0.05em;
       color: $white;
       opacity: 0.5;
+      @media(max-width: 767px) {
+        font-size: 12px;
+        line-height: 22px;
+      }
     }
   }
   &__user {
     padding: 1.67vw 1.25vw;
     background-color: #0D0D0D;
+    @media(max-width: 767px) {
+      padding: 17px 10px;
+    }
   }
   &__auction {
     &-btn {
       margin-top: 0.417vw;
       margin-bottom: 1.67vw;
+      @media(max-width: 767px) {
+        height: 40px;
+        font-size: 22px;
+        line-height: 22px;
+        margin-top: 0;
+        margin-bottom: 12px;
+      }
     }
     &-min {
       font-family: NeueMachina;
@@ -49,6 +81,10 @@
       letter-spacing: -0.05em;
       color: $white;
       opacity: 0.5;
+      @media(max-width: 767px) {
+        font-size: 12px;
+        line-height: 20px;
+      }
     }
   }
 }

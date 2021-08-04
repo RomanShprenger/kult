@@ -128,11 +128,13 @@ const Artwork = ({ data }) => {
 
       </div>
       {/* Price block at the bottom right */}
-      <div className={`artwork__slider-price ${auction ? "artwork__slider-price--active" : ''}`}>
-        {
-          auction.active === false && (<div className="artwork__slider-price-title">Last price</div>)
-        }
-        <div className="artwork__slider-price-value">{priceFormat(price.eth)} ETH</div>
+      <div className={`artwork__slider-price ${auction.active ? "artwork__slider-price--active" : ''}`}>
+        <div className="artwork__slider-price-title">
+          { auction.active === false ? "Last price" : "Last bid" }
+        </div>
+        <div className="artwork__slider-price-value">
+          { auction.active === false ? priceFormat(price.eth) : priceFormat(auction.last_bid.eth) } ETH
+        </div>
         {
           auction.active && (<div className="artwork__slider-price-btn">
             <button className="btn btn--bid">Bid in</button>
@@ -187,7 +189,7 @@ export async function getServerSideProps({ query }) {
     "tags": ["Visual", "3D", "Contemporary", "GraphicDesign", "Objects", "Collectible", "Network", "Neon", "Installations", "GIF", "Motion", "Interactive"],
     "categories": ["visual design"],
     "auction": {
-      "active": false,
+      "active": true,
       "last_bid": {
         "eth": 2,
         "usd": 1464.26
@@ -255,7 +257,20 @@ export async function getServerSideProps({ query }) {
       "eth": 3,
       "usd": 1464.26
     },
-    "chainInfo": ["View on Etherscan", "View on IPFS", "View on Opensea"],
+    "chainInfo": [
+      {
+        "key": "etherscan",
+        "text": "View on Etherscan",
+      },
+      {
+        "key": "ipfs",
+        "text": "View on IPFS",
+      },
+      {
+        "key": "opensea",
+        "text": "View on Opensea",
+      }
+    ],
     "bids": [
       {
         "nickname": "/",

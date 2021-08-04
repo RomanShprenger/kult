@@ -314,6 +314,7 @@
         width: 100%;
         padding: 20px 0;
         border-top: 1px solid $border;
+        margin-bottom: 0;
         &:before {
           content: '';
           display: block;
@@ -336,6 +337,12 @@
       &--active {
         margin-bottom: 0;
       }
+      &--active &-title {
+        display: none;
+        @media(max-width: 767px) {
+          display: block;
+        }
+      }
       &-title {
         font-family: NeueMachina;
         font-size: 40px;
@@ -347,7 +354,7 @@
           font-size: 14px;
           line-height: 14px;
           text-align: center;
-          margin-bottom: 8px;
+          margin-bottom: 12px;
           opacity: 0.4;
         }
       }
@@ -363,6 +370,11 @@
           text-align: center;
           letter-spacing: -0.04em;
           color: $primary;
+        }
+      }
+      &-btn {
+        @media(max-width: 767px) {
+          display: none;
         }
       }
     }
@@ -417,6 +429,9 @@
       @media(max-width: 767px) {
         flex: 1 0 100%;
         max-width: 100%;
+        &:nth-child(n + 2) {
+          padding-top: 0;
+        }
       }
       &:before {
         content: '';
@@ -491,6 +506,13 @@
       padding: 30px 20px;
       margin-bottom: 30px;
       position: relative;
+      @media(max-width: 767px) {
+        padding: 20px 15px;
+        margin-bottom: 15px;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
       &:last-child:after {
         display: none;
         @media(max-width: 767px) {
@@ -510,6 +532,10 @@
     text-transform: uppercase;
     color: $primary;
     margin-bottom: 20px;
+    @media(max-width: 767px) {
+      font-size: 10px;
+      line-height: 10px;
+    }
   }
   &__content {
     font-family: IBM Plex Mono;
@@ -521,5 +547,10 @@
     color: $white;
     border-top: 1px solid #1E1E1E;
     padding-top: 1.36vw;
+    word-break: break-all;
+    @media(max-width: 767px) {
+      font-size: 12px;
+      line-height: 26px;
+    }
   }
 }

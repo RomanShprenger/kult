@@ -13,7 +13,7 @@ const Activity = ({ data, auctionActive, owner }) => {
             Auction won by: <Link href={`/user/${owner.nickname}`}>
               <a className="activity__winner-link">@{owner.nickname}</a>
             </Link>
-            {moment(owner.date).format("MMM DD, YYYY [at] LT")}
+            <span className="activity__winner-time">{moment(owner.date).format("MMM DD, YYYY [at] LT")}</span>
           </div>
           <div className="activity__winner-sold">
             Sold for : <span className="activity__winner-expense">{priceFormat(owner.bid.eth)} ETH</span>${priceFormat(owner.bid.usd)}

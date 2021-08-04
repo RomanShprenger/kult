@@ -17,7 +17,7 @@ const Info = ({ creator, title, description, unlockable, tags, categories }) => 
           <div className="info__unlockable-icon">
             <img src="/diamond-primary.svg" alt="unlicable icon"/>
           </div>
-          <div className="info__unlockable-title">Unlockable contnet</div>
+          <div className="info__unlockable-title">Unlockable content</div>
           <div className="info__unlockable-text" dangerouslySetInnerHTML={{__html: unlockable.content}}></div>
         </div>
       ): null

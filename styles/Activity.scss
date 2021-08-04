@@ -9,6 +9,10 @@
     text-transform: uppercase;
     color: $primary;
     margin-bottom: 20px;
+    @media(max-width: 767px) {
+      font-size: 10px;
+      line-height: 10px;
+    }
   }
   &__list {
     margin: 0;
@@ -26,6 +30,9 @@
       align-items: center;
       border-top: 1px solid #1E1E1E;
       padding: 0 1.25vw;
+      @media(max-width: 767px) {
+        min-height: 100px;
+      }
     }
   }
   &__winner {
@@ -35,14 +42,25 @@
     letter-spacing: -0.03em;
     color: #666666;
     margin-bottom: 0.833vw;
+    @media(max-width: 767px) {
+      font-size: 16px;
+      line-height: 26px;
+      margin-bottom: 30px;
+    }
     &-user {
       margin-bottom: 0.417vw;
+      @media(max-width: 767px) {
+        margin-bottom: 0;
+      }
     }
     &-link {
       color: $white;
       margin-right: 8px;
       text-decoration: none;
       transition: color 0.3s ease;
+      @media(max-width: 767px) {
+        margin-right: 0;
+      }
       &:hover {
         color: $primary;
       }
@@ -51,12 +69,27 @@
       color: $white;
       margin-right: 24px;
     }
+    &-time {
+      @media(max-width: 767px) {
+        display: block;
+        margin-top: 8px;
+        margin-bottom: 12px;
+      }
+    }
   }
   &-item {
     display: flex;
     flex-direction: row;
     width: 100%;
     align-items: center;
+    text-decoration: none;
+    color: $white;
+    @media(min-width: 768px) {
+      pointer-events: none;
+    }
+    @media(max-width: 767px) {
+      align-items: flex-start;
+    }
     &__photo {
       width: 36px;
       height: 36px;
@@ -70,6 +103,10 @@
       padding-left: 10px;
       flex-basis: calc(100% - 216px);
       max-width: calc(100% - 216px);
+      @media(max-width: 767px) {
+        flex-basis: calc(100% - 126px);
+        max-width: calc(100% - 126px);
+      }
       &-event {
         margin-bottom: 8px;
         font-size: 16px;
@@ -91,6 +128,11 @@
         font-size: 12px;
         line-height: 12px;
         letter-spacing: -0.05em;
+        font-family: NeueMachina;
+        @media(max-width: 767px) {
+          font-size: 10px;
+          line-height: 10px;
+        }
       }
     }
     &__bid {
@@ -98,6 +140,11 @@
       max-width: 140px;
       text-align: right;
       padding-right: 16px;
+      @media(max-width: 767px) {
+        flex-basis: 90px;
+        max-width: 90px;
+        padding-right: 0;
+      }
       &-eth {
         font-family: NeueMachinaBold;
         font-size: 16px;
@@ -105,10 +152,14 @@
         letter-spacing: -0.05em;
         margin-top: 4px;
         margin-bottom: 8px;
+        @media(max-width: 767px) {
+          margin-top: 0;
+        }
       }
       &-usd {
         font-size: 12px;
         line-height: 12px;
+        font-family: NeueMachina;
         letter-spacing: -0.05em;
         color: $white;
         opacity: 0.4;
@@ -121,9 +172,13 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
+      pointer-events: all;
       &-link {
         text-decoration: none;
         color: $white;
+      }
+      @media(max-width: 767px) {
+        display: none;
       }
     }
   }

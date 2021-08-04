@@ -9,6 +9,10 @@
     text-transform: uppercase;
     color: $primary;
     margin-bottom: 20px;
+    @media(max-width: 767px) {
+      font-size: 10px;
+      line-height: 10px;
+    }
   }
   &__list {
     margin: 0;
@@ -26,6 +30,10 @@
       align-items: center;
       border-top: 1px solid #1E1E1E;
       padding: 0 1.25vw;
+      img {
+        display: inline-block;
+        margin-right: 14px;
+      }
     }
   }
 }

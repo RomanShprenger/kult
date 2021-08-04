@@ -6,7 +6,7 @@ const Owner = ({ price, auction, owner }) => {
 
   const columnOne = (title, price) => {
     return <>
-      <div className="owner__title">Sold for</div>
+      <div className="owner__title">{title}</div>
       <div className="owner__price">
         <div className="owner__price-eth">{priceFormat(price.eth)} ETH</div>
         <div className="owner__price-usd">${priceFormat(price.usd)}</div>
