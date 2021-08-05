@@ -50,7 +50,7 @@ const renderArt = (data) => (
         <img className="grid__item-img" src={data.imgUrl} alt="Post image"/>
         <div className="grid__item-hover-footer">
           <div className="grid__item-title">{data.title}</div>
-          <i className="grid__item-hover-arrow" />
+          <i className="icon icon-arrow-bottom-right grid__item-hover-arrow" />
         </div>
       </a>
     </Link>

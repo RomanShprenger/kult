@@ -1,0 +1,158 @@
+@import "variables.scss";
+
+.info {
+  &__badge {
+    @media(max-width: 767px) {
+      display: none;
+    }
+  }
+  &__title {
+    margin-top: 1.04vw;
+    font-family: NeueMachinaBold;
+    font-size: 2.76vw;
+    line-height: 3.54vw;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: $white;
+    @media(max-width: 767px) {
+      display: none;
+    }
+  }
+  &__categroies {
+    margin: 0 0 2.5vw;
+    padding: 0;
+    list-style: none;
+    @media(max-width: 767px) {
+      margin-bottom: 8px;
+    }
+    &-item {
+      font-family: NeueMachinaBold;
+      font-size: 0.625vw;
+      line-height: 0.625vw;
+      letter-spacing: 0.06em;
+      color: $white;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 0.416vw 0.625vw;
+      border: 1px solid $border;
+      border-radius: 200px;
+      margin-right: 8px;
+      height: 1.4vw;
+      @media(max-width: 767px) {
+        height: 27px;
+        font-size: 12px;
+        line-height: 12px;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+      }
+      &--unlockable {
+        position: relative;
+        padding-left: 1.45vw;
+        img {
+          width: 0.625vw;
+          position: absolute;
+          left: 0.5vw;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        @media(max-width: 767px) {
+          padding-left: 32px;
+          img {
+            width: 16px;
+            left: 8px;
+          }
+        }
+      }
+    }
+  }
+  &__description {
+    font-family: IBM Plex Mono;
+    font-size: 1.15vw;
+    line-height: 1.82vw;
+    letter-spacing: -0.03em;
+    color: $white;
+    opacity: 0.4;
+    margin-bottom: 1.66vw;
+    @media(max-width: 767px) {
+      font-size: 18px;
+      line-height: 39px;
+      margin-bottom: 16px;
+    }
+  }
+  &__unlockable {
+    padding: 1vw 1vw 1vw 3.9vw;
+    background-color: #0D0D0D;
+    margin-bottom: 2.18vw;
+    position: relative;
+    @media(max-width: 767px) {
+      padding: 30px 24px;
+    }
+    &-icon {
+      position: absolute;
+      top: 50%;
+      left: 1vw;
+      transform: translateY(-50%);
+      width: 1.67vw;
+      @media(max-width: 767px) {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 42px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    &-title {
+      font-family: NeueMachinaBold;
+      font-size: 0.625vw;
+      line-height: 0.625vw;
+      letter-spacing: 0.06em;
+      color: $primary;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      @media(max-width: 767px) {
+        font-size: 12px;
+        line-height: 12px;
+        display: inline-block;
+        margin: 0 0 0 15px;
+        vertical-align: middle;
+      }
+    }
+    &-text {
+      font-family: NeueMachina;
+      font-size: 0.83vw;
+      line-height: 1.35vw;
+      letter-spacing: -0.03em;
+      color: #C4C4C4;
+      @media(max-width: 767px) {
+        margin-top: 28px;
+        display: block;
+        font-size: 16px;
+        line-height: 26px;
+        word-break: break-all;
+      }
+      a {
+        color: $primary;
+      }
+    }
+  }
+  &__tags {
+    font-family: NeueMachina;
+    font-size: 0.625vw;
+    line-height: 0.99vw;;
+    letter-spacing: 0.06em;
+    color: $white;
+    opacity: 0.4;
+    @media(max-width: 767px) {
+      margin-top: 28px;
+      display: block;
+      font-size: 12px;
+      line-height: 22px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "variables.scss";
+
+.chain-info {
+  &__title {
+    font-family: NeueMachinaBold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: $primary;
+    margin-bottom: 20px;
+    @media(max-width: 767px) {
+      font-size: 10px;
+      line-height: 10px;
+    }
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &-item {
+      font-family: NeueMachinaBold;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: -0.05em;
+      color: $white;
+      min-height: 85px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-top: 1px solid #1E1E1E;
+      padding: 0 1.25vw;
+      img {
+        display: inline-block;
+        margin-right: 14px;
+      }
+    }
+  }
+}

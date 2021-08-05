@@ -1,0 +1,17 @@
+.bid-list {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  &__item {
+    margin-bottom: 20px;
+    &--empty {
+      font-family: NeueMachina;
+      font-size: 22px;
+      line-height: 35px;
+      letter-spacing: -0.03em;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
