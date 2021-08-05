@@ -32,6 +32,11 @@
       width: 1.48vw;
       height: 2.39vw;
       animation: bounce 5s infinite;
+      @media(max-width: 1023px) {
+        left: calc(50% - 8px);
+        width: 18px;
+        height: 28px;
+      }
     }
     @media(max-width: 767px) {
       height: auto;
@@ -311,7 +316,7 @@
       text-align: right;
       margin-bottom: 50px;
       z-index: 1;
-      @media(max-width: 1365px) {
+      @media(max-width: 1919px) {
         bottom: 48px;
       }
       @media(max-width: 767px) {
@@ -371,7 +376,7 @@
         line-height: 77px;
         letter-spacing: -0.05em;
         color: $white;
-        @media(max-width: 1365px) {
+        @media(max-width: 1919px) {
           font-size: 54px;
           line-height: 51px;
         }
@@ -384,7 +389,7 @@
         }
       }
       &-btn {
-        @media(max-width: 1365px) {
+        @media(max-width: 1919px) {
           font-size: 2.17vw;
           line-height: 2.61vw;
           height: 3.41vw;
@@ -401,7 +406,7 @@
       left: 36px;
       z-index: 1;
       transform: translateY(50%);
-      @media(max-width: 1365px) {
+      @media(max-width: 1919px) {
         bottom: 48px;
         transform: none;
       }
