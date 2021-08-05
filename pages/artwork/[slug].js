@@ -136,9 +136,7 @@ const Artwork = ({ data }) => {
           { auction.active === false ? priceFormat(price.eth) : priceFormat(auction.last_bid.eth) } ETH
         </div>
         {
-          auction.active && (<div className="artwork__slider-price-btn">
-            <button className="btn btn--bid">Bid in</button>
-          </div>)
+          auction.active && (<button className="btn btn--bid artwork__slider-price-btn">Bid in</button>)
         }
       </div>
     </div>
