@@ -1,0 +1,17 @@
+@import 'variables';
+
+.post-actions {
+  &__item {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: #767676;
+    font-size: 22px;
+    line-height: 22px;
+    height: 22px;
+    margin-right: 20px;
+    &--liked {
+      color: $primary;
+    }
+  }
+}

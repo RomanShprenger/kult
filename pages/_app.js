@@ -2,6 +2,7 @@ import Layout from "components/Layout";
 
 import "public/fonts/kulticons/style.scss";
 import "styles/global.scss";
+import "styles/PostActions.scss";
 import "styles/Badge.scss";
 import "styles/BidList.scss";
 import "styles/Header.scss";
