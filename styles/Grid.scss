@@ -228,6 +228,9 @@
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
+        @media(max-width: 767px) {
+          display: none;
+        }
       }
     }
     &--art &-hover-footer {
@@ -484,6 +487,10 @@
         bottom: 1.875vw;
         left: 1.875vw;
         cursor: pointer;
+        .icon {
+          font-size: 1.8em;
+          vertical-align: sub;
+        }
         &:hover {
           color: $white;
         }
@@ -727,6 +734,11 @@
           padding: 16px 18px;
         }
       }
+      &-action {
+        &--mobile {
+          display: none;
+        }
+      }
     }
     &--artist[data-size="2x1"] & {
       &-header {
@@ -887,6 +899,10 @@
           display: none;
           @media(max-width: 767px) {
             display: block;
+            position: relative;
+            top: auto;
+            right: auto;
+            padding: 8px 12px 28px;
           }
         }
         &--desktop {

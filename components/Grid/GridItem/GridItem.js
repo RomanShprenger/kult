@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import PostActions from 'components/PostActions';
+import { priceFormat } from "utils/format";
 
 const renderArt = (data) => (
   <div className="grid__item-inner">
@@ -23,9 +25,9 @@ const renderArt = (data) => (
       </div>
       <footer className="grid__item-footer">
         <div className="grid__item-action">
-          <div className="grid__item-like"></div>
+          <PostActions type="small" cbLike={() => console.log("Like")} cbComment={() => console.log("Comment")} cbShare={() => console.log("Share")} />
           <div className="grid__item-bidin">
-            <div className="grid__item-price">{data.price} ETH</div>
+            <div className="grid__item-price">{priceFormat(data.price)} ETH</div>
             <button className="grid__item-btn grid__item-btn--bid">Bid in</button>
           </div>
         </div>
@@ -83,7 +85,7 @@ const renderArtist = (data, size) => (
       <button type="button" className="grid__item-btn">Unfollow</button>
     </div>
     <div className="grid__item-action grid__item-action--mobile">
-
+      <PostActions type="small" cbLike={() => console.log("Like")} cbComment={() => console.log("Comment")} cbShare={() => console.log("Share")} />
     </div>
   </div>
 );
@@ -101,7 +103,7 @@ const renderTags = (data) => (
       ))}
     </div>
     <Link href="/">
-      <a className="grid__item-explore">Explore</a>
+      <a className="grid__item-explore"><i className="icon icon-explore"></i> Explore</a>
     </Link>
   </div>
 );
