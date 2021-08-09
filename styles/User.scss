@@ -89,10 +89,6 @@
       padding: 20px;
       position: sticky;
       top: 0;
-      @media(max-width: 1439px) {
-        flex-basis: 33.3333%;
-        max-width: 33.3333%;
-      }
       @media(max-width: 1023px) {
         display: none;
       }
@@ -107,12 +103,8 @@
         top: 0;
         bottom: 0;
         border-right: 1px solid $border;
-      }
-      @media(max-width: 1439px) {
-        flex-basis: 66.6667%;
-        max-width: 66.6667%;
-        &:after {
-          left: calc(33.3333% + 15px);
+        @media(max-width: 1023px) {
+          display: none;
         }
       }
       @media(max-width: 1023px) {
@@ -176,6 +168,9 @@
       font-family: NeueMachinaBold;
       text-transform: uppercase;
       cursor: pointer;
+      @media(max-width: 1439px) {
+        margin-right: 16px;
+      }
       &-count {
         opacity: 0.5;
       }
@@ -257,26 +252,37 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin: 20px 25px;
+        margin: 1.04vw 1.3vw;
         text-decoration: none;
+        @media(max-width: 1023px) {
+          margin: 2.04vw 2.3vw;
+        }
         &-img {
           border-radius: 50%;
-          width: 44px;
-          height: 44px;
+          width: 2.29vw;
+          height: 2.29vw;
           margin-right: 12px;
           display: inline-block;
+          @media(max-width: 1023px) {
+            width: 4.29vw;
+            height: 4.29vw;
+          }
         }
         &-name {
           font-family: NeueMachinaBold;
-          font-size: 20px;
-          line-height: 19px;
+          font-size: 1.04vw;
+          line-height: 1vw;
           color: $white;
           opacity: 0.88;
+          @media(max-width: 1023px) {
+            font-size: 2.04vw;
+            line-height: 2vw;
+          }
         }
       }
       &__text {
         display: block;
-        margin: 0 25px 20px;
+        margin: 0 1.3vw 1.04vw;
         color: $white;
         font-size: 1.4vw;
         line-height: 2.24vw;
@@ -284,7 +290,13 @@
         opacity: 0.88;
         text-decoration: none;
         overflow: hidden;
-        height: calc(100% - 84px);
+        height: calc(100% - 4.375vw);
+        @media(max-width: 1023px) {
+          font-size: 1.9vw;
+          line-height: 2.4vw;
+          margin: 0 2.3vw 2.04vw;
+          height: calc(100% - 8.375vw);
+        }
       }
     }
   }

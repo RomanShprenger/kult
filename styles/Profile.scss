@@ -227,9 +227,9 @@
       }
     }
     &__stats {
-      margin-bottom: 1.875vw;
+      flex-wrap: wrap;
       &-item {
-        margin: 0 12px;
+        margin: 0 12px 1.875vw;
       }
       &-value {
         font-size: 1.77vw;
