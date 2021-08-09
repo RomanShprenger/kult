@@ -1,0 +1,263 @@
+@import "variables";
+
+.profile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  &__name {
+    font-family: NeueMachinaBold;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+  }
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    &-item {
+      border-radius: 200px;
+      border: 1px solid $white;
+      padding: 8px 12px;
+      height: 27px;
+      font-size: 12px;
+      line-height: 12px;
+      font-family: NeueMachinaBold;
+      letter-spacing: 0.06em;
+      color: $white;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 4px;
+      display: block;
+      &--follow {
+        background-color: $white;
+        color: $black;
+      }
+      &--more {
+        font-size: 18px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  }
+  &__description {
+    font-family: NeueMachina;
+    text-align: center;
+    color: $white;
+    opacity: 0.4;
+  }
+  &__created {
+    font-family: NeueMachina;
+    text-align: center;
+    color: $white;
+    opacity: 0.4;
+  }
+  &__avatar {
+    position: relative;
+    margin-bottom: 32px;
+    &-img {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      img {
+        width: 100%;
+      }
+    }
+    &-verified {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(50%, -50%);
+      font-size: 28px;
+      height: 44px;
+      width: 44px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: $white;
+      color: $black;
+    }
+  }
+  &__ids {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    &-nickname {
+      font-family: NeueMachina;
+      color: $white;
+      margin: 0 8px;
+      &-at {
+        color: #666666;
+      }
+    }
+    &-hash {
+      background-color: transparent;
+      border: none;
+      font-family: NeueMachina;
+      font-style: normal;
+      font-weight: normal;
+      color: $white;
+      opacity: 0.4;
+      cursor: pointer;
+    }
+  }
+  &__stats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    &-item {
+      text-align: center;
+    }
+    &-value {
+      color: $primary;
+      font-family: NeueMachinaBold;
+      text-transform: uppercase;
+    }
+    &-param {
+      font-family: NeueMachina;
+      text-transform: uppercase;
+    }
+  }
+  &--full & {
+    &__avatar {
+      margin-bottom: 1.667vw;
+      @media(max-width: 1365px) {
+        font-size: 7.4vw;
+        line-height: 7.5vw;
+        &-img {
+          width: 72px;
+          height: 72px;
+        }
+        &-verified {
+          font-size: 20px;
+          height: 32px;
+          width: 32px;
+        }
+      }
+    }
+    &__name {
+      font-size: 10.4vw;
+      line-height: 10.5vw;
+      letter-spacing: -0.05em;
+      @media(max-width: 1365px) {
+        font-size: 7.4vw;
+        line-height: 7.5vw;
+      }
+    }
+    &__links {
+      margin-bottom: 2.8vw;
+    }
+    &__description {
+      font-size: 1.458vw;
+      line-height: 1.927vw;
+      letter-spacing: -0.05em;
+      margin-bottom: 1.25vw;
+      max-width: 560px;
+    }
+    &__created {
+      font-size: 16px;
+      line-height: 15px;
+      letter-spacing: -0.05em;
+      margin-bottom: 2.5vw;
+    }
+    &__ids {
+      margin-bottom: 1.25vw;
+      &-nickname {
+        font-size: 1.354vw;
+        line-height: 1.2vw;
+        letter-spacing: -0.05em;
+      }
+      &-hash {
+        font-size: 1.354vw;
+        line-height: 1.2vw;
+        letter-spacing: -0.05em;
+      }
+    }
+    &__stats {
+      margin-bottom: 2.08vw;
+      &-item {
+        margin: 0 24px;
+      }
+      &-value {
+        font-size: 3.3333vw;
+        line-height: 3.2vw;
+        letter-spacing: -0.05em;
+      }
+      &-param {
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0.06em;
+      }
+    }
+  }
+  &--small &{
+    &__avatar {
+      margin-top: 28px;
+    }
+    &__name {
+      font-size: 1.77vw;
+      line-height: 1.7vw;
+      letter-spacing: -0.05em;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      @media(max-width: 1365px) {
+        font-size: 2.3vw;
+        line-height: 2.3vw;
+      }
+    }
+    &__ids {
+      margin-bottom: 1.25vw;
+      &-nickname {
+        font-size: 1.04vw;
+        line-height: 1vw;
+        letter-spacing: -0.05em;
+      }
+      &-hash {
+        font-size: 1.04vw;
+        line-height: 1vw;
+        letter-spacing: -0.05em;
+      }
+    }
+    &__stats {
+      margin-bottom: 1.875vw;
+      &-item {
+        margin: 0 12px;
+      }
+      &-value {
+        font-size: 1.77vw;
+        line-height: 1.7vw;
+        letter-spacing: -0.05em;
+      }
+      &-param {
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0.06em;
+      }
+    }
+    &__description {
+      font-size: 1.25vw;
+      line-height: 1.77vw;
+      letter-spacing: -0.05em;
+      margin-bottom: 32px;
+      width: 100%;
+    }
+    &__created {
+      font-size: 16px;
+      line-height: 15px;
+      letter-spacing: -0.05em;
+    }
+    &__links {
+      &-item {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}

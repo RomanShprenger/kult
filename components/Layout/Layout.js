@@ -6,7 +6,7 @@ import Header from 'components/Header';
 export default function Layout({ children }) {
   useEffect(() => {
     if (mobileDetect()) {
-      document.querySelector("body").classList.add("mobile")
+      document.querySelector("body").classList.add("touch")
     }
   });
 

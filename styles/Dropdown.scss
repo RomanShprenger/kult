@@ -1,0 +1,26 @@
+@import "variables";
+
+.dropdown {
+  position: relative;
+  &__link {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  &__list {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &-item {
+      margin-top: 12px;
+    }
+  }
+}
