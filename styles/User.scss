@@ -12,6 +12,14 @@
     @media(max-width: 1024px) {
       max-height: 600px;
     }
+    @media(max-width: 767px) {
+      max-height: none;
+      margin: 0;
+      padding: 72px 0 40px;
+      border: none;
+      height: auto;
+      overflow: hidden;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -19,6 +27,10 @@
       bottom: -31px;
       left: 30px;
       border-left: 1px solid $border;
+      z-index: 1;
+      @media(max-width: 767px) {
+        display: none;
+      }
     }
     &:after {
       content: '';
@@ -27,6 +39,10 @@
       bottom: -31px;
       right: 30px;
       border-right: 1px solid $border;
+      z-index: 1;
+      @media(max-width: 767px) {
+        display: none;
+      }
     }
     &-bg {
       display: block;
@@ -37,7 +53,12 @@
       background-size: cover;
       position: relative;
       opacity: 0.5;
-      left: 1px;
+      @media(max-width: 767px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
       &:before {
         content: "";
         background: linear-gradient(360deg, #000000 50%, rgba(0, 0, 0, 0) 98.64%);
@@ -46,6 +67,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        z-index: 1;
       }
       img {
         display: none;
@@ -57,6 +79,11 @@
       left: 30px;
       width: calc(100% - 60px);
       height: 100%;
+      @media(max-width: 767px) {
+        left: 18px;
+        width: calc(100% - 36px);
+        position: relative;
+      }
     }
   }
   &__content {
@@ -66,7 +93,11 @@
     align-items: flex-start;
     padding: 0 30px;
     border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
     position: relative;
+    @media(max-width: 767px) {
+      padding: 0;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -74,6 +105,10 @@
       bottom: 0;
       left: 30px;
       border-right: 1px solid $border;
+      z-index: 1;
+      @media(max-width: 767px) {
+        display: none;
+      }
     }
     &:after {
       content: "";
@@ -82,6 +117,10 @@
       bottom: 0;
       right: 30px;
       border-right: 1px solid $border;
+      z-index: 1;
+      @media(max-width: 767px) {
+        display: none;
+      }
     }
     &-profile {
       flex-basis: 25%;
@@ -103,6 +142,7 @@
         top: 0;
         bottom: 0;
         border-right: 1px solid $border;
+        z-index: 1;
         @media(max-width: 1023px) {
           display: none;
         }
@@ -124,6 +164,9 @@
       display: flex;
       flex-direction: row;
       border-bottom: 1px solid $border;
+      @media(max-width: 767px) {
+        padding: 0;
+      }
     }
     &__toggle {
       position: absolute;
@@ -131,6 +174,9 @@
       top: 28px;
       display: flex;
       flex-direction: row;
+      @media(max-width: 767px) {
+        display: none;
+      }
       &-radio {
         margin-left: 16px;
         label {
@@ -161,7 +207,6 @@
       background: transparent;
       border: none;
       color: $white;
-      opacity: 0.4;
       font-size: 12px;
       line-height: 12px;
       letter-spacing: 0.06em;
@@ -171,15 +216,53 @@
       @media(max-width: 1439px) {
         margin-right: 16px;
       }
+      @media(max-width: 767px) {
+        margin: 0;
+        flex-basis: 25%;
+        max-width: 25%;
+        padding: 16px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid $border;
+        &:last-child {
+          border-right: none;
+        }
+      }
       &-count {
         opacity: 0.5;
       }
-      &--selected {
+      &--selected &-title{
         opacity: 1;
       }
       &--selected &-count {
         color: $primary;
         opacity: 1;
+      }
+      &--selected &-title--mobile {
+        color: $primary;
+      }
+      &-title {
+        opacity: 0.4;
+        &--mobile {
+          font-size: 18px;
+          line-height: 18px;
+          display: none;
+          @media(max-width: 767px) {
+            display: block;
+          }
+        }
+        &--desktop {
+          @media(max-width: 767px) {
+            display: none;
+          }
+        }
+      }
+    }
+    &__panel {
+      @media(max-width: 767px) {
+        overflow: hidden;
       }
     }
   }
@@ -190,11 +273,19 @@
     flex-direction: row;
     flex-wrap: wrap;
     padding: 15px;
+    @media(max-width: 767px) {
+      padding: 0;
+      margin: -4px;
+      overflow: hidden;
+    }
     &-item {
       flex-basis: 33.3333%;
       max-width: 33.3333%;
       padding: 15px;
       position: relative;
+      @media(max-width: 767px) {
+        padding: 2px;
+      }
       &:before {
         content: '';
         position: absolute;
@@ -203,6 +294,11 @@
         left: 15px;
         border-left: 1px solid $border;
         z-index: 1;
+        @media(max-width: 767px) {
+          top: -2px;
+          bottom: -2px;
+          left: 2px;
+        }
       }
       &:before {
         content: '';
@@ -212,6 +308,11 @@
         right: 15px;
         border-right: 1px solid $border;
         z-index: 1;
+        @media(max-width: 767px) {
+          top: -2px;
+          bottom: -2px;
+          right: 2px;
+        }
       }
       &__link {
         display: block;
@@ -225,6 +326,11 @@
           left: -30px;
           border-top: 1px solid $border;
           z-index: 1;
+          @media(max-width: 767px) {
+            top: 0;
+            right: -2px;
+            left: -2px;
+          }
         }
         &:before {
           content: '';
@@ -234,6 +340,11 @@
           left: -30px;
           border-bottom: 1px solid $border;
           z-index: 1;
+          @media(max-width: 767px) {
+            bottom: 0;
+            right: -2px;
+            left: -2px;
+          }
         }
       }
       &__content {
@@ -256,6 +367,9 @@
         text-decoration: none;
         @media(max-width: 1023px) {
           margin: 2.04vw 2.3vw;
+        }
+        @media(max-width: 767px) {
+          display: none;
         }
         &-img {
           border-radius: 50%;
@@ -296,6 +410,12 @@
           line-height: 2.4vw;
           margin: 0 2.3vw 2.04vw;
           height: calc(100% - 8.375vw);
+        }
+        @media(max-width: 767px) {
+          margin: 8px;
+          font-size: 10px;
+          line-height: 15px;
+          height: calc(100% - 16px);
         }
       }
     }

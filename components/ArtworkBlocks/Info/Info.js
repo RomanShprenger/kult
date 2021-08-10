@@ -7,7 +7,7 @@ const Info = ({ creator, title, description, unlockable, tags, categories }) => 
     </div>
     <div className="info__title">{title}</div>
     <ul className="info__categroies">
-      { unlockable.status ? <li className="info__categroies-item info__categroies-item--unlockable"><img src="/diamond-primary.svg" alt="unlockable category"/> Unlockable content</li> : null}
+      { unlockable.status ? <li className="info__categroies-item info__categroies-item--unlockable"><i className="icon icon-diamond"></i> Unlockable content</li> : null}
       { categories.map(cat => <li className="info__categroies-item" key={cat}>{cat}</li>) }
     </ul>
     <div className="info__description">{description}</div>
@@ -15,7 +15,7 @@ const Info = ({ creator, title, description, unlockable, tags, categories }) => 
       unlockable.status ? (
         <div className="info__unlockable">
           <div className="info__unlockable-icon">
-            <img src="/diamond-primary.svg" alt="unlicable icon"/>
+            <i className="icon icon-diamond"></i>
           </div>
           <div className="info__unlockable-title">Unlockable content</div>
           <div className="info__unlockable-text" dangerouslySetInnerHTML={{__html: unlockable.content}}></div>

@@ -17,16 +17,20 @@ const UserTabs = ({ feed, creations, collection, bids, name, nickname, avatar })
     <Tabs className="user-tabs__container" onSelect={select} defaultIndex={0}>
       <TabList className="user-tabs__list">
         <Tab className="user-tabs__tab" selectedClassName="user-tabs__tab--selected">
-          Feed <span className="user-tabs__tab-count">({feed.length})</span>
+          <div className="user-tabs__tab-title user-tabs__tab-title--desktop">Feed <span className="user-tabs__tab-count">({feed.length})</span></div>
+          <div className="user-tabs__tab-title user-tabs__tab-title--mobile"><i className="icon icon-grid"></i></div>
         </Tab>
         <Tab className="user-tabs__tab" selectedClassName="user-tabs__tab--selected">
-          Creations <span className="user-tabs__tab-count">({creations.length})</span>
+          <div className="user-tabs__tab-title user-tabs__tab-title--desktop">Creations <span className="user-tabs__tab-count">({creations.length})</span></div>
+          <div className="user-tabs__tab-title user-tabs__tab-title--mobile"><i className="icon icon-feed"></i></div>
         </Tab>
         <Tab className="user-tabs__tab" selectedClassName="user-tabs__tab--selected">
-          Collections <span className="user-tabs__tab-count">({collection.length})</span>
+          <div className="user-tabs__tab-title user-tabs__tab-title--desktop">Collections <span className="user-tabs__tab-count">({collection.length})</span></div>
+          <div className="user-tabs__tab-title user-tabs__tab-title--mobile"><i className="icon icon-like"></i></div>
         </Tab>
         <Tab className="user-tabs__tab" selectedClassName="user-tabs__tab--selected">
-          Current Bids <span className="user-tabs__tab-count">({bids.length})</span>
+          <div className="user-tabs__tab-title user-tabs__tab-title--desktop">Current Bids <span className="user-tabs__tab-count">({bids.length})</span></div>
+          <div className="user-tabs__tab-title user-tabs__tab-title--mobile"><i className="icon icon-auction"></i></div>
         </Tab>
       </TabList>
 
