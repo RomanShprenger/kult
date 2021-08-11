@@ -60,7 +60,7 @@ const User = ({ data, notFound }) => {
         />
       </div>
       <div className="user__content-tabs">
-        <UserTabs feed={data.feed} creations={data.creations} collection={data.collections} bids={data.bids} avatar={data.avatar} nickname={data.nickname} name={data.name} />
+        <UserTabs owner={data.owner} feed={data.feed} creations={data.creations} collection={data.collections} bids={data.bids} avatar={data.avatar} nickname={data.nickname} name={data.name} />
       </div>
     </div>
   </div>
@@ -113,78 +113,132 @@ export async function getServerSideProps({ query }) {
       imageUrl: "/assets/post-1x1-2.png",
       title: "Abstract horizons sunset on the mountains",
       slug: "abstract-horizons-sunset-on-the-mountains",
-      bid: 2,  // ETH
+      categories: ["visual design"],
+      unlockable: {
+        status: true
+      },
+      bid: {
+        eth: 2,
+        usd: 1464.26
+      },
+      date: 1621430820, // timestamp
       liked: false
     }, {
       type: "post",
       text: "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
       description: "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night. See More...",
       slug: "abstract-horizons-sunset-on-the-mountains",
+      date: 1621430820, // timestamp
       liked: false
     },{
       type: "artwork",
       imageUrl: "/assets/post-1x1-2.png",
       title: "Abstract horizons sunset on the mountains",
       slug: "abstract-horizons-sunset-on-the-mountains",
-      bid: 2,  // ETH
+      categories: ["visual design"],
+      unlockable: {
+        status: true
+      },
+      bid: {
+        eth: 2,
+        usd: 1464.26
+      },
+      date: 1621430820, // timestamp
       liked: false
     }, {
       type: "post",
       text: "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
       description: "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night. See More...",
       slug: "abstract-horizons-sunset-on-the-mountains",
+      date: 1621430820, // timestamp
       liked: false
     },{
       type: "artwork",
       imageUrl: "/assets/post-1x1-2.png",
       title: "Abstract horizons sunset on the mountains",
       slug: "abstract-horizons-sunset-on-the-mountains",
-      bid: 2,  // ETH
+      categories: ["visual design"],
+      unlockable: {
+        status: true
+      },
+      bid: {
+        eth: 2,
+        usd: 1464.26
+      },
+      date: 1621430820, // timestamp
       liked: false
     }, {
       type: "post",
       text: "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
       description: "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night. See More...",
       slug: "abstract-horizons-sunset-on-the-mountains",
+      date: 1621430820, // timestamp
       liked: false
     },{
       type: "artwork",
       imageUrl: "/assets/post-1x1-2.png",
       title: "Abstract horizons sunset on the mountains",
       slug: "abstract-horizons-sunset-on-the-mountains",
-      bid: 2,  // ETH
+      categories: ["visual design"],
+      unlockable: {
+        status: true
+      },
+      bid: {
+        eth: 2,
+        usd: 1464.26
+      },
+      date: 1621430820, // timestamp
       liked: false
     }, {
       type: "post",
       text: "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
       description: "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night. See More...",
       slug: "abstract-horizons-sunset-on-the-mountains",
+      date: 1621430820, // timestamp
       liked: false
     },{
       type: "artwork",
       imageUrl: "/assets/post-1x1-2.png",
       title: "Abstract horizons sunset on the mountains",
       slug: "abstract-horizons-sunset-on-the-mountains",
-      bid: 2,  // ETH
+      categories: ["visual design"],
+      unlockable: {
+        status: true
+      },
+      bid: {
+        eth: 2,
+        usd: 1464.26
+      },
+      date: 1621430820, // timestamp
       liked: false
     }, {
       type: "post",
       text: "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
       description: "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night. See More...",
       slug: "abstract-horizons-sunset-on-the-mountains",
+      date: 1621430820, // timestamp
       liked: false
     },{
       type: "artwork",
       imageUrl: "/assets/post-1x1-2.png",
       title: "Abstract horizons sunset on the mountains",
       slug: "abstract-horizons-sunset-on-the-mountains",
-      bid: 2,  // ETH
+      categories: ["visual design"],
+      unlockable: {
+        status: true
+      },
+      bid: {
+        eth: 2,
+        usd: 1464.26
+      },
+      date: 1621430820, // timestamp
       liked: false
     }, {
       type: "post",
       text: "William uses lines to create small personal sketches, large-scale murals, live drawings, and collaborations with artists",
       description: "Moved good image fly to gathering brought grass air living. Living light, own fruit created you'll heaven a appear and subdue them forth place waters his female fifth. The place which. It signs he. Kind yielding air is gathered days rule lesser multiply it sixth, yielding had created fifth herb isn't years night. See More...",
       slug: "abstract-horizons-sunset-on-the-mountains",
+      date: 1621430820, // timestamp
       liked: false
     }], // посты и артворки
     creations: [{
@@ -197,7 +251,11 @@ export async function getServerSideProps({ query }) {
         "content": "The piece of art was created by PPSS group - collaboration between Pavel Pepperstein and Sonya Stereostyrski. <a href='https://en.wikipedia.org/wiki/Pavel_Pepperstein' target='_blank'>https://en.wikipedia.org/wiki/Pavel_Pepperstein</a>"
       },
       categories: ["visual design"],
-      bid: 2,  // ETH
+      bid: {
+        eth: 2,
+        usd: 1464.26
+      },
+      date: 1621430820, // timestamp
       liked: false
     }, {
       type: "artwork",
@@ -209,7 +267,11 @@ export async function getServerSideProps({ query }) {
         "content": "The piece of art was created by PPSS group - collaboration between Pavel Pepperstein and Sonya Stereostyrski. <a href='https://en.wikipedia.org/wiki/Pavel_Pepperstein' target='_blank'>https://en.wikipedia.org/wiki/Pavel_Pepperstein</a>"
       },
       categories: ["visual design"],
-      bid: 2,  // ETH
+      bid: {
+        eth: 2,
+        usd: 1464.26
+      },
+      date: 1621430820, // timestamp
       liked: false
     }], // артворки
     collections: [{

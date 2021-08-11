@@ -26,7 +26,7 @@ const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickn
         <img src={avatar} alt="User avatar" />
       </div>
       {
-        verified && <div className="profile__avatar-verified"><i className="icon icon-diamond"></i></div>
+        verified && <div className="profile__avatar-verified"><i className="icon icon-diamond"></i> Verified Artist</div>
       }
     </div>
     <div className="profile__links">

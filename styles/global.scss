@@ -20,6 +20,26 @@
   font-weight: 400;
   font-display: swap;
 }
+@font-face {
+  font-family: "NeueMachinaLight";
+  src: url("/fonts/NeueMachina/NeueMachina-Light.eot?") format("eot"),
+       url("/fonts/NeueMachina/NeueMachina-Light.ttf") format("truetype"),
+       url("/fonts/NeueMachina/NeueMachina-Light.woff2") format("woff2"),
+       url("/fonts/NeueMachina/NeueMachina-Light.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NeueMachinaUltraLight";
+  src: url("/fonts/NeueMachina/NeueMachina-UltraLight.eot?") format("eot"),
+       url("/fonts/NeueMachina/NeueMachina-UltraLight.ttf") format("truetype"),
+       url("/fonts/NeueMachina/NeueMachina-UltraLight.woff2") format("woff2"),
+       url("/fonts/NeueMachina/NeueMachina-UltraLight.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
 
 * {
   box-sizing: border-box;

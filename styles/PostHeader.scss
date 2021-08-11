@@ -1,0 +1,47 @@
+@import "variables";
+
+.post-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px;
+  &__img {
+    width: 66px;
+    height: 66px;
+    margin-right: 25px;
+    img {
+      width: 100%;
+    }
+  }
+  &__name {
+    font-family: NeueMachinaUltraLight;
+    font-size: 34px;
+    line-height: 33px;
+    letter-spacing: -0.03em;
+    color: $white;
+    opacity: 0.88;
+    margin-bottom: 8px;
+  }
+  &__info {
+    &-footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__nickname {
+    font-family: NeueMachinaUltraLight;
+    font-size: 14px;
+    line-height: 14px;
+    color: $white;
+    opacity: 0.8;
+    margin-right: 20px;
+  }
+  &__date {
+    font-family: NeueMachinaUltraLight;
+    font-size: 14px;
+    line-height: 14px;
+    color: $white;
+    opacity: 0.4;
+  }
+}

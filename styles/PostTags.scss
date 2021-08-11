@@ -1,0 +1,32 @@
+@import 'variables';
+
+.post-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  &__item {
+    font-family: NeueMachinaBold;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.06em;
+    color: $white;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    padding: 4px 12px;
+    border: 1px solid $border;
+    border-radius: 200px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    height: 27px;
+    text-decoration: none;
+    &--unlockable {
+      i {
+        color: $primary;
+        font-size: 16px;
+        margin-right: 4px;
+      }
+    }
+  }
+}

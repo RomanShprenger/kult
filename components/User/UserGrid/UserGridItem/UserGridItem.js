@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import moment from 'moment';
 
-const UserGridItem = ({ type, imageUrl, slug, title, text, bid, liked, name, avatar }) => {
+const UserGridItem = ({ type, imageUrl, slug, title, text, name, date, avatar }) => {
   return <div className={`user-grid-item user-grid-item--${type}`}>
     <Link href={`/${type}/${slug}`}>
       <a className="user-grid-item__link">
@@ -15,6 +16,7 @@ const UserGridItem = ({ type, imageUrl, slug, title, text, bid, liked, name, ava
               <span className="user-grid-item__text">{text}</span>
             </>
           }
+          { type === "post" && date && <span className="user-grid-item__date">{moment(date).format("DD MMM")}</span> }
         </span>
       </a>
     </Link>

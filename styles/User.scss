@@ -128,6 +128,7 @@
       padding: 20px;
       position: sticky;
       top: 0;
+      z-index: 100;
       @media(max-width: 1023px) {
         display: none;
       }
@@ -404,18 +405,189 @@
         opacity: 0.88;
         text-decoration: none;
         overflow: hidden;
-        height: calc(100% - 4.375vw);
+        height: calc(100% - 6.5vw);
         @media(max-width: 1023px) {
           font-size: 1.9vw;
           line-height: 2.4vw;
           margin: 0 2.3vw 2.04vw;
-          height: calc(100% - 8.375vw);
+          height: calc(100% - 14vw);
         }
         @media(max-width: 767px) {
           margin: 8px;
           font-size: 10px;
           line-height: 15px;
-          height: calc(100% - 16px);
+          height: calc(100% - 28px);
+        }
+      }
+      &__date {
+        position: absolute;
+        bottom: 1.04vw;
+        left: 1.3vw;
+        color: $white;
+        opacity: 0.44;
+        text-decoration: none;
+        font-family: NeueMachinaBold;
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0.06em;
+        @media(max-width: 1023px) {
+          font-size: 12px;
+          line-height: 12px;
+          left: 2.3vw;
+          bottom: 2.04vw;
+        }
+        @media(max-width: 767px) {
+          font-size: 10px;
+          line-height: 12px;
+          left: 8px;
+          bottom: 4px;
+        }
+      }
+    }
+  }
+
+  // UserFeed component
+  &-feed {
+    position: relative;
+    padding: 0 30px;
+    overflow: hidden;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 30px;
+      bottom: -30px;
+      border-left: 1px solid $border;
+      z-index: 1;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: -30px;
+      right: 30px;
+      bottom: -30px;
+      border-right: 1px solid $border;
+      z-index: 1;
+    }
+    &-item {
+      position: relative;
+      margin: 30px 0;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -30px;
+        right: -30px;
+        border-top: 1px solid $border;
+        z-index: 1;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: -30px;
+        left: -30px;
+        border-bottom: 1px solid $border;
+        z-index: 1;
+      }
+      &--artwork & {
+        &__body {
+          padding: 0 30px;
+          &-img {
+            margin: 0 -30px;
+            padding-top: 51.3%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+          }
+          &-title {
+            font-family: NeueMachinaBold;
+            font-size: 53px;
+            line-height: 68px;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            color: $white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+          }
+        }
+        &__img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+        }
+        &__footer {
+          padding: 30px;
+          &-title {
+            font-family: NeueMachinaBold;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            color: $primary;
+            margin-bottom: 12px;
+          }
+          &-eth {
+            font-family: NeueMachinaBold;
+            font-size: 80px;
+            line-height: 77px;
+            letter-spacing: -0.05em;
+            color: $primary;
+            margin-bottom: 8px;
+          }
+          &-usd {
+            font-family: NeueMachina;
+            font-size: 24px;
+            line-height: 23px;
+            letter-spacing: -0.05em;
+            color: $white;
+            opacity: 0.5;
+            margin-bottom: 20px;
+          }
+          &-actions {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+          &-btn {
+            background-color: $primary;
+            border-radius: 200px;
+            color: $black;
+            border: 1px solid $primary;
+            padding: 8px 12px;
+            font-family: NeueMachinaBold;
+            font-size: 12px;
+            line-height: 12px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-right: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+      &--post & {
+        &__body {
+          padding: 0 30px;
+          &-text {
+            font-family: NeueMachina;
+            font-size: 48px;
+            line-height: 56px;
+            letter-spacing: -0.03em;
+            color: $white;
+            opacity: 0.88;
+          }
+          &-link {
+            color: $white;
+            display: inline;
+            margin-left: 12px;
+            opacity: 0.4;
+          }
+        }
+        &__footer {
+          padding: 30px;
         }
       }
     }

@@ -23,7 +23,7 @@
     flex-wrap: wrap;
     &-item {
       border-radius: 200px;
-      border: 1px solid $white;
+      border: 1px solid $border;
       padding: 8px 12px;
       height: 27px;
       font-size: 12px;
@@ -48,13 +48,13 @@
     }
   }
   &__description {
-    font-family: NeueMachina;
+    font-family: NeueMachinaUltraLight;
     text-align: center;
     color: $white;
     opacity: 0.4;
   }
   &__created {
-    font-family: NeueMachina;
+    font-family: NeueMachinaUltraLight;
     text-align: center;
     color: $white;
     opacity: 0.4;
@@ -73,18 +73,69 @@
     &-verified {
       position: absolute;
       top: 50%;
-      right: 0;
-      transform: translate(50%, -50%);
-      font-size: 28px;
+      left: calc(100% - 22px);
+      transform: translateY(-50%);
+      font-size: 16px;
+      line-height: 28px;
       height: 44px;
       width: 44px;
-      border-radius: 50%;
+      border-radius: 22px;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       background-color: $white;
       color: $black;
+      white-space: nowrap;
+      padding: 0 16px 0 8px;
+      transition: width 0.3s ease;
+      overflow: hidden;
+      z-index: 2;
+      &:hover {
+        width: auto;
+      }
+      i {
+        font-size: 28px;
+        line-height: 28px;
+        margin-right: 8px;
+      }
+    }
+    @media(max-width: 1365px) {
+      font-size: 7.4vw;
+      line-height: 7.5vw;
+      &-img {
+        width: 72px;
+        height: 72px;
+      }
+      &-verified {
+        font-size: 12px;
+        height: 32px;
+        width: 32px;
+        left: calc(100% - 16px);
+        padding: 0 12px 0 6px;
+        i {
+          font-size: 21px;
+          line-height: 22px;
+          margin-right: 8px;
+        }
+      }
+    }
+    @media(max-width: 767px) {
+      &-img {
+        width: 104px;
+        height: 104px;
+      }
+      &-verified {
+        font-size: 12px;
+        line-height: 14px;
+        white-space: normal;
+        height: 44px;
+        width: 44px;
+        padding: 0 16px 0 8px;
+        i {
+          font-size: 28px;
+        }
+      }
     }
   }
   &__ids {
@@ -103,9 +154,7 @@
     &-hash {
       background-color: transparent;
       border: none;
-      font-family: NeueMachina;
-      font-style: normal;
-      font-weight: normal;
+      font-family: NeueMachinaUltraLight;
       color: $white;
       opacity: 0.4;
       cursor: pointer;
@@ -132,30 +181,8 @@
   &--full & {
     &__avatar {
       margin-bottom: 1.667vw;
-      @media(max-width: 1365px) {
-        font-size: 7.4vw;
-        line-height: 7.5vw;
-        &-img {
-          width: 72px;
-          height: 72px;
-        }
-        &-verified {
-          font-size: 20px;
-          height: 32px;
-          width: 32px;
-        }
-      }
       @media(max-width: 767px) {
         margin-bottom: 32px;
-        &-img {
-          width: 104px;
-          height: 104px;
-        }
-        &-verified {
-          font-size: 26px;
-          height: 44px;
-          width: 44px;
-        }
       }
     }
     &__name {

@@ -7,6 +7,8 @@ import "styles/BidList.scss";
 import "styles/Header.scss";
 import "styles/Dropdown.scss";
 import "styles/PostActions.scss";
+import "styles/PostHeader.scss";
+import "styles/PostTags.scss";
 import "styles/Slider.scss";
 import "styles/Profile.scss";
 
