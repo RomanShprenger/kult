@@ -21,8 +21,36 @@
     list-style: none;
     background-color: $black;
     border-radius: 15px;
+    border: 1px solid $border;
     &-item {
-      // margin-top: 12px;
+      padding: 12px;
+      text-align: center;
+      position: relative;
+      width: 176px;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+        border-bottom: 1px solid $border;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    &-link {
+      font-family: NeueMachinaBold;
+      font-size: 12px;
+      line-height: 12px;
+      text-align: center;
+      letter-spacing: 0.06em;
+      color: $white;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
     }
   }
 }

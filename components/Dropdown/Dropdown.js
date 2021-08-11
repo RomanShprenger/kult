@@ -1,6 +1,9 @@
+import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 
-const Dropdown = ({ list = [], classList, title }) => {
+const Dropdown = ({ list = [], classList, wrapperClasses, title }) => {
+  // list = [{ name: '', link: '' }]
+
   const dropdownRef = useRef(null);
   const [open, setOpen] = useState(false);
 
@@ -17,11 +20,19 @@ const Dropdown = ({ list = [], classList, title }) => {
     };
   }, [dropdownRef]);
 
-  return <div className="dropdown" ref={dropdownRef}>
+  return <div className={`dropdown ${wrapperClasses}`} ref={dropdownRef}>
     <button className={`dropdown__link ${classList}`} onClick={(e) => setOpen(!open)}>{title}</button>
     {
       list.length > 0 && open && (<ul className="dropdown__list">
-        {list.map((item, i) => <li className="dropdown__list-item" key={`${title}-dropdown-item-${i}`}>{item}</li>)}
+        {
+          list.map((item, i) => <li className="dropdown__list-item" key={item.name}>
+            <Link href={item.link}>
+              <a className="dropdown__list-link">
+                {item.name}
+              </a>
+            </Link>
+          </li>)
+        }
       </ul>)
     }
   </div>

@@ -2,22 +2,30 @@ import moment from 'moment';
 import Dropdown from "components/Dropdown";
 
 const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickname, name, hash, description, created, stats, socials }) => {
-  const links = [];
+  let links = [];
+  let shownLinks = [];
+  let hiddenLinks = [];
   const handler = (e) => {
     e.preventDefault();
     followHandler(e);
   }
 
-  if (!owner) {
+  if (!owner && socials.length >= 2) {
     links.push(<a href="#" className="profile__links-item profile__links-item--follow" key="follow" onClick={handler}>{ follower ? "Unfollow" : "Follow" }</a>)
+    hiddenLinks = socials.slice(2, socials.length);
+    shownLinks = shownLinks.concat(socials.slice(0, 2));
+  } else if (socials.length >= 3) {
+    hiddenLinks = socials.slice(3, socials.length);
+    shownLinks = shownLinks.concat(socials.slice(0, 3));
+  } else {
+    shownLinks = shownLinks.concat(socials);
   }
 
-  socials.forEach(el => links.push(<a href={el.link} target="_blank" className="profile__links-item" key={el.name}>{el.name}</a>));
+  shownLinks.forEach(el => links.push(<a href={el.link} target="_blank" className="profile__links-item" key={el.name}>{el.name}</a>));
 
-  if (links.length > 3) {
-    const hidden = links.slice(3);
-    const dropdown = <Dropdown list={hidden} title={<i className="icon icon-more"></i>} classList="profile__links-item profile__links-item--more" key="more" />
-    links.splice(3, links.length, dropdown);
+  if (hiddenLinks.length > 0) {
+    const dropdown = <Dropdown list={hiddenLinks} title={<i className="icon icon-more"></i>} wrapperClasses="profile__links-dropdown" classList="profile__links-item profile__links-item--more" key="more" />
+    links.push(dropdown);
   }
 
   return <div className={`profile profile--${type}`}>
