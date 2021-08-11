@@ -26,11 +26,9 @@ const Dropdown = ({ list = [], classList, wrapperClasses, title }) => {
       list.length > 0 && open && (<ul className="dropdown__list">
         {
           list.map((item, i) => <li className="dropdown__list-item" key={item.name}>
-            <Link href={item.link}>
-              <a className="dropdown__list-link">
-                {item.name}
-              </a>
-            </Link>
+          <a href={item.link} className="dropdown__list-link" target="_blank">
+            {item.name}
+          </a>
           </li>)
         }
       </ul>)
