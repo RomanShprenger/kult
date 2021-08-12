@@ -451,6 +451,9 @@
     position: relative;
     padding: 0 30px;
     overflow: hidden;
+    @media(max-width: 767px) {
+      padding: 0 15px;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -459,6 +462,11 @@
       bottom: -30px;
       border-left: 1px solid $border;
       z-index: 1;
+      @media(max-width: 767px) {
+        top: -15px;
+        left: 15px;
+        bottom: -15px;
+      }
     }
     &:after {
       content: "";
@@ -468,10 +476,27 @@
       bottom: -30px;
       border-right: 1px solid $border;
       z-index: 1;
+      @media(max-width: 767px) {
+        top: -15px;
+        right: 15px;
+        bottom: -15px;
+      }
     }
     &-item {
       position: relative;
       margin: 30px 0;
+      display: flex;
+      flex-direction: column;
+      @media(max-width: 767px) {
+        margin: 0 0 15px;
+        display: flex;
+        flex-direction: column;
+        &:first-child {
+          &:before {
+            display: none;
+          }
+        }
+      }
       &:before {
         content: "";
         position: absolute;
@@ -493,12 +518,12 @@
       &--artwork & {
         &__body {
           padding: 0 30px;
-          &-img {
-            margin: 0 -30px;
-            padding-top: 51.3%;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 30px;
+          @media(max-width: 767px) {
+            padding: 0 15px;
+            order: 4;
+            &-tags {
+              display: none;
+            }
           }
           &-title {
             font-family: NeueMachinaBold;
@@ -510,17 +535,70 @@
             text-decoration: none;
             display: block;
             margin-bottom: 12px;
+            &-name {
+              display: none;
+            }
+            @media(max-width: 767px) {
+              font-family: NeueMachinaUltraLight;
+              font-size: 14px;
+              line-height: 18px;
+              letter-spacing: -0.05em;
+              text-transform: none;
+              margin-bottom: 24px;
+              &-name {
+                display: inline-block;
+                margin-right: 4px;
+              }
+              &-text {
+                opacity: 0.44;
+              }
+            }
           }
         }
         &__img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 100%;
+          padding-top: 51.3%;
+          position: relative;
+          overflow: hidden;
+          margin-bottom: 30px;
+          @media(max-width: 767px) {
+            margin-bottom: 15px;
+            padding: 0;
+          }
+          img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            @media(max-width: 767px) {
+              position: static;
+              transform: none;
+              display: block;
+            }
+          }
         }
         &__footer {
-          padding: 30px;
+          padding: 0 30px 30px;
+          order: 5;
+          @media(max-width: 767px) {
+            padding: 0 15px;
+            order: 3;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            margin-bottom: 15px;
+            height: 24px;
+            &:before {
+              content: '';
+              position: absolute;
+              top: -15px;
+              left: -15px;
+              right: -15px;
+              border-top: 1px solid $border;
+            }
+          }
           &-title {
             font-family: NeueMachinaBold;
             font-size: 16px;
@@ -529,6 +607,9 @@
             text-transform: uppercase;
             color: $primary;
             margin-bottom: 12px;
+            @media(max-width: 767px) {
+              display: none;
+            }
           }
           &-eth {
             font-family: NeueMachinaBold;
@@ -537,6 +618,12 @@
             letter-spacing: -0.05em;
             color: $primary;
             margin-bottom: 8px;
+            @media(max-width: 767px) {
+              font-size: 10px;
+              line-height: 10px;
+              margin-right: 8px;
+              margin-bottom: 0;
+            }
           }
           &-usd {
             font-family: NeueMachina;
@@ -546,11 +633,21 @@
             color: $white;
             opacity: 0.5;
             margin-bottom: 20px;
+            @media(max-width: 767px) {
+              display: none;
+            }
           }
           &-actions {
             display: flex;
             flex-direction: row;
             align-items: center;
+            @media(max-width: 767px) {
+              &-wrapper {
+                position: absolute;
+                left: 15px;
+                top: 0;
+              }
+            }
           }
           &-btn {
             background-color: $primary;
@@ -565,6 +662,36 @@
             text-transform: uppercase;
             margin-right: 20px;
             cursor: pointer;
+            @media(max-width: 767px) {
+              margin-right: 0;
+              font-size: 10px;
+              line-height: 10px;
+              padding: 6px 12px;
+            }
+          }
+          &-owner {
+            padding: 30px;
+            order: 4;
+            @media(max-width: 767px) {
+              position: relative;
+              padding: 15px;
+              order: 5;
+              &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -15px;
+                right: -15px;
+                border-top: 1px solid $border;
+              }
+            }
+          }
+        }
+      }
+      &--collection & {
+        &__footer {
+          &-eth, &-usd, &-title {
+            display: none;
           }
         }
       }

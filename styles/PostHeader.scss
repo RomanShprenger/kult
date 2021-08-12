@@ -5,10 +5,27 @@
   flex-direction: row;
   align-items: center;
   padding: 30px;
+  @media(max-width: 767px) {
+    padding: 15px;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -15px;
+      right: -15px;
+      border-bottom: 1px solid $border;
+    }
+  }
   &__img {
     width: 66px;
     height: 66px;
     margin-right: 25px;
+    @media(max-width: 767px) {
+      width: 36px;
+      height: 36px;
+      margin-right: 8px;
+    }
     img {
       width: 100%;
     }
@@ -21,6 +38,11 @@
     color: $white;
     opacity: 0.88;
     margin-bottom: 8px;
+    @media(max-width: 767px) {
+      font-size: 14px;
+      line-height: 13px;
+      margin-bottom: 4px;
+    }
   }
   &__info {
     &-footer {
@@ -36,6 +58,11 @@
     color: $white;
     opacity: 0.8;
     margin-right: 20px;
+    @media(max-width: 767px) {
+      font-size: 10px;
+      line-height: 10px;
+      margin-right: 15px;
+    }
   }
   &__date {
     font-family: NeueMachinaUltraLight;
@@ -43,5 +70,9 @@
     line-height: 14px;
     color: $white;
     opacity: 0.4;
+    @media(max-width: 767px) {
+      font-size: 10px;
+      line-height: 10px;
+    }
   }
 }

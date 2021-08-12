@@ -3,20 +3,25 @@ import moment from 'moment';
 import PostHeader from 'components/PostHeader';
 import PostTags from 'components/PostTags';
 import PostActions from 'components/PostActions';
+import { Owner } from 'components/ArtworkBlocks';
 import { priceFormat } from "utils/format";
 
-const UserFeedArtwork= ({ owner, name, nickname, avatar, title, imageUrl, slug, bid, liked, date, categories, unlockable }) => {
-  return <div className="user-feed-item user-feed-item--artwork">
+const UserFeedArtwork= ({ owner, name, nickname, hash, avatar, title, imageUrl, slug, bid, sold, liked, date, categories, unlockable, feedType }) => {
+  // "bid" for feed and creations, "sold" for collection
+  const price = feedType === 'collection' ? sold : bid;
+  // feedType: creations, collection, feed
+  return <div className={`user-feed-item user-feed-item--artwork user-feed-item--${feedType}`}>
     <div className="user-feed-item__header">
       <PostHeader name={name} nickname={nickname} avatar={avatar} date={moment(date).format("DD MMM")} />
     </div>
+    <div className="user-feed-item__img">
+      <img src={imageUrl} alt="Artwork image" />
+    </div>
     <div className="user-feed-item__body">
-      <div className="user-feed-item__body-img">
-        <img src={imageUrl} alt="" className="user-feed-item__img"/>
-      </div>
       <Link href={`/artwork/${slug}`}>
         <a className="user-feed-item__body-title">
-          {title}
+          <span className="user-feed-item__body-title-name">{name} :</span>
+          <span className="user-feed-item__body-title-text">{title}</span>
         </a>
       </Link>
       <div className="user-feed-item__body-tags">
@@ -25,16 +30,35 @@ const UserFeedArtwork= ({ owner, name, nickname, avatar, title, imageUrl, slug, 
     </div>
     {
       !owner ? <div className="user-feed-item__footer">
-        <div className="user-feed-item__footer-title">Last bid</div>
-        <div className="user-feed-item__footer-eth">{priceFormat(bid.eth)} ETH</div>
-        <div className="user-feed-item__footer-usd">${priceFormat(bid.usd)}</div>
+        <div className="user-feed-item__footer-title">{feedType === 'collection' ? "Sold" : "Last bid"}</div>
+        <div className="user-feed-item__footer-eth">{priceFormat(price.eth)} ETH</div>
+        <div className="user-feed-item__footer-usd">${priceFormat(price.usd)}</div>
         <div className="user-feed-item__footer-actions">
-          <button className="user-feed-item__footer-btn" onClick={() => {console.log("BID")}}>Bid now</button>
+          {
+            feedType !== 'collection' &&
+            <button className="user-feed-item__footer-btn" onClick={() => {console.log("BID")}}>Bid now</button>
+          }
+          <div className="user-feed-item__footer-actions-wrapper">
+            <PostActions cbLike={() => console.log("like")} liked={liked} />
+          </div>
+        </div>
+      </div> : <div className="user-feed-item__footer">
+        <div className="user-feed-item__footer-actions-wrapper">
           <PostActions cbLike={() => console.log("like")} liked={liked} />
         </div>
-
-      </div> : <div className="user-feed-item__footer">
-        <PostActions cbLike={() => console.log("like")} liked={liked} />
+      </div>
+    }
+    {
+      feedType === 'collection' && <div className="user-feed-item__footer-owner">
+        <Owner
+          price={price}
+          auction={{ active: false }}
+          owner={{
+            nickname: nickname,
+            photo: avatar,
+            hash: hash
+          }}
+        />
       </div>
     }
   </div>

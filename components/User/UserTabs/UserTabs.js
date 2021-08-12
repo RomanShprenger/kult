@@ -5,7 +5,7 @@ import { UserBids, UserCollection, UserCreations, UserGrid, UserFeed } from "com
 
 resetIdCounter();
 
-const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, avatar }) => {
+const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, avatar, hash }) => {
   const [gridView, setGridView] = useState(true);
   const [toggleView, setToggleView] = useState(true);
 
@@ -36,14 +36,14 @@ const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, av
 
       <TabPanel className="user-tabs__panel">
         {
-          gridView ? <UserGrid data={feed} name={name} avatar={avatar} /> :  <UserFeed owner={owner} data={feed} name={name} nickname={nickname} avatar={avatar} />
+          gridView ? <UserGrid data={feed} name={name} avatar={avatar} /> :  <UserFeed type="feed" owner={owner} data={feed} name={name} nickname={nickname} avatar={avatar} hash={hash} />
         }
       </TabPanel>
       <TabPanel className="user-tabs__panel">
-        <h2>Any content 2</h2>
+        <UserCreations data={creations} owner={owner} name={name} nickname={nickname} avatar={avatar} hash={hash} />
       </TabPanel>
       <TabPanel className="user-tabs__panel">
-        <h2>Any content 3</h2>
+        <UserCollection data={collection} owner={owner} name={name} nickname={nickname} avatar={avatar} hash={hash} />
       </TabPanel>
       <TabPanel className="user-tabs__panel">
         <h2>Any content 4</h2>

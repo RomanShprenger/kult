@@ -60,7 +60,7 @@ const User = ({ data, notFound }) => {
         />
       </div>
       <div className="user__content-tabs">
-        <UserTabs owner={data.owner} feed={data.feed} creations={data.creations} collection={data.collections} bids={data.bids} avatar={data.avatar} nickname={data.nickname} name={data.name} />
+        <UserTabs owner={data.owner} feed={data.feed} creations={data.creations} collection={data.collections} bids={data.bids} avatar={data.avatar} nickname={data.nickname} name={data.name} hash={data.hash} />
       </div>
     </div>
   </div>
@@ -279,6 +279,11 @@ export async function getServerSideProps({ query }) {
       imageUrl: "/assets/post-1x1.png",
       title: "Abstract horizons sunset on the mountains",
       slug: "abstract-horizons-sunset-on-the-mountains",
+      unlockable: {
+        "status": true,
+        "content": "The piece of art was created by PPSS group - collaboration between Pavel Pepperstein and Sonya Stereostyrski. <a href='https://en.wikipedia.org/wiki/Pavel_Pepperstein' target='_blank'>https://en.wikipedia.org/wiki/Pavel_Pepperstein</a>"
+      },
+      categories: ["visual design"],
       sold: {
         eth: 2,
         usd: 1464.64
@@ -293,6 +298,11 @@ export async function getServerSideProps({ query }) {
       imageUrl: "/assets/post-1x1-2.png",
       title: "Abstract horizons sunset on the mountains",
       slug: "abstract-horizons-sunset-on-the-mountains",
+      unlockable: {
+        "status": true,
+        "content": "The piece of art was created by PPSS group - collaboration between Pavel Pepperstein and Sonya Stereostyrski. <a href='https://en.wikipedia.org/wiki/Pavel_Pepperstein' target='_blank'>https://en.wikipedia.org/wiki/Pavel_Pepperstein</a>"
+      },
+      categories: ["visual design"],
       sold: {
         eth: 2,
         usd: 1464.64
