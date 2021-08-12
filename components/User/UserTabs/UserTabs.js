@@ -13,6 +13,8 @@ const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, av
     index !== 0 ? setToggleView(false) : setToggleView(true);
   }
 
+  const emptyTab = () => <div className="user-tabs__panel-empty">No content yet</div>;
+
   return <div className="user-tabs">
     <Tabs className="user-tabs__container" onSelect={select} defaultIndex={0}>
       <TabList className="user-tabs__list">
@@ -36,14 +38,21 @@ const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, av
 
       <TabPanel className="user-tabs__panel">
         {
-          gridView ? <UserGrid data={feed} name={name} avatar={avatar} /> :  <UserFeed type="feed" owner={owner} data={feed} name={name} nickname={nickname} avatar={avatar} hash={hash} />
+          feed.length > 0 ?
+            (gridView ? <UserGrid data={feed} name={name} avatar={avatar} /> :  <UserFeed type="feed" owner={owner} data={feed} name={name} nickname={nickname} avatar={avatar} hash={hash} />)
+            :
+            emptyTab()
         }
       </TabPanel>
       <TabPanel className="user-tabs__panel">
-        <UserCreations data={creations} owner={owner} name={name} nickname={nickname} avatar={avatar} hash={hash} />
+        {
+          creations.length > 0 ? <UserCreations data={creations} owner={owner} name={name} nickname={nickname} avatar={avatar} hash={hash} /> : emptyTab()
+        }
       </TabPanel>
       <TabPanel className="user-tabs__panel">
-        <UserCollection data={collection} owner={owner} name={name} nickname={nickname} avatar={avatar} hash={hash} />
+        {
+          collection.length > 0 ? <UserCollection data={collection} owner={owner} name={name} nickname={nickname} avatar={avatar} hash={hash} /> : emptyTab()
+        }
       </TabPanel>
       <TabPanel className="user-tabs__panel">
         <h2>Any content 4</h2>
