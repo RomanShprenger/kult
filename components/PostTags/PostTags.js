@@ -10,7 +10,7 @@ const PostTags = ({ categories, unlockable }) => {
       </Link>
     }
     {
-      categories.map(item => <Link href="/">
+      categories.map(item => <Link href="/" key={item}>
         <a className="post-tags__item">{item}</a>
       </Link>)
     }

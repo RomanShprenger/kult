@@ -67,7 +67,9 @@ const User = ({ data, notFound }) => {
 }
 
 export async function getServerSideProps({ query }) {
-  const { nickname } = query;
+  const { nickname, owner } = query;
+
+  // TODO: временное решение для проверки дизайна (?owner=true)
 
   // TODO: тут будем запрашивать данные с сервера и передавать в компонент
   // const res = await fetch(`https://...`)
@@ -76,7 +78,7 @@ export async function getServerSideProps({ query }) {
   // Схема запроса
   const data = {
     verified: true,
-    owner: false, // аккаунт самого пользователя
+    owner: !!owner, // аккаунт самого пользователя
     follower: true, // подписан ли пользователь на автора
     nickname: nickname,
     avatar: "/assets/author-1x1-2.png",
@@ -314,39 +316,115 @@ export async function getServerSideProps({ query }) {
       }
     }], // купленные артворки
     bids: [{
-      current: [{
+      others: [{
         avatar: "/assets/owner3.png",
         nickname: "williamhaze",
         hash: "0X88B1...F448",
-        bid: 2 // eth
-      }, {
-        avatar: "/assets/owner1.png",
-        nickname: "williamhaze",
-        hash: "0X88B1...F448",
-        bid: 2 // eth
+        date: 1621430820, // timestamp
+        bid: {
+          eth: 2,
+          usd: 1412
+        }
       }, {
         avatar: "/assets/owner2.png",
         nickname: "williamhaze",
         hash: "0X88B1...F448",
-        bid: 2 // eth
+        date: 1621430820, // timestamp
+        bid: {
+          eth: 2,
+          usd: 1412
+        }
+      }, {
+        avatar: "/assets/owner5.png",
+        nickname: "williamhaze",
+        hash: "0X88B1...F448",
+        date: 1621430820, // timestamp
+        bid: {
+          eth: 2,
+          usd: 1412
+        }
       }, {
         avatar: "/assets/owner4.png",
         nickname: "williamhaze",
         hash: "0X88B1...F448",
-        bid: 2 // eth
+        date: 1621430820, // timestamp
+        bid: {
+          eth: 2,
+          usd: 1412
+        }
       }],
       last_bid: {
-        eth: 2,
-        usd: 1412
+        avatar: "/assets/owner1.png",
+        nickname: "williamhaze",
+        hash: "0X88B1...F448",
+        date: 1621430820, // timestamp
+        bid: {
+          eth: 2,
+          usd: 1412
+        }
       },
-      imageUrl: "",
-      title: "",
+      min_bid: {
+        eth: 2.1,
+        usd: 1482.6
+      },
+      imageUrl: "/assets/artwork-4.png",
+      title: "Abstract horizons sunset on the mountains",
       slug: "abstract-horizons-sunset-on-the-mountains",
-      unlockable: {
-        "status": true,
-        "content": "The piece of art was created by PPSS group - collaboration between Pavel Pepperstein and Sonya Stereostyrski. <a href='https://en.wikipedia.org/wiki/Pavel_Pepperstein' target='_blank'>https://en.wikipedia.org/wiki/Pavel_Pepperstein</a>"
+    }, {
+      others: [{
+        avatar: "/assets/owner3.png",
+        nickname: "williamhaze",
+        hash: "0X88B1...F448",
+        date: 1621430820, // timestamp
+        bid: {
+          eth: 2,
+          usd: 1412
+        }
+      }, {
+        avatar: "/assets/owner2.png",
+        nickname: "williamhaze",
+        hash: "0X88B1...F448",
+        date: 1621430820, // timestamp
+        bid: {
+          eth: 2,
+          usd: 1412
+        }
+      }, {
+        avatar: "/assets/owner5.png",
+        nickname: "williamhaze",
+        hash: "0X88B1...F448",
+        date: 1621430820, // timestamp
+        bid: {
+          eth: 2,
+          usd: 1412
+        }
+      }, {
+        avatar: "/assets/owner4.png",
+        nickname: "williamhaze",
+        hash: "0X88B1...F448",
+        date: 1621430820, // timestamp
+        bid: {
+          eth: 2,
+          usd: 1412
+        }
+      }],
+      last_bid: {
+        avatar: "/assets/owner1.png",
+        nickname: "williamhaze",
+        hash: "0X88B1...F448",
+        date: 1621430820, // timestamp
+        bid: {
+          eth: 2,
+          usd: 1412
+        }
       },
-      categories: ["visual design"],
+      min_bid: {
+        eth: 2.1,
+        usd: 1482.6
+      },
+      imageUrl: "/assets/artwork-4.png",
+      title: "Abstract horizons sunset on the mountains",
+      slug: "abstract-horizons-sunset-on-the-mountains",
     }], // текущие ставки
   }
 

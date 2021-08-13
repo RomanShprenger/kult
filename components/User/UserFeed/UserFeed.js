@@ -4,11 +4,11 @@ import UserFeedArtwork from './UserFeedArtwork';
 const UserFeed = ({ owner, data, name, nickname, avatar, hash, type }) => {
   return <div className="user-feed">
     {
-      data.map(item => {
+      data.map((item, index) => {
         return item.type === "artwork" ?
-          <UserFeedArtwork feedType={type} {...item} owner={owner} name={name} nickname={nickname} avatar={avatar} hash={hash} />
+          <UserFeedArtwork key={`${item.title}-${index}`} feedType={type} {...item} owner={owner} name={name} nickname={nickname} avatar={avatar} hash={hash} />
           :
-          <UserFeedPost {...item} name={name} nickname={nickname} avatar={avatar} />
+          <UserFeedPost key={`${item.title}-${index}`} {...item} name={name} nickname={nickname} avatar={avatar} />
       })
     }
   </div>

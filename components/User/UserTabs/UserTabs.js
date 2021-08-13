@@ -55,7 +55,9 @@ const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, av
         }
       </TabPanel>
       <TabPanel className="user-tabs__panel">
-        <h2>Any content 4</h2>
+        {
+          bids.length > 0 ? <UserBids owner={owner} data={bids} /> : emptyTab()
+        }
       </TabPanel>
 
       {toggleView && <div className="user-tabs__toggle">
