@@ -578,7 +578,7 @@
           }
         }
         &__footer {
-          padding: 0 30px 30px;
+          padding: 30px;
           order: 5;
           @media(max-width: 767px) {
             padding: 0 15px;
@@ -670,7 +670,7 @@
             }
           }
           &-owner {
-            padding: 30px;
+            padding: 30px 30px 0;
             order: 4;
             @media(max-width: 767px) {
               position: relative;
@@ -865,8 +865,7 @@
         display: flex;
         flex-direction: row;
         align-items: flex-end;
-        margin-top: 4px;
-        margin-bottom: 24px;
+        margin-top: 0.83vw;
         @media(max-width: 1439px) and (min-width: 768px) {
           margin-bottom: 0;
           margin-top: 0;
@@ -910,6 +909,7 @@
         }
         &-action {
           position: relative;
+          margin-bottom: 8px;
           &:after {
             content: '';
             position: absolute;
@@ -923,6 +923,7 @@
           }
           @media(max-width: 1439px) and (min-width: 768px) {
             flex: 1 0;
+            margin-bottom: 0;
           }
           @media(max-width: 767px) {
             text-align: center;
@@ -1034,6 +1035,7 @@
             line-height: 24px;
             margin-right: 0;
             margin-bottom: 12px;
+            padding: 10px 20px;
           }
           @media(max-width: 767px) {
             font-size: 14px;
@@ -1054,7 +1056,7 @@
           }
           @media(max-width: 1439px) and (min-width: 768px) {
             position: absolute;
-            top: -44px;
+            top: -40px;
             left: 0;
             font-family: NeueMachinaBold;
             font-size: 16px;
