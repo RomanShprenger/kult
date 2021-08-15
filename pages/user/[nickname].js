@@ -3,12 +3,12 @@ import { UserTabs } from "components/User";
 import { useState } from 'react';
 
 const User = ({ data, notFound }) => {
-
   if (notFound) {
     return <div className="user">User didn't find</div>
   }
 
   const [follow, setFollow] = useState(data.follower);
+  const [editable, setEditable] = useState(false);
 
   const followHandler = (e) => {
     e.preventDefault();
@@ -16,8 +16,24 @@ const User = ({ data, notFound }) => {
     setFollow(!follow);
   };
 
+  const editableHandler = () => {
+    console.log("Save changes");
+  }
+
   return <div className="user">
     <div className="user__preview">
+      {
+        data.owner && <div className="user__editable">
+          {
+            editable ? <>
+                <div className="user__editable-btn" onClick={() => setEditable(false)}><i className="icon icon-close"></i></div>
+                <div className="user__editable-btn user__editable-btn--primary" onClick={editableHandler}><i className="icon icon-done"></i></div>
+              </>
+            :
+              <div className="user__editable-btn" onClick={() => setEditable(true)}><i className="icon icon-edit"></i></div>
+          }
+        </div>
+      }
       <div className="user__preview-bg" style={{
         backgroundImage: `url(${data.backgroundUrl})`
       }}>
@@ -38,6 +54,7 @@ const User = ({ data, notFound }) => {
           created={data.created}
           stats={data.stats}
           socials={data.socials}
+          editable={editable}
         />
       </div>
     </div>

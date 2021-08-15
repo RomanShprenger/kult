@@ -1,6 +1,39 @@
 @import 'variables.scss';
 
 .user {
+  &__editable {
+    position: absolute;
+    top: 24px;
+    right: 54px;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    @media(max-width: 767px) {
+      display: none;
+    }
+    &-btn {
+      border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      background-color: $black;
+      color: $white;
+      font-size: 16px;
+      line-height: 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &:nth-child(n + 1) {
+        margin-left: 12px;
+      }
+      &--primary {
+        background-color: $primary;
+        color: $black;
+      }
+    }
+  }
+
   // User page
   &__preview {
     height: calc(100vh - 56px - 60px);
