@@ -1,5 +1,6 @@
 import moment from 'moment';
 import Dropdown from "components/Dropdown";
+import copyClipboard from 'utils/copyClipboard';
 
 const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickname, name, hash, description, created, stats, socials }) => {
   let links = [];
@@ -8,6 +9,10 @@ const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickn
   const handler = (e) => {
     e.preventDefault();
     followHandler(e);
+  }
+
+  const copy = (text) => {
+    copyClipboard(text, () => console.log("Copied"));
   }
 
   if (!owner && socials.length >= 2) {
@@ -43,7 +48,7 @@ const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickn
     <div className="profile__name">{name}</div>
     <div className="profile__ids">
       <div className="profile__ids-nickname"><span className="profile__ids-nickname-at">@</span> {nickname}</div>
-      <button className="profile__ids-hash" onClick={() => console.log("Copy")}><i className="icon icon-open"></i> {hash}</button>
+      <button className="profile__ids-hash" onClick={() => copy(hash)}><i className="icon icon-open"></i> {hash}</button>
     </div>
     <div className="profile__stats">
       <div className="profile__stats-item">
