@@ -1,5 +1,6 @@
 import { Tab, Tabs, TabList, TabPanel, resetIdCounter } from 'react-tabs';
 import { useState } from 'react';
+import Link from 'next/link';
 import 'react-tabs/style/react-tabs.css';
 import { UserBids, UserCollection, UserCreations, UserGrid, UserFeed } from "components/User";
 
@@ -12,6 +13,23 @@ const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, av
   const select = (index, lastIndex, event) => {
     index !== 0 ? setToggleView(false) : setToggleView(true);
   }
+
+  const createContent = () => (<div className="user-tabs__add">
+    <div className="user-tabs__add-grid">
+      <Link href="/post/new">
+        <a className="user-tabs__add-link">
+          <i className="icon icon-post"></i>
+          <span className="user-tabs__add-link-text">Add post</span>
+        </a>
+      </Link>
+      <Link href="/artwork/new">
+        <a className="user-tabs__add-link">
+          <i className="icon icon-picture"></i>
+          <span className="user-tabs__add-link-text">Upload artwork</span>
+        </a>
+      </Link>
+    </div>
+  </div>);
 
   const emptyTab = () => <div className="user-tabs__panel-empty">No content yet</div>;
 
@@ -38,6 +56,9 @@ const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, av
 
       <TabPanel className="user-tabs__panel">
         {
+          owner && createContent()
+        }
+        {
           feed.length > 0 ?
             (gridView ? <UserGrid data={feed} name={name} avatar={avatar} /> :  <UserFeed type="feed" owner={owner} data={feed} name={name} nickname={nickname} avatar={avatar} hash={hash} />)
             :
@@ -46,10 +67,16 @@ const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, av
       </TabPanel>
       <TabPanel className="user-tabs__panel">
         {
+          owner && createContent()
+        }
+        {
           creations.length > 0 ? <UserCreations data={creations} owner={owner} name={name} nickname={nickname} avatar={avatar} hash={hash} /> : emptyTab()
         }
       </TabPanel>
       <TabPanel className="user-tabs__panel">
+        {
+          owner && createContent()
+        }
         {
           collection.length > 0 ? <UserCollection data={collection} owner={owner} name={name} nickname={nickname} avatar={avatar} hash={hash} /> : emptyTab()
         }

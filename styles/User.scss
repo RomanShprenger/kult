@@ -266,6 +266,99 @@
         overflow: hidden;
       }
     }
+    &__add {
+      position: relative;
+      padding: 30px;
+      margin-top: 30px;
+      border-top: 1px solid $border;
+      border-bottom: 1px solid $border;
+      @media(max-width: 767px) {
+        padding: 16px 12px;
+        margin: 0;
+        border-top: none;
+        border-bottom: none;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        left: 30px;
+        top: -30px;
+        bottom: 0;
+        border-left: 1px solid $border;
+        @media(max-width: 767px) {
+          display: none;
+        }
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        right: 30px;
+        top: -30px;
+        bottom: 0;
+        border-right: 1px solid $border;
+        @media(max-width: 767px) {
+          display: none;
+        }
+      }
+      &-grid {
+        padding: 0 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @media(max-width: 767px) {
+          padding: 0;
+        }
+      }
+      &-link {
+        margin: 0 15px;
+        flex: 1 0 calc(50% - 30px);
+        max-width: calc(50% - 30px);
+        background-color: #141414;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        color: $white;
+        @media(max-width: 1023px) {
+          padding: 24px 16px;
+          flex-direction: row;
+          justify-content: center;
+        }
+        @media(max-width: 767px) {
+          justify-content: flex-start;
+          margin: 0 4px;
+          flex: 1 0 calc(50% - 8px);
+          max-width: calc(50% - 8px);
+          padding: 12px;
+        }
+        &:hover {
+          background-color: transparent;
+        }
+        i {
+          font-size: 40px;
+          @media(max-width: 767px) {
+            font-size: 22px;
+          }
+        }
+        &-text {
+           margin-top: 32px;
+           font-size: 12px;
+           line-height: 12px;
+           font-family: NeueMachinaBold;
+           text-transform: uppercase;
+           @media(max-width: 1023px) {
+             margin: 0 0 0 16px;
+           }
+           @media(max-width: 767px) {
+             font-size: 10px;
+             line-height: 10px;
+             margin: 4px 0 0 8px;
+           }
+        }
+      }
+    }
   }
 
   // UserGrid component
@@ -294,23 +387,23 @@
         bottom: -15px;
         left: 15px;
         border-left: 1px solid $border;
-        z-index: 1;
+        z-index: 2;
         @media(max-width: 767px) {
-          top: -2px;
+          top: 2px;
           bottom: -2px;
           left: 2px;
         }
       }
-      &:before {
+      &:after {
         content: '';
         position: absolute;
         top: -15px;
         bottom: -15px;
         right: 15px;
         border-right: 1px solid $border;
-        z-index: 1;
+        z-index: 2;
         @media(max-width: 767px) {
-          top: -2px;
+          top: 2px;
           bottom: -2px;
           right: 2px;
         }
@@ -326,21 +419,21 @@
           right: -30px;
           left: -30px;
           border-top: 1px solid $border;
-          z-index: 1;
+          z-index: 2;
           @media(max-width: 767px) {
-            top: 0;
+            top: -1px;
             right: -2px;
             left: -2px;
           }
         }
-        &:before {
+        &:after {
           content: '';
           position: absolute;
           bottom: 0;
           right: -30px;
           left: -30px;
           border-bottom: 1px solid $border;
-          z-index: 1;
+          z-index: 2;
           @media(max-width: 767px) {
             bottom: 0;
             right: -2px;
@@ -453,6 +546,8 @@
     overflow: hidden;
     @media(max-width: 767px) {
       padding: 0 15px;
+      border-top: 1px solid $border;
+      margin-top: -1px;
     }
     &:before {
       content: "";
