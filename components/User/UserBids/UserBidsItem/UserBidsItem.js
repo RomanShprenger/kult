@@ -17,27 +17,13 @@ const UserBidsItem = ({ owner, others, min_bid: minBid, last_bid: lastBid, image
       </div>
       <div className="user-bids__item-info">
         <div className="user-bids__item-title">{title}</div>
-        <div className="user-bids__item-current">
-          { !owner && <div className="user-bids__item-current-heading">Minimum Bid</div> }
-          <div className="user-bids__item-current-eth">{bid.eth} ETH</div>
-          <div className="user-bids__item-current-usd">${bid.usd}</div>
-        </div>
         <div className="user-bids__item-footer">
-          <div className="user-bids__item-footer-action">
-            {
-              owner ? <>
-                <button className="user-bids__item-footer-btn" onClick={() => {console.log("ACCEPT")}}>Accept bid</button>
-                <span className="user-bids__item-footer-note">You will reveive: {bid.accept} ETH</span>
-              </>
-              :
-              <>
-                <button className="user-bids__item-footer-btn" onClick={() => {console.log("BID")}}>Bid In</button>
-                <span className="user-bids__item-footer-note">Minimum bid: {bid.eth} ETH</span>
-              </>
-            }
+          <div className="user-bids__item-current">
+            { !owner && <div className="user-bids__item-current-heading">Minimum Bid</div> }
+            <div className="user-bids__item-current-eth">{bid.eth} ETH</div>
+            <div className="user-bids__item-current-usd">${bid.usd}</div>
           </div>
           <div className="user-bids__item-footer-last user-bids__item-footer-last--desktop">
-            <div className="user-bids__item-footer-heading">Last bid</div>
             <div className="user-bids__item-footer-bid">
               <Badge type="hash-bid" nick={lastBid.nickname} imgUrl={lastBid.avatar} hash={lastBid.hash} bid={`${priceFormat(lastBid.bid.eth)} ETH`} />
             </div>
@@ -55,6 +41,19 @@ const UserBidsItem = ({ owner, others, min_bid: minBid, last_bid: lastBid, image
               </div>
               <div className="user-bids__item-footer-bid-date">{moment(lastBid.date).format("MMMM D, YYYY [at] h:mm A")}</div>
             </div>
+          </div>
+          <div className="user-bids__item-footer-action">
+            {
+              owner ? <>
+                <button className="user-bids__item-footer-btn" onClick={() => {console.log("ACCEPT")}}>Accept bid</button>
+                <span className="user-bids__item-footer-note">You will reveive: {bid.accept} ETH</span>
+              </>
+              :
+              <>
+                <button className="user-bids__item-footer-btn" onClick={() => {console.log("BID")}}>Bid In</button>
+                <span className="user-bids__item-footer-note">Minimum bid: {bid.eth} ETH</span>
+              </>
+            }
           </div>
         </div>
       </div>
