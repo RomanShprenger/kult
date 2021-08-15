@@ -10,6 +10,8 @@ const User = ({ data, notFound }) => {
   const [follow, setFollow] = useState(data.follower);
   const [editable, setEditable] = useState(false);
 
+  // TODO: useReducer добавить для редактирования и прокинуть в Profile
+
   const followHandler = (e) => {
     e.preventDefault();
     // TODO: отправляем запрос к API, чтобы отписать пользователя

@@ -27,7 +27,6 @@ const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickn
     console.log("Change description");
   }
 
-
   if (!owner && socials.length >= 2) {
     links.push(<a href="#" className="profile__links-item profile__links-item--follow" key="follow" onClick={handler}>{ follower ? "Unfollow" : "Follow" }</a>)
     hiddenLinks = socials.slice(2, socials.length);
