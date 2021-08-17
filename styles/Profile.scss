@@ -138,9 +138,11 @@
       height: 108px;
       border-radius: 50%;
       overflow: hidden;
+      background-position: 50% 50%;
+      background-size: cover;
       img {
         width: 100%;
-        display: block;
+        display: none;
       }
     }
     &-verified {

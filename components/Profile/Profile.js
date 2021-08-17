@@ -69,7 +69,9 @@ const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickn
               <div className="profile__avatar-edit">Edit</div>
             </>
           )}
-          <div className="profile__avatar-img">
+          <div className="profile__avatar-img" style={{
+            backgroundImage: `url(${avatar.preview})`
+          }}>
             <img src={avatar.preview} alt="User avatar" />
           </div>
           {
