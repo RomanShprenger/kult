@@ -137,6 +137,7 @@
       width: 108px;
       height: 108px;
       border-radius: 50%;
+      overflow: hidden;
       img {
         width: 100%;
         display: block;
@@ -258,8 +259,8 @@
       }
     }
     &__name {
-      font-size: 10.4vw;
-      line-height: 9.5vw;
+      font-size: 9vw;
+      line-height: 9.2vw;
       letter-spacing: -0.05em;
       @media(max-width: 1365px) {
         font-size: 7.4vw;
@@ -285,6 +286,9 @@
       letter-spacing: -0.05em;
       margin-bottom: 1.25vw;
       max-width: 29.16vw;
+      &:focus {
+        outline-color: $primary;
+      }
       @media(max-width: 767px) {
         font-size: 16px;
         line-height: 24px;

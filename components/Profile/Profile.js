@@ -1,11 +1,32 @@
 import moment from 'moment';
+import ContentEditable from 'react-contenteditable'
 import Dropdown from "components/Dropdown";
 import copyClipboard from 'utils/copyClipboard';
+import {useDropzone} from 'react-dropzone';
+import { useState, useRef } from 'react';
 
-const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickname, name, hash, description, created, stats, socials, editable }) => {
+const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickname, name, hash, description, created, stats, socials, editable, dispatchChanges }) => {
   let links = [];
   let shownLinks = [];
   let hiddenLinks = [];
+
+  const contentEditable = useRef(null);
+  let desc = {html: description};
+
+  const {getRootProps, getInputProps} = useDropzone({
+     accept: 'image/*',
+     maxFiles: 1,
+     multiple: false,
+     noDragEventsBubbling: true,
+     onDrop: (acceptedFiles, fileRejections, event) => {
+       const newImage = acceptedFiles.pop();
+       dispatchChanges({ type: "AVATAR", value: {
+         file: newImage,
+         preview: URL.createObjectURL(newImage),
+       } });
+     }
+   });
+
   const handler = (e) => {
     e.preventDefault();
     followHandler(e);
@@ -15,16 +36,8 @@ const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickn
     copyClipboard(text, () => console.log("Copied"));
   }
 
-  const changeAvatar = () => {
-    console.log("Change avatar");
-  }
-
-  const changeBg = () => {
-    console.log("Change background");
-  }
-
   const changeDescription = () => {
-    console.log("Change description");
+    contentEditable.current.focus();
   }
 
   if (!owner && socials.length >= 2) {
@@ -47,15 +60,22 @@ const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickn
 
   return <div className={`profile profile--${type}`}>
     <div className="profile__top">
-      { editable && <div className="profile__top-edit" onClick={changeBg}>Edit</div> }
-      <div className="profile__avatar">
-        { editable && <div className="profile__avatar-edit" onClick={changeAvatar}>Edit</div> }
-        <div className="profile__avatar-img">
-          <img src={avatar} alt="User avatar" />
+      { editable && <div className="profile__top-edit">Edit</div> }
+      <div className="profile__avatar" onClick={e => e.stopPropagation()}>
+        <div {...getRootProps({className: 'user__dropzone user__dropzone-avatar'})}>
+          { editable && (
+            <>
+              <input {...getInputProps()} />
+              <div className="profile__avatar-edit">Edit</div>
+            </>
+          )}
+          <div className="profile__avatar-img">
+            <img src={avatar.preview} alt="User avatar" />
+          </div>
+          {
+            verified && <div className="profile__avatar-verified"><i className="icon icon-diamond"></i> Verified Artist</div>
+          }
         </div>
-        {
-          verified && <div className="profile__avatar-verified"><i className="icon icon-diamond"></i> Verified Artist</div>
-        }
       </div>
       <div className="profile__links">
         { links.map(el => el) }
@@ -65,7 +85,7 @@ const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickn
     <div className="profile__middle">
       <div className="profile__ids">
         <div className="profile__ids-nickname"><span className="profile__ids-nickname-at">@</span> {nickname}</div>
-        <button className="profile__ids-hash" onClick={() => copy(hash)}><i className="icon icon-open"></i> {hash}</button>
+        <button type="button" className="profile__ids-hash" onClick={() => copy(hash)}><i className="icon icon-open"></i> {hash}</button>
       </div>
       <div className="profile__stats">
         <div className="profile__stats-item">
@@ -82,9 +102,18 @@ const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickn
         </div>
       </div>
     </div>
-    <div className="profile__bottom">
+    <div className="profile__bottom" onClick={event => event.stopPropagation()}>
       { editable && <div className="profile__bottom-edit" onClick={changeDescription}>Edit</div> }
-      <div className="profile__description">{description}</div>
+      <ContentEditable
+        className="profile__description"
+        innerRef={contentEditable}
+        html={desc.html}
+        disabled={!editable}
+        onChange={(evt) => dispatchChanges({
+          type: "DESCRIPTION",
+          value: evt.target.value
+        })}
+      />
       <div className="profile__created">Joined {moment(created).format("MMMM YYYY")}</div>
     </div>
   </div>

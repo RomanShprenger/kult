@@ -1,6 +1,29 @@
 import Profile from "components/Profile";
 import { UserTabs } from "components/User";
-import { useState } from 'react';
+import { useState, useEffect, useReducer } from 'react';
+import {useDropzone} from 'react-dropzone';
+
+function reducer(state = {}, action) {
+  switch (action.type) {
+    case 'BACKGROUND':
+      return {
+        ...state,
+        bg: action.value
+      };
+    case 'AVATAR':
+      return {
+        ...state,
+        avatar: action.value
+      };
+    case 'DESCRIPTION':
+      return {
+        ...state,
+        description: action.value
+      };
+    default:
+      throw new Error();
+  }
+}
 
 const User = ({ data, notFound }) => {
   if (notFound) {
@@ -9,8 +32,34 @@ const User = ({ data, notFound }) => {
 
   const [follow, setFollow] = useState(data.follower);
   const [editable, setEditable] = useState(false);
+  const [changes, dispatchChanges] = useReducer(
+    reducer,
+    {
+      bg: {
+        file: null,
+        preview: data.backgroundUrl,
+      },
+      avatar: {
+        file: null,
+        preview: data.avatar,
+      },
+      description: data.description
+    }
+  );
 
-  // TODO: useReducer добавить для редактирования и прокинуть в Profile
+  const {getRootProps, getInputProps} = useDropzone({
+     accept: 'image/*',
+     maxFiles: 1,
+     multiple: false,
+     noDragEventsBubbling: true,
+     onDrop: (acceptedFiles) => {
+       const newImage = acceptedFiles.pop();
+       dispatchChanges({ type: "BACKGROUND", value: {
+         file: newImage,
+         preview: URL.createObjectURL(newImage),
+       } });
+     }
+   });
 
   const followHandler = (e) => {
     e.preventDefault();
@@ -18,61 +67,68 @@ const User = ({ data, notFound }) => {
     setFollow(!follow);
   };
 
-  const editableHandler = () => {
-    console.log("Save changes");
+  const editableHandler = (e) => {
+    e.preventDefault();
+    // TODO: отправляем запрос к API, чтобы сохранить изменения
+    console.log("Save changes", changes);
+    setEditable(false);
   }
 
   return <div className="user">
-    <div className="user__preview">
-      {
-        data.owner && <div className="user__editable">
-          {
-            editable ? <>
-                <div className="user__editable-btn" onClick={() => setEditable(false)}><i className="icon icon-close"></i></div>
-                <div className="user__editable-btn user__editable-btn--primary" onClick={editableHandler}><i className="icon icon-done"></i></div>
-              </>
-            :
-              <div className="user__editable-btn" onClick={() => setEditable(true)}><i className="icon icon-edit"></i></div>
-          }
+    <form className="user__preview" onSubmit={editableHandler}>
+      <div {...getRootProps({className: 'user__dropzone user__dropzone-bg'})}>
+        { editable && <input {...getInputProps()} />}
+        {
+          data.owner && <div className="user__editable">
+            {
+              editable ? <>
+                  <button type="button" className="user__editable-btn" onClick={(event) => { event.stopPropagation(); setEditable(false) }}><i className="icon icon-close"></i></button>
+                <button className="user__editable-btn user__editable-btn--primary" type="submit" onClick={(event) => event.stopPropagation()}><i className="icon icon-done"></i></button>
+                </>
+              :
+                <button type="button" className="user__editable-btn" onClick={() => setEditable(true)}><i className="icon icon-edit"></i></button>
+            }
+          </div>
+        }
+        <div className="user__preview-bg" style={{
+          backgroundImage: `url(${changes.bg.preview})`
+        }}>
+          <img src={changes.bg.preview} alt="Profile background image" />
         </div>
-      }
-      <div className="user__preview-bg" style={{
-        backgroundImage: `url(${data.backgroundUrl})`
-      }}>
-        <img src={data.backgroundUrl} alt="Profile background image" />
+        <div className="user__preview-profile">
+          <Profile
+            type="full"
+            followHandler={followHandler}
+            avatar={changes.avatar}
+            verified={data.verified}
+            owner={data.owner}
+            follower={follow}
+            nickname={data.nickname}
+            name={data.name}
+            hash={data.hash}
+            description={changes.description}
+            created={data.created}
+            stats={data.stats}
+            socials={data.socials}
+            editable={editable}
+            dispatchChanges={dispatchChanges}
+          />
+        </div>
       </div>
-      <div className="user__preview-profile">
-        <Profile
-          type="full"
-          followHandler={followHandler}
-          avatar={data.avatar}
-          verified={data.verified}
-          owner={data.owner}
-          follower={follow}
-          nickname={data.nickname}
-          name={data.name}
-          hash={data.hash}
-          description={data.description}
-          created={data.created}
-          stats={data.stats}
-          socials={data.socials}
-          editable={editable}
-        />
-      </div>
-    </div>
+    </form>
     <div className="user__content">
       <div className="user__content-profile">
         <Profile
           type="small"
           followHandler={followHandler}
-          avatar={data.avatar}
+          avatar={changes.avatar}
           verified={data.verified}
           owner={data.owner}
           follower={follow}
           nickname={data.nickname}
           name={data.name}
           hash={data.hash}
-          description={data.description}
+          description={changes.description}
           created={data.created}
           stats={data.stats}
           socials={data.socials}
