@@ -8,7 +8,7 @@ function ConnectPage() {
   return <div className="connect">
     <div className="connect__header">
       <div className="connect__label">wallet</div>
-      <h1 className="connect__title">Connect your wallet</h1>
+      <h1 className="connect__title">Connect</h1>
       <div className="connect__text">Connect with one of available wallet providers or create a new wallet.</div>
     </div>
     <div className="connect__grid">

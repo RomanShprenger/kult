@@ -8,6 +8,9 @@
       overflow-y: visible !important;
       padding-top: 50px;
       padding-bottom: 50px;
+      @media(max-width: 767px) {
+        padding-top: 30px;
+      }
     }
     &-slide {
       background-position: center;
