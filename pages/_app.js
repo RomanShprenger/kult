@@ -15,6 +15,7 @@ import "styles/Profile.scss";
 import "styles/Home.scss";
 import "styles/Grid.scss";
 import "styles/User.scss";
+import "styles/Connect.scss";
 import "styles/Artwork.scss";
 import "styles/Activity.scss";
 import "styles/Info.scss";

@@ -1,0 +1,20 @@
+{
+  "wallets": [
+    {
+      "name": "Metamask",
+      "text": "One of the most secure wallets with great flexibility",
+      "icons": [
+        "/connect/metamask-fox.svg"
+      ],
+      "link": "/"
+    },
+    {
+      "name": "Portis",
+      "text": "Connect with your email and password",
+      "icons": [
+        "/connect/portis.svg"
+      ],
+      "link": "/"
+    }
+  ]
+}
