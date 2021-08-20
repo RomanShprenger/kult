@@ -154,12 +154,10 @@ const renderBlock = (type, data, size) => {
   }
 }
 
-function GridItem({ type, size, data, index, hoverAction }) {
+function GridItem({ type, size, data, index }) {
   return <div
       className={`grid__item grid__item--${index} grid__item--${type}`}
-      data-size={size}
-      onMouseEnter={() => type === "art" && hoverAction(true)}
-      onMouseLeave={() => type === "art" && hoverAction(false)}>
+      data-size={size}>
       {renderBlock(type, data, size)}
     </div>
 }

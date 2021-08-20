@@ -94,16 +94,17 @@ const FormNewPost = (props) => {
             <div className="post-new__group post-new__group-tags">
               <div className="post-new__group-heading">Suggested tags</div>
               <FieldArray name="tags">
-                {({ insert, remove, push }) => (
+                {({ remove, push }) => (
                   <div className="post-new__tags">
                     {values.tags.length > 0 &&
-                      values.tags.map((tag, index) => (
-                        <div className="post-new__tags-item" key={index}>
+                      values.tags.map((tag, index) => {
+                        return (<div className={`post-new__tags-item ${tag === '' ? "post-new__tags-item--empty" : ""}`} key={index}>
                           <Field
                             name={`tags.${index}`}
                             placeholder=""
                             type="text"
                             className="post-new__tags-field"
+                            autoFocus={tag === ''}
                             style={{ width: `${tag.length + 1}ch` }}
                           />
                           <button
@@ -120,8 +121,8 @@ const FormNewPost = (props) => {
                           >
                             <i className="icon icon-done"></i>
                           </button>
-                        </div>
-                      ))}
+                        </div>)
+                      })}
                     <button
                       type="button"
                       className="post-new__tags-add"

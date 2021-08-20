@@ -87,6 +87,7 @@
       line-height: 12px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
+      cursor: pointer;
       &--error {
         border: 1px solid $error;
       }
@@ -121,6 +122,9 @@
         padding: 6px 32px 6px 20px;
         position: relative;
       }
+      &-item--empty + &-add {
+        display: none;
+      }
       &-field {
         background-color: transparent;
         color: $white;
@@ -131,6 +135,10 @@
         line-height: 12px;
         padding: 0;
         letter-spacing: 0.06em;
+        &:-webkit-autofill {
+          -webkit-text-fill-color: $white !important;
+          -webkit-box-shadow: 0 0 0px 1000px $black inset;
+        }
         &:focus {
           outline: none;
           color: $primary;
@@ -146,6 +154,7 @@
         transform: translateY(-50%);
         font-size: 10px;
         line-height: 4px;
+        cursor: pointer;
       }
       &-field ~ &-btn--save {
         display: none;
