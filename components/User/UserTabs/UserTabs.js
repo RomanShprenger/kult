@@ -1,5 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel, resetIdCounter } from 'react-tabs';
 import { useState } from 'react';
+import Modal from 'components/Modal';
+import { FormNewPost } from 'components/Forms';
 import Link from 'next/link';
 import 'react-tabs/style/react-tabs.css';
 import { UserBids, UserCollection, UserCreations, UserGrid, UserFeed } from "components/User";
@@ -9,6 +11,7 @@ resetIdCounter();
 const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, avatar, hash }) => {
   const [gridView, setGridView] = useState(true);
   const [toggleView, setToggleView] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const select = (index, lastIndex, event) => {
     index !== 0 ? setToggleView(false) : setToggleView(true);
@@ -16,12 +19,16 @@ const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, av
 
   const createContent = () => (<div className="user-tabs__add">
     <div className="user-tabs__add-grid">
-      <Link href="/post/new">
-        <a className="user-tabs__add-link">
-          <i className="icon icon-post"></i>
-          <span className="user-tabs__add-link-text">Add post</span>
-        </a>
-      </Link>
+      <a href="#" className="user-tabs__add-link" onClick={(e) => { e.preventDefault(); setShowModal(true) }}>
+        <i className="icon icon-post"></i>
+        <span className="user-tabs__add-link-text">Add post</span>
+      </a>
+      <Modal
+        onClose={() => setShowModal(false)}
+        show={showModal}
+      >
+        <FormNewPost close={() => setShowModal(false)} />
+      </Modal>
       <Link href="/artwork/new">
         <a className="user-tabs__add-link">
           <i className="icon icon-picture"></i>
