@@ -36,7 +36,9 @@ const Dropzone = ({ setFieldValue, errors, touched }) => {
      }
   });
   return (
-    <div {...getRootProps({className: `post-new__dropzone ${errors.illustration && touched.illustration && "post-new__dropzone--error"}`})}>
+    <div {...getRootProps({
+        className: `post-new__dropzone ${errors.illustration && touched.illustration && "post-new__dropzone--error"}`
+      })}>
       <input {...getInputProps()} />
       <p><i className="icon icon-picture"></i>Upload image</p>
     </div>
@@ -45,12 +47,13 @@ const Dropzone = ({ setFieldValue, errors, touched }) => {
 
 const FormNewPost = (props) => {
   const { close } = props;
-   const previewImage = (file) => {
-     const preview = URL.createObjectURL(file);
-     return (<div className="post-new__preview">
-       <img src={preview} alt={file.name} />
-     </div>)
-   }
+
+  const previewImage = (file) => {
+    const preview = URL.createObjectURL(file);
+    return (<div className="post-new__preview">
+      <img src={preview} alt={file.name} />
+    </div>)
+  }
 
   return (
     <div className="post-new">
@@ -146,7 +149,9 @@ const FormNewPost = (props) => {
               <button
                 type="submit"
                 className="btn post-new__actions-btn  post-new__actions-btn--submit"
-              >Submit</button>
+              >
+                Submit
+              </button>
             </div>
           </Form>
         )}

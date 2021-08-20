@@ -88,35 +88,39 @@ export default function Slider({ data }) {
         }}
       >
       {
-        data.map(({ imgUrl, title, owner, price }) => (
+        data.map(({ imgUrl, title, owner, price, slug }) => (
           <SwiperSlide key={title}>
             {({ isActive }) => (
               <>
-                <div className="slider__item">
-                  <img src={imgUrl} alt={title} />
-                </div>
+                <Link href={`/artwork/${slug}`}>
+                  <a className="slider__item">
+                    <img src={imgUrl} alt={title} />
+                  </a>
+                </Link>
                 <div className={`slider__item-content  ${isActive ? "visible" : ""}`}>
-                  <div className="slider__item-title">
-                    <div className="slider__item-animation">
-                      {title}
-                    </div>
-                  </div>
+                  <Link href={`/artwork/${slug}`}>
+                    <a className="slider__item-title">
+                      <div className="slider__item-animation">
+                        {title}
+                      </div>
+                    </a>
+                  </Link>
                   <div className="slider__item-info-wrapper">
                     <div className="slider__item-info slider__item-animation">
-                      <div className="slider__item-owner item__owner">
-                        <div className="item__owner-photo">
-                          <img src={owner.avatar} alt={owner.name} />
-                        </div>
-                        <div className="item__owner-info">
-                          <span className="item__owner-title">Owner</span>
-                          <Link href="/">
-                            <a className="item__owner-link">
+                      <Link href={`/user/${owner.nickname}`}>
+                        <a className="slider__item-owner item__owner">
+                          <div className="item__owner-photo">
+                            <img src={owner.avatar} alt={owner.name} />
+                          </div>
+                          <div className="item__owner-info">
+                            <span className="item__owner-title">Owner</span>
+                            <span className="item__owner-link">
                               <span className="item__owner-at">@</span>
                               <span className="item__owner-name">{owner.name}</span>
-                            </a>
-                          </Link>
-                        </div>
-                      </div>
+                            </span>
+                          </div>
+                        </a>
+                      </Link>
                       <div className="slider__item-buy item__buy">
                         <div className="item__buy-price">{price}</div>
                         <button type="button" className="item__buy-btn">bid in</button>

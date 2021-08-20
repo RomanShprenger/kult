@@ -175,6 +175,8 @@
       padding: 12px;
       width: 100%;
       position: relative;
+      text-decoration: none;
+      color: inherit;
       &:before {
         content: '';
         display: block;
@@ -629,6 +631,14 @@
           padding: 32px 0;
         }
       }
+      &-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+      }
       &-photo {
         width: 36%;
         margin: 0 auto 1.4vw;
@@ -748,6 +758,14 @@
         @media(max-width: 767px) {
           padding: 12px;
         }
+      }
+      &-link {
+        display: flex;
+        align-items: center;
+        flex-basis: 36.8vw;
+        max-width: 36.8vw;
+        text-decoration: none;
+        color: inherit;
       }
       &-inner {
         display: flex;
@@ -910,6 +928,7 @@
         }
       }
       &-btn {
+        text-decoration: none;
         @media(min-width: 768px) {
           background: #393939;
           border-radius: 200px;

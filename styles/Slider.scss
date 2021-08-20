@@ -66,6 +66,7 @@
   &__item {
     height: 35.8vw !important;
     overflow: hidden;
+    text-decoration: none;
     @media(max-width: 1919px) {
       height: 30vw !important;
     }
@@ -138,6 +139,7 @@
       width: 90%;
       left: -72px;
       overflow: hidden;
+      text-decoration: none;
       @media(max-width: 1919px) {
         font-size: 90px;
         line-height: 96px;
@@ -254,6 +256,8 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    text-decoration: none;
+    color: inherit;
     @media(max-width: 1023px) {
       align-items: center;
     }

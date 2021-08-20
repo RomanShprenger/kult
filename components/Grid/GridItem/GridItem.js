@@ -5,21 +5,23 @@ import { priceFormat } from "utils/format";
 const renderArt = (data) => (
   <div className="grid__item-inner">
     <div className="grid__item-mobile">
-      <header className="grid__item-header">
-        <div className="grid__item-photo">
-          <img src={data.photo} alt="author photo"/>
-        </div>
-        <div className="grid__item-info">
-          <div className="grid__item-name">{data.name}</div>
-          <div className="grid__item-profile">
-            <div className="grid__item-nickname">@{data.nickname}</div>
-            <div className="grid__item-followers">{data.followers} Followers</div>
+      <Link href={`/user/${data.nickname}`}>
+        <a className="grid__item-header">
+          <div className="grid__item-photo">
+            <img src={data.photo} alt="author photo"/>
           </div>
-        </div>
-        <div className="grid__item-follow">
-          <button type="button" className="grid__item-btn grid__item-btn--follow">UnFollow</button>
-        </div>
-      </header>
+          <div className="grid__item-info">
+            <div className="grid__item-name">{data.name}</div>
+            <div className="grid__item-profile">
+              <div className="grid__item-nickname">@{data.nickname}</div>
+              <div className="grid__item-followers">{data.followers} Followers</div>
+            </div>
+          </div>
+          <div className="grid__item-follow">
+            <button type="button" className="grid__item-btn grid__item-btn--follow">UnFollow</button>
+          </div>
+        </a>
+      </Link>
       <div className="grid__item-content">
         <img className="grid__item-img" src={data.imgUrl} alt="Post image"/>
       </div>
@@ -37,17 +39,19 @@ const renderArt = (data) => (
       </footer>
     </div>
     <div className="grid__item-hover-header">
-      <div className="grid__item-header">
-        <div className="grid__item-photo">
-          <img src={data.photo} alt="author photo"/>
-        </div>
-        <div className="grid__item-info">
-          <div className="grid__item-owner">Owner</div>
-          <div className="grid__item-hash"><span>@</span>{data.hash}</div>
-        </div>
-      </div>
+      <Link href={`/user/${data.nickname}`}>
+        <a className="grid__item-header">
+          <div className="grid__item-photo">
+            <img src={data.photo} alt="author photo"/>
+          </div>
+          <div className="grid__item-info">
+            <div className="grid__item-owner">Owner</div>
+            <div className="grid__item-hash"><span>@</span>{data.hash}</div>
+          </div>
+        </a>
+      </Link>
     </div>
-    <Link href={data.slug}>
+    <Link href={`/artwork/${data.slug}`}>
       <a className="grid__item-link grid__item-desktop">
         <img className="grid__item-img" src={data.imgUrl} alt="Post image"/>
         <div className="grid__item-hover-footer">
@@ -62,21 +66,29 @@ const renderArt = (data) => (
 const renderArtist = (data, size) => (
   <div className="grid__item-inner">
     <header className="grid__item-header">
-      <div className="grid__item-photo">
-        <img src={data.photo} alt="author photo"/>
-      </div>
-      <div className="grid__item-info">
-        <div className="grid__item-name">{data.name}</div>
-        <div className="grid__item-profile">
-          <div className="grid__item-nickname">@{data.nickname}</div>
-          <div className="grid__item-followers">{data.followers} Followers</div>
-        </div>
-      </div>
+      <Link href={`/user/${data.nickname}`}>
+        <a className="grid__item-link">
+          <div className="grid__item-photo">
+            <img src={data.photo} alt="author photo"/>
+          </div>
+          <div className="grid__item-info">
+            <div className="grid__item-name">{data.name}</div>
+            <div className="grid__item-profile">
+              <div className="grid__item-nickname">@{data.nickname}</div>
+              <div className="grid__item-followers">{data.followers} Followers</div>
+            </div>
+          </div>
+        </a>
+      </Link>
       <div className="grid__item-follow">
         <button type="button" className="grid__item-btn grid__item-btn--follow">Unfollow</button>
       </div>
       <div className="grid__item-gallery">
-        <button type="button" className="grid__item-btn">Gallery</button>
+        <Link href={`/user/${data.nickname}?tab=creations`}>
+          <a className="grid__item-btn">
+            Gallery
+          </a>
+        </Link>
       </div>
     </header>
     <div className="grid__item-description">{data.description}</div>

@@ -3,9 +3,11 @@
     {
       "imgUrl": "/assets/slide.png",
       "title": "FLORA 001: Anemone",
+      "slug": "flora",
       "owner": {
         "avatar": "/assets/owner1.png",
-        "name": "M329X...0X532"
+        "name": "M329X...0X532",
+        "nickname": "williamhaze"
       },
       "price": "1.00 ETH",
       "id": "000001"
@@ -13,9 +15,11 @@
     {
       "imgUrl": "/assets/slide.png",
       "title": "Solitude original",
+      "slug": "flora",
       "owner": {
         "avatar": "/assets/owner2.png",
-        "name": "M111X...0X214"
+        "name": "M111X...0X214",
+        "nickname": "williamhaze"
       },
       "price": "2.00 ETH",
       "id": "000002"
@@ -23,9 +27,11 @@
     {
       "imgUrl": "/assets/slide.png",
       "title": "Some awesome picture",
+      "slug": "flora",
       "owner": {
         "avatar": "/assets/owner3.png",
-        "name": "M767X...0X207"
+        "name": "M767X...0X207",
+        "nickname": "williamhaze"
       },
       "price": "1.50 ETH",
       "id": "000003"
@@ -33,9 +39,11 @@
     {
       "imgUrl": "/assets/slide.png",
       "title": "FLORA 004: Anemone",
+      "slug": "flora",
       "owner": {
         "avatar": "/assets/owner4.png",
-        "name": "M111X...0X001"
+        "name": "M111X...0X001",
+        "nickname": "williamhaze"
       },
       "price": "0.50 ETH",
       "id": "000004"
@@ -43,9 +51,11 @@
     {
       "imgUrl": "/assets/slide.png",
       "title": "FLORA 005: Anemone",
+      "slug": "flora",
       "owner": {
         "avatar": "/assets/owner5.png",
-        "name": "M777X...0X007"
+        "name": "M777X...0X007",
+        "nickname": "williamhaze"
       },
       "price": "2.50 ETH",
       "id": "000005"

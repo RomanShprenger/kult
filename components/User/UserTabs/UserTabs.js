@@ -1,5 +1,6 @@
 import { Tab, Tabs, TabList, TabPanel, resetIdCounter } from 'react-tabs';
 import { useState } from 'react';
+import { useRouter } from 'next/router'
 import Modal from 'components/Modal';
 import { FormNewPost } from 'components/Forms';
 import Link from 'next/link';
@@ -9,6 +10,25 @@ import { UserBids, UserCollection, UserCreations, UserGrid, UserFeed } from "com
 resetIdCounter();
 
 const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, avatar, hash }) => {
+  const router = useRouter();
+  const { tab } = router.query;
+
+  let defaultTab = 0;
+
+  switch(tab) {
+    case "creations":
+      defaultTab = 1;
+      break;
+    case "collections":
+      defaultTab = 2;
+      break;
+    case "bids":
+      defaultTab = 3;
+      break;
+    default:
+      break;
+  }
+
   const [gridView, setGridView] = useState(true);
   const [toggleView, setToggleView] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -41,7 +61,7 @@ const UserTabs = ({ owner, feed, creations, collection, bids, name, nickname, av
   const emptyTab = () => <div className="user-tabs__panel-empty">No content yet</div>;
 
   return <div className="user-tabs">
-    <Tabs className="user-tabs__container" onSelect={select} defaultIndex={0}>
+    <Tabs className="user-tabs__container" onSelect={select} defaultIndex={defaultTab}>
       <TabList className="user-tabs__list">
         <Tab className="user-tabs__tab" selectedClassName="user-tabs__tab--selected">
           <div className="user-tabs__tab-title user-tabs__tab-title--desktop">Feed <span className="user-tabs__tab-count">({feed.length})</span></div>
