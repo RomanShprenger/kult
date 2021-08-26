@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 const links = [
-  { href: "#", text: "Create", type: "bordered" },
+  { href: "/artwork/new", text: "Create", type: "bordered" },
   { href: "#", text: "Explore", type: "bordered" },
   { href: "/connect", text: "Connect" }
 ]

@@ -15,7 +15,7 @@ export default function Layout({ children }) {
       <title>Kult</title>
       <meta name="description" content="Awesome kult" />
     </Head>
-      <Header />
-      {children}
+    <Header />
+    {children}
   </div>
 }

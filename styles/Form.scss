@@ -1,0 +1,402 @@
+@import 'variables';
+
+.form {
+  &__group {
+    margin-bottom: 24px;
+    position: relative;
+    &--royalty {
+      position: relative;
+      &:after {
+        content: '%';
+        position: absolute;
+        top: 50px;
+        right: 16px;
+        font-size: 12px;
+        font-family: NeueMachinaUltraLight;
+        color: $white;
+        opacity: 0.6;
+        pointer-events: none;
+      }
+    }
+    &--unlockable {
+      background-color: #0D0D0D;
+      padding: 32px 24px;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &--unlockable & {
+      &-heading {
+        color: $primary;
+        margin-bottom: 8px;
+      }
+      &-text {
+        font-family: NeueMachinaUltraLight;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.03em;
+        color: #C4C4C4;
+      }
+      &-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 42px;
+        color: $primary;
+      }
+      &-checkbox {
+        position: static;
+      }
+    }
+
+    &-heading {
+      font-family: NeueMachinaBold;
+      font-size: 12px;
+      line-height: 24px;
+      letter-spacing: 0.06em;
+      color: $white;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    &-error {
+      margin-top: 16px;
+      font-family: NeueMachinaUltraLight;
+      font-size: 12px;
+      line-height: 12px;
+      letter-spacing: 0.06em;
+      color: $error;
+    }
+    &-checkbox {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &-sale-type {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 24px -8px;
+      &-item {
+        flex: 1 0 calc(33.3333% - 16px);
+        max-width: calc(33.3333% - 16px);
+        margin: 0 8px;
+        background-color: #141414;
+        border: 1px solid #141414;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+        cursor: pointer;
+        &--active {
+          border: 1px solid $primary;
+        }
+        input {
+          display: none;
+        }
+        .icon {
+          font-size: 28px;
+          margin-bottom: 32px;
+          opacity: 0.4;
+        }
+        span {
+          font-family: NeueMachinaBold;
+          font-size: 12px;
+          line-height: 12px;
+          letter-spacing: 0.06em;
+          color: $white;
+          text-transform: uppercase;
+        }
+      }
+    }
+    &-row {
+      display: flex;
+      flex-direction: row;
+    }
+    &-note {
+      font-family: NeueMachinaBold;
+      font-size: 12px;
+      line-height: 12px;
+      letter-spacing: 0.06em;
+      color: $white;
+      margin-top: 16px;
+      & + & {
+        margin-top: 12px;
+      }
+      &-value {
+        color: $primary;
+      }
+    }
+    &-unlockable-text {
+      margin-right: auto;
+      margin-left: 24px;
+    }
+  }
+  &__field {
+    background-color: #141414;
+    border: 1px solid #141414;
+    padding: 12px 20px;
+    font-family: NeueMachinaUltraLight;
+    color: $white;
+    width: 100%;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid $primary;
+    }
+    &--error {
+      border: 1px solid $error;
+    }
+    &-textarea {
+      min-height: 124px;
+      max-width: 100%;
+      min-width: 100%;
+    }
+    &-select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+      ::-ms-expand {
+        display: none;
+      }
+      &-container {
+        position: relative;
+        .icon {
+          position: absolute;
+          right: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 12px;
+          line-height: 39px;
+          cursor: pointer;
+          pointer-events: none;
+        }
+      }
+      &--currency {
+        width: 100px;
+      }
+    }
+  }
+  &__dropzone {
+    padding: 24px 20px;
+    background-color: #141414;
+    border: 1px solid #141414;
+    font-family: NeueMachinaBold;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    &--error {
+      border: 1px solid $error;
+    }
+    .icon {
+      font-size: 36px;
+      line-height: 39px;
+      margin-right: 32px;
+    }
+    p {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+  }
+  &__preview {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  &__tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    &-item {
+      border: 1px solid $border;
+      border-radius: 200px;
+      margin-bottom: 12px;
+      margin-right: 12px;
+      padding: 6px 32px 6px 20px;
+      position: relative;
+    }
+    &-item--empty + &-add {
+      display: none;
+    }
+    &-field {
+      background-color: transparent;
+      color: $white;
+      border: none;
+      text-transform: uppercase;
+      font-family: NeueMachinaBold;
+      font-size: 12px;
+      line-height: 12px;
+      padding: 0;
+      letter-spacing: 0.06em;
+      &:-webkit-autofill {
+        -webkit-text-fill-color: $white !important;
+        -webkit-box-shadow: 0 0 0px 1000px $black inset;
+      }
+      &:focus {
+        outline: none;
+        color: $primary;
+      }
+    }
+    &-btn {
+      border: none;
+      background-color: transparent;
+      color: $border;
+      position: absolute;
+      top: 50%;
+      right: 6px;
+      transform: translateY(-50%);
+      font-size: 10px;
+      line-height: 4px;
+      cursor: pointer;
+    }
+    &-field ~ &-btn--save {
+      display: none;
+    }
+    &-field:focus ~ &-btn--save {
+      display: inline-block;
+      color: $primary;
+    }
+    &-field:focus ~ &-btn--remove {
+      display: none;
+    }
+    &-add {
+      width: 30px;
+      height: 30px;
+      border-radius: 200px;
+      border: 1px solid $border;
+      background-color: $black;
+      color: $white;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+  }
+
+  // Dropzone component
+  &-dropzone {
+    &__container {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    &__icon {
+      display: inline-flex;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: #1C1C1C;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      @media(max-width: 1023px) {
+        width: 156px;
+        height: 156px;
+      }
+      img {
+        display: block;
+        width: 86px;
+        @media(max-width: 1023px) {
+          width: 72px;
+        }
+      }
+    }
+    &__title {
+      font-family: NeueMachinaBold;
+      font-size: 48px;
+      line-height: 56px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: $white;
+      @media(max-width: 1023px) {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+    &__subtitle {
+      font-family: NeueMachina;
+      font-size: 28px;
+      line-height: 40px;
+      letter-spacing: -0.03em;
+      color: $white;
+      margin-bottom: 12px;
+      @media(max-width: 1023px) {
+        font-size: 20px;
+        line-height: 32px;
+      }
+    }
+    &__note {
+      font-family: NeueMachinaUltraLight;
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: -0.03em;
+      color: $white;
+      opacity: 0.4;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      @media(max-width: 1023px) {
+        font-size: 16px;
+        line-height: 16px;
+      }
+      img {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  // Checkbox components
+  &-checkbox {
+    background-color: #141414;
+    width: 52px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    &:before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: $primary;
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      transition: left 0.3s ease;
+    }
+    &--off {
+      &:before {
+        left: 28px;
+      }
+    }
+    &--inverse {
+      background-color: $black;
+    }
+    &__field {
+      display: none;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import Profile from "components/Profile";
 import { UserTabs } from "components/User";
-import { useState, useEffect, useReducer } from 'react';
+import { useState, useReducer } from 'react';
 import {useDropzone} from 'react-dropzone';
 
 function reducer(state = {}, action) {

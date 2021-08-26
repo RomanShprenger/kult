@@ -1,0 +1,183 @@
+@import 'variables';
+
+.artwork-new {
+  &__step {
+    border-bottom: 1px solid $border;
+    &--3 {
+      border: none;
+    }
+    &-container {
+      max-width: 776px;
+      margin: 0 auto;
+      padding: 0 36px 64px;
+    }
+  }
+  &__title {
+    margin-top: 48px;
+    padding-top: 32px;
+    font-family: NeueMachinaBold;
+    font-size: 48px;
+    line-height: 98px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: $white;
+    position: sticky;
+    top: 0;
+    background-color: #000;
+    z-index: 10000;
+    @media(max-width: 1023px) {
+      margin-top: 0;
+      font-size: 32px;
+      line-height: 72px;
+    }
+    &-step {
+      color: $primary;
+      margin-right: 12px;
+    }
+    &-subtitle {
+      display: block;
+      font-size: 12px;
+      line-height: 12px;
+      letter-spacing: 0.06em;
+      color: $white;
+    }
+  }
+  &__subtitle {
+    font-family: NeueMachinaUltraLight;
+    font-size: 28px;
+    line-height: 45px;
+    letter-spacing: -0.03em;
+    color: $white;
+    margin: 16px 0 32px;
+  }
+  &__preview {
+    border: 1px solid #1E1E1E;
+    padding: 32px;
+    &-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 12px;
+      &-photo {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        margin-right: 16px;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      &-hash {
+        font-family: NeueMachinaUltraLight;
+        font-size: 20px;
+        line-height: 19px;
+        letter-spacing: -0.05em;
+        color: $white;
+        text-transform: uppercase;
+        span {
+          color: $primary;
+          margin-right: 2px;
+        }
+      }
+      &-owner {
+        font-family: NeueMachinaUltraLight;
+        font-size: 16px;
+        line-height: 15px;
+        letter-spacing: -0.05em;
+        color: $white;
+        opacity: 0.4;
+        margin-bottom: 8px;
+      }
+    }
+    &-body {
+      &-img {
+        width: 100%;
+        padding-top: 37%;
+        overflow: hidden;
+        position: relative;
+        img, span {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        span {
+          text-align: center;
+          font-family: NeueMachinaUltraLight;
+          font-size: 16px;
+          line-height: 15px;
+          letter-spacing: -0.05em;
+          color: $white;
+          opacity: 0.4;
+        }
+      }
+      &-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &-name {
+        font-family: NeueMachinaBold;
+        font-size: 50px;
+        line-height: 54px;
+        color: $white;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      &-price {
+        font-family: NeueMachinaBold;
+        font-size: 22px;
+        line-height: 21px;
+        letter-spacing: -0.04em;
+        color: $primary;
+        text-transform: uppercase;
+        white-space: nowrap;
+        margin-left: 16px;
+      }
+      &-description {
+        font-family: NeueMachinaUltraLight;
+        font-size: 22px;
+        line-height: 35px;
+        letter-spacing: -0.03em;
+        color: $white;
+        opacity: 0.4;
+      }
+      &-tags {
+        margin-top: 24px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -8px;
+    &-btn {
+      margin: 0 8px;
+      flex: 1 0 calc(50% - 16px);
+      max-width: calc(50% - 16px);
+      height: 50px;
+      font-family: NeueMachinaBold;
+      font-size: 24px;
+      line-height: 48px;
+      text-align: center;
+      letter-spacing: 0.06em;
+      color: $white;
+      border: 1px solid $white;
+      background-color: transparent;
+      text-transform: uppercase;
+      cursor: pointer;
+      &--submit {
+        background-color: $primary;
+        border: 1px solid $primary;
+        color: $black;
+      }
+    }
+  }
+}

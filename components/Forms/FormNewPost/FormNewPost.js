@@ -1,5 +1,5 @@
-import { Formik, Field, Form, ErrorMessage, FieldArray } from 'formik';
-import {useDropzone} from 'react-dropzone';
+import { Formik, Field, Form, FieldArray } from 'formik';
+import { FormDropzonePost } from 'components/Forms';
 import * as Yup from 'yup';
 
 const NewPostSchema = Yup.object().shape({
@@ -25,32 +25,12 @@ const initialValues = {
   tags: ["visual", "contemporary", "objects", "collectible"],
 };
 
-const Dropzone = ({ setFieldValue, errors, touched }) => {
-  const {getRootProps, getInputProps} = useDropzone({
-     accept: 'image/*',
-     maxFiles: 1,
-     multiple: false,
-     noDrag: true,
-     onDrop: (acceptedFiles, fileRejections, event) => {
-       setFieldValue("illustration", acceptedFiles);
-     }
-  });
-  return (
-    <div {...getRootProps({
-        className: `post-new__dropzone ${errors.illustration && touched.illustration && "post-new__dropzone--error"}`
-      })}>
-      <input {...getInputProps()} />
-      <p><i className="icon icon-picture"></i>Upload image</p>
-    </div>
-  )
-}
-
 const FormNewPost = (props) => {
   const { close } = props;
 
   const previewImage = (file) => {
     const preview = URL.createObjectURL(file);
-    return (<div className="post-new__preview">
+    return (<div className="form__preview">
       <img src={preview} alt={file.name} />
     </div>)
   }
@@ -69,54 +49,54 @@ const FormNewPost = (props) => {
       >
         {({ values, errors, touched, isSubmitting, handleReset, setFieldValue }) => (
           <Form className="post-new__form">
-            <div className="post-new__group post-new__group-title">
-              <div className="post-new__group-heading">Title</div>
-              <Field type="text" name="title" placeholder="New post title" className={`post-new__field post-new__field-input ${errors.title && touched.title && "post-new__field--error"}`} />
+            <div className="form__group form__group--title">
+              <div className="form__group-heading">Title</div>
+              <Field type="text" name="title" placeholder="New post title" className={`form__field form__field-input ${errors.title && touched.title && "form__field--error"}`} />
               {errors.title && touched.title ? (
-                 <div className="post-new__group-error">{errors.title}</div>
+                 <div className="form__group-error">{errors.title}</div>
                ) : null}
             </div>
-            <div className="post-new__group post-new__group-text">
-              <div className="post-new__group-heading">Text</div>
-              <Field as="textarea" type="text" name="text" placeholder="Enter post content" className={`post-new__field post-new__field-textarea ${errors.text && touched.text && "post-new__field--error"}`} />
+            <div className="form__group form__group--text">
+              <div className="form__group-heading">Text</div>
+              <Field as="textarea" type="text" name="text" placeholder="Enter post content" className={`form__field form__field-textarea ${errors.text && touched.text && "form__field--error"}`} />
               {errors.text && touched.text ? (
-                 <div className="post-new__group-error">{errors.text}</div>
+                 <div className="form__group-error">{errors.text}</div>
                ) : null}
             </div>
-            <div className="post-new__group post-new__group-illustration">
-              <div className="post-new__group-heading">Illustration</div>
-              <Dropzone setFieldValue={setFieldValue} errors={errors} touched={touched} />
+            <div className="form__group form__group--illustration">
+              <div className="form__group-heading">Illustration</div>
+              <FormDropzonePost fieldName="illustration" setFieldValue={setFieldValue} errors={errors} touched={touched} className="form__dropzone" />
               {errors.illustration && touched.illustration ? (
-                 <div className="post-new__group-error">{errors.illustration}</div>
+                 <div className="form__group-error">{errors.illustration}</div>
                ) : null}
               { values.illustration.length > 0 && previewImage(values.illustration[0]) }
             </div>
-            <div className="post-new__group post-new__group-tags">
-              <div className="post-new__group-heading">Suggested tags</div>
+            <div className="form__group form__group--tags">
+              <div className="form__group-heading">Suggested tags</div>
               <FieldArray name="tags">
                 {({ remove, push }) => (
-                  <div className="post-new__tags">
+                  <div className="form__tags">
                     {values.tags.length > 0 &&
                       values.tags.map((tag, index) => {
-                        return (<div className={`post-new__tags-item ${tag === '' ? "post-new__tags-item--empty" : ""}`} key={index}>
+                        return (<div className={`form__tags-item ${tag === '' ? "form__tags-item--empty" : ""}`} key={index}>
                           <Field
                             name={`tags.${index}`}
                             placeholder=""
                             type="text"
-                            className="post-new__tags-field"
+                            className="form__tags-field"
                             autoFocus={tag === ''}
                             style={{ width: `${tag.length + 1}ch` }}
                           />
                           <button
                             type="button"
-                            className="post-new__tags-btn post-new__tags-btn--remove"
+                            className="form__tags-btn form__tags-btn--remove"
                             onClick={() => remove(index)}
                           >
                             <i className="icon icon-close"></i>
                           </button>
                           <button
                             type="button"
-                            className="post-new__tags-btn post-new__tags-btn--save"
+                            className="form__tags-btn form__tags-btn--save"
                             onClick={() => console.log("save", index)}
                           >
                             <i className="icon icon-done"></i>
@@ -125,7 +105,7 @@ const FormNewPost = (props) => {
                       })}
                     <button
                       type="button"
-                      className="post-new__tags-add"
+                      className="form_tags-add"
                       onClick={() => push("")}
                     >
                       +
@@ -134,7 +114,7 @@ const FormNewPost = (props) => {
                 )}
               </FieldArray>
               {errors.tags && touched.tags ? (
-                 <div className="post-new__group-error">{errors.tags}</div>
+                 <div className="form__group-error">{errors.tags}</div>
                ) : null}
             </div>
 
