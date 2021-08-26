@@ -35,7 +35,7 @@ const FormDropzoneArtwork = ({ setFieldValue, value, fieldName, thumb, errors, t
             <div className="form-dropzone__title">Drag and drop</div>
             <div className="form-dropzone__subtitle">{msg}</div>
             <div className="form-dropzone__note">
-              PNG,GIF, WEBP,MP4 or MP3. Max 30 Mb
+              PNG, GIF, WEBP, MP4 or MP3. Max 30 Mb
             </div>
             <div className="form-dropzone__footer">
               <div className="form-dropzone__footer-column">

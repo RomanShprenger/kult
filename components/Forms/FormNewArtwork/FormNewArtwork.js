@@ -1,6 +1,6 @@
 import { Formik, Form } from 'formik';
 import { ArtworkNewTitle } from 'components/ArtworkNew';
-import { FormArtworkStepOne, FormArtworkStepTwo, FormArtworkStepThree } from 'components/Forms/FormNewArtwork';
+import { FormArtworkStepZero, FormArtworkStepOne, FormArtworkStepTwo, FormArtworkStepThree } from 'components/Forms/FormNewArtwork';
 import { artworkSchema } from 'schemas';
 
 const FormNewArtwork = ({ initialValues, action }) => {
@@ -13,6 +13,11 @@ const FormNewArtwork = ({ initialValues, action }) => {
   >
     {({ values, errors, touched, isSubmitting, handleReset, setFieldValue }) => (
       <Form className={`artwork-new__form artwork-new__form--step-${values.step}`}>
+        <div className="artwork-new__step artwork-new__step--0">
+          <div className="artwork-new__step-container">
+            <FormArtworkStepZero values={values} errors={errors} touched={touched} setFieldValue={setFieldValue} />
+          </div>
+        </div>
         <div className="artwork-new__step artwork-new__step--1">
           <ArtworkNewTitle step="01" title="Artwork information" subtitle="create a collectible" />
           <div className="artwork-new__step-container">

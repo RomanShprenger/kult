@@ -4,6 +4,17 @@
   &__group {
     margin-bottom: 24px;
     position: relative;
+    @media(max-width: 767px) {
+      &--image {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+      &--preview {
+        margin: 16px 0 0;
+      }
+    }
     &--royalty {
       position: relative;
       &:after {
@@ -26,11 +37,17 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      @media(max-width: 767px) {
+        padding: 20px 16px;
+      }
     }
     &--unlockable & {
       &-heading {
         color: $primary;
         margin-bottom: 8px;
+        @media(max-width: 767px) {
+          margin-bottom: 0;
+        }
       }
       &-text {
         font-family: NeueMachinaUltraLight;
@@ -38,12 +55,20 @@
         line-height: 26px;
         letter-spacing: -0.03em;
         color: #C4C4C4;
+        @media(max-width: 767px) {
+          display: none;
+        }
       }
       &-icon {
         width: 42px;
         height: 42px;
         font-size: 42px;
         color: $primary;
+        @media(max-width: 767px) {
+          width: 32px;
+          height: 32px;
+          font-size: 32px;
+        }
       }
       &-checkbox {
         position: static;
@@ -52,6 +77,9 @@
     &--tags, &--royalty {
       padding-bottom: 64px;
       margin-bottom: 0;
+      @media(max-width: 767px) {
+        padding-bottom: 128px;
+      }
     }
 
     &-sale {
@@ -86,6 +114,10 @@
       align-items: center;
       justify-content: space-between;
       margin: 24px -8px;
+      @media(max-width: 767px) {
+        flex-wrap: wrap;
+        margin: 24px 0 12px;
+      }
       &-item {
         flex: 1 0 calc(33.3333% - 16px);
         max-width: calc(33.3333% - 16px);
@@ -98,6 +130,11 @@
         justify-content: center;
         padding: 32px;
         cursor: pointer;
+        @media(max-width: 767px) {
+          flex: 1 0 100%;
+          max-width: 100%;
+          margin: 0 0 12px;
+        }
         &--active {
           border: 1px solid $primary;
         }
@@ -140,6 +177,9 @@
     &-unlockable-text {
       margin-right: auto;
       margin-left: 24px;
+      @media(max-width: 767px) {
+        margin-left: 16px;
+      }
     }
   }
   &__field {
@@ -203,6 +243,15 @@
     line-height: 12px;
     letter-spacing: 0.06em;
     cursor: pointer;
+    @media(max-width: 767px) {
+      &--artwork {
+        flex: 1 0 auto;
+        align-items: center;
+        display: flex;
+        padding: 16px 20px;
+        justify-content: center;
+      }
+    }
     &--error {
       border: 1px solid $error;
     }
@@ -307,6 +356,9 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      @media(max-width: 767px) {
+        padding: 0;
+      }
       &--image {
         padding: 0;
         text-align: left;
@@ -314,6 +366,9 @@
       }
       &--content {
         padding-bottom: 156px;
+        @media(max-width: 767px) {
+          padding-bottom: 0;
+        }
       }
     }
     &__icon {
@@ -361,6 +416,10 @@
         font-size: 20px;
         line-height: 32px;
       }
+      @media(max-width: 767px) {
+        line-height: 24px;
+        margin-bottom: 8px;
+      }
     }
     &__note {
       font-family: NeueMachinaUltraLight;
@@ -376,6 +435,10 @@
         font-size: 16px;
         line-height: 16px;
       }
+      @media(max-width: 767px) {
+        font-size: 12px;
+        line-height: 12px;
+      }
       img {
         margin-right: 16px;
       }
@@ -383,6 +446,9 @@
     &__preview {
       width: 100%;
       display: block;
+      @media(max-width: 767px) {
+        text-align: center;
+      }
       &-name {
         width: 100%;
         display: block;
@@ -404,6 +470,9 @@
       left: 20px;
       right: 20px;
       bottom: 24px;
+      @media(max-width: 767px) {
+        display: none;
+      }
       &-column {
         display: flex;
         flex-direction: row;

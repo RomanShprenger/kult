@@ -1,9 +1,6 @@
 import * as Yup from 'yup';
 
 const artworkSchema = Yup.object().shape({
-  type: Yup.mixed()
-    .oneOf(['image', 'video'])
-    .required('Required'),
   title: Yup.string()
     .min(10, 'Too short!')
     .required('Required'),

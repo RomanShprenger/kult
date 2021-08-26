@@ -12,7 +12,7 @@ const FormArtworkStepOne = ({ values, errors, touched, setFieldValue }) => {
         setFieldValue={setFieldValue}
         errors={errors}
         touched={touched}
-        className="form__dropzone"
+        className="form__dropzone form__dropzone--artwork"
         msg="Browse to choose a file"
       />
     </div>
@@ -26,7 +26,7 @@ const FormArtworkStepOne = ({ values, errors, touched, setFieldValue }) => {
           setFieldValue={setFieldValue}
           errors={errors}
           touched={touched}
-          className="form__dropzone"
+          className="form__dropzone form__dropzone--artwork"
           msg="Browse to choose an image file for preview"
         />
       </div>

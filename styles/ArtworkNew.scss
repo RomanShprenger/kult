@@ -25,7 +25,7 @@
           }
         }
       }
-      &__step--1 {
+      &__step--0 {
         opacity: 1;
         visibility: visible;
         z-index: 1;
@@ -49,7 +49,7 @@
           }
         }
       }
-      &__step--2 {
+      &__step--1 {
         opacity: 1;
         visibility: visible;
         z-index: 1;
@@ -57,6 +57,30 @@
       }
     }
     &__form--step-2 & {
+      &__actions {
+        &-btn {
+          &--cancel {
+            display: none;
+          }
+          &--back {
+            display: block;
+          }
+          &--next {
+            display: block;
+          }
+          &--submit {
+            display: none;
+          }
+        }
+      }
+      &__step--2 {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+        display: block;
+      }
+    }
+    &__form--step-3 & {
       &__actions {
         &-btn {
           &--cancel {
@@ -84,7 +108,20 @@
   &__step {
     border-bottom: 1px solid $border;
     @media(max-width: 767px) {
+      padding-top: 24px;
       border: none;
+    }
+    &--0 {
+      display: none;
+    }
+    &--1 {
+      @media(max-width: 767px) {
+        .form__group {
+          &--image, &--preview {
+            display: none;
+          }
+        }
+      }
     }
     &--3 {
       border: none;
@@ -94,7 +131,17 @@
       margin: 0 auto;
       padding: 0 36px;
       @media(max-width: 767px) {
-        padding: 32px 24px;
+        padding: 0 24px;
+        .artwork-new__step--0 & {
+          position: fixed;
+          height: calc(100vh - 56px - 60px);
+          top: 56px;
+          left: 0;
+          right: 0;
+          display: flex;
+          flex-direction: column;
+          padding: 24px;
+        }
       }
     }
   }
@@ -112,7 +159,9 @@
     background-color: #000;
     z-index: 10000;
     &--bordered {
-      border-bottom: 1px solid $border;
+      @media(min-width: 768px) {
+        border-bottom: 1px solid $border;
+      }
     }
     @media(max-width: 1023px) {
       margin-top: 0;
@@ -148,11 +197,18 @@
     letter-spacing: -0.03em;
     color: $white;
     margin: 16px 0 32px;
+    @media(max-width: 767px) {
+      display: none;
+    }
   }
   &__preview {
     border: 1px solid #1E1E1E;
     padding: 32px;
     margin-bottom: 48px;
+    @media(max-width: 767px) {
+      padding: 24px;
+      margin-bottom: 128px;
+    }
     &-header {
       display: flex;
       flex-direction: row;
@@ -227,6 +283,10 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        @media(max-width: 767px) {
+          font-size: 32px;
+          line-height: 48px;
+        }
       }
       &-price {
         font-family: NeueMachinaBold;
@@ -237,6 +297,10 @@
         text-transform: uppercase;
         white-space: nowrap;
         margin-left: 16px;
+        @media(max-width: 767px) {
+          font-size: 16px;
+          line-height: 16px;
+        }
       }
       &-description {
         font-family: NeueMachinaUltraLight;
@@ -245,6 +309,12 @@
         letter-spacing: -0.03em;
         color: $white;
         opacity: 0.4;
+        white-space: pre-wrap;
+        word-break: break-all;
+        @media(max-width: 767px) {
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
       &-tags {
         margin-top: 24px;
@@ -264,6 +334,7 @@
       left: 0;
       right: 0;
       padding: 16px;
+      margin: 0;
       background-color: $black;
       border-top: 1px solid $border;
     }
