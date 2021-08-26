@@ -1,11 +1,7 @@
-import { useState, useReducer } from 'react';
 import { FormNewArtwork } from 'components/Forms';
 
 function NewArtwork() {
-  const [step, setStep] = useState(0);
-
   const artworkDefault = {
-    type: "image",
     content: [],
     preview: [],
     title: '',
@@ -33,13 +29,16 @@ function NewArtwork() {
     console.log(formSchema);
   };
 
+  const initialValues = {
+    ...artworkDefault,
+    owner: owner,
+    step: 0
+  }
+
   return <div className="artwork-new">
     <FormNewArtwork
-      artwork={artworkDefault}
+      initialValues={initialValues}
       action={action}
-      step={step}
-      setStep={setStep}
-      owner={owner}
     />
   </div>
 }

@@ -3,7 +3,6 @@ import PostTags from 'components/PostTags';
 const FormArtworkStepThree = ({ values }) => {
   const { owner, preview: [file], title, price, description, tags, unlockStatus } = values;
   const imgUrl = file && URL.createObjectURL(file);
-  console.log(values);
   return <>
     <div className="artwork-new__preview">
       <div className="artwork-new__preview-header">

@@ -2,28 +2,22 @@ import { Field, FieldArray } from 'formik';
 import { FormDropzoneArtwork } from 'components/Forms';
 
 const FormArtworkStepOne = ({ values, errors, touched, setFieldValue }) => {
+  const isVideo = values.content.length > 0 && values.content[0].type === 'video/mp4';
   return <>
-    <div className="form__group form__group--type">
-      <div className="form__group-heading">Type of content</div>
-      <Field
-         name="type"
-       >
-         {({ field /* { name, value, onChange, onBlur } */ }) => (
-           <div className="form__field-select-container">
-             <select {...field} className={`form__field form__field-select ${errors.title && touched.title ? "form__field--error" : ""}`}>
-               <option value="image">Image</option>
-               <option value="video">Video</option>
-             </select>
-             <i className="icon icon-arrow-down"></i>
-           </div>
-         )}
-      </Field>
-      {errors.type && touched.type ? (
-         <div className="form__group-error">{errors.title}</div>
-       ) : null}
+    <div className="form__group form__group--image">
+      <FormDropzoneArtwork
+        fieldName="content"
+        thumb={true}
+        value={values.content}
+        setFieldValue={setFieldValue}
+        errors={errors}
+        touched={touched}
+        className="form__dropzone"
+        msg="Browse to choose a file"
+      />
     </div>
     {
-      values.type === 'image' ? <div className="form__group form__group--image">
+      isVideo && <div className="form__group form__group--preview">
         <FormDropzoneArtwork
           type="image"
           fieldName="preview"
@@ -33,36 +27,9 @@ const FormArtworkStepOne = ({ values, errors, touched, setFieldValue }) => {
           errors={errors}
           touched={touched}
           className="form__dropzone"
-          msg="Browse to choose an image file"
+          msg="Browse to choose an image file for preview"
         />
-      </div> : <>
-        <div className="form__group form__group--video">
-          <FormDropzoneArtwork
-            type="video"
-            fieldName="content"
-            thumb={true}
-            value={values.content}
-            setFieldValue={setFieldValue}
-            errors={errors}
-            touched={touched}
-            className="form__dropzone"
-            msg="Browse to choose a video file"
-          />
-        </div>
-        <div className="form__group form__group--preview">
-          <FormDropzoneArtwork
-            type="image"
-            fieldName="preview"
-            thumb={true}
-            value={values.preview}
-            setFieldValue={setFieldValue}
-            errors={errors}
-            touched={touched}
-            className="form__dropzone"
-            msg="Browse to choose an image file for preview"
-          />
-        </div>
-      </>
+      </div>
     }
     <div className="form__group form__group--title">
       <div className="form__group-heading">Title</div>

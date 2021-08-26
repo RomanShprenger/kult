@@ -1,15 +1,101 @@
 @import 'variables';
 
 .artwork-new {
+  @media(max-width: 767px) {
+    &__step {
+      opacity: 0;
+      visibility: hidden;
+      z-index: 0;
+      display: none;
+    }
+    &__form--step-0 & {
+      &__actions {
+        &-btn {
+          &--cancel {
+            display: block;
+          }
+          &--back {
+            display: none;
+          }
+          &--next {
+            display: block;
+          }
+          &--submit {
+            display: none;
+          }
+        }
+      }
+      &__step--1 {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+        display: block;
+      }
+    }
+    &__form--step-1 & {
+      &__actions {
+        &-btn {
+          &--cancel {
+            display: none;
+          }
+          &--back {
+            display: block;
+          }
+          &--next {
+            display: block;
+          }
+          &--submit {
+            display: none;
+          }
+        }
+      }
+      &__step--2 {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+        display: block;
+      }
+    }
+    &__form--step-2 & {
+      &__actions {
+        &-btn {
+          &--cancel {
+            display: none;
+          }
+          &--back {
+            display: block;
+          }
+          &--next {
+            display: none;
+          }
+          &--submit {
+            display: block;
+          }
+        }
+      }
+      &__step--3 {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+        display: block;
+      }
+    }
+  }
   &__step {
     border-bottom: 1px solid $border;
+    @media(max-width: 767px) {
+      border: none;
+    }
     &--3 {
       border: none;
     }
     &-container {
       max-width: 776px;
       margin: 0 auto;
-      padding: 0 36px 64px;
+      padding: 0 36px;
+      @media(max-width: 767px) {
+        padding: 32px 24px;
+      }
     }
   }
   &__title {
@@ -25,10 +111,20 @@
     top: 0;
     background-color: #000;
     z-index: 10000;
+    &--bordered {
+      border-bottom: 1px solid $border;
+    }
     @media(max-width: 1023px) {
       margin-top: 0;
       font-size: 32px;
       line-height: 72px;
+    }
+    @media(max-width: 767px) {
+      position: static;
+      padding-top: 0;
+      font-size: 20px;
+      line-height: 32px;
+      margin-bottom: 8px;
     }
     &-step {
       color: $primary;
@@ -40,6 +136,9 @@
       line-height: 12px;
       letter-spacing: 0.06em;
       color: $white;
+      @media(max-width: 767px) {
+        margin-bottom: 12px;
+      }
     }
   }
   &__subtitle {
@@ -53,6 +152,7 @@
   &__preview {
     border: 1px solid #1E1E1E;
     padding: 32px;
+    margin-bottom: 48px;
     &-header {
       display: flex;
       flex-direction: row;
@@ -157,7 +257,16 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0 -8px;
+    margin: 0 -8px 48px;
+    @media(max-width: 767px) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px;
+      background-color: $black;
+      border-top: 1px solid $border;
+    }
     &-btn {
       margin: 0 8px;
       flex: 1 0 calc(50% - 16px);
@@ -173,6 +282,19 @@
       background-color: transparent;
       text-transform: uppercase;
       cursor: pointer;
+      @media(max-width: 767px) {
+        height: 27px;
+        font-size: 12px;
+        line-height: 13px;
+      }
+      &--back, &--next {
+        display: none;
+      }
+      &--next {
+        background-color: $white;
+        border: 1px solid $white;
+        color: $black;
+      }
       &--submit {
         background-color: $primary;
         border: 1px solid $primary;
