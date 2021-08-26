@@ -105,7 +105,7 @@ const FormNewPost = (props) => {
                       })}
                     <button
                       type="button"
-                      className="form_tags-add"
+                      className="form__tags-add"
                       onClick={() => push("")}
                     >
                       +

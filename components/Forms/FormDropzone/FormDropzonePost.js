@@ -12,7 +12,7 @@ const FormDropzonePost = ({ fieldName, setFieldValue, errors, touched, className
   });
   return (
     <div {...getRootProps({
-        className: `className ${errors[fieldName] && touched[fieldName] && (className + "--error")}`
+        className: `form-dropzone ${className} ${errors[fieldName] && touched[fieldName] && (className + "--error")}`
       })}>
       <input {...getInputProps()} />
       <p><i className="icon icon-picture"></i>Upload image</p>
