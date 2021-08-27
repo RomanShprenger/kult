@@ -2,6 +2,14 @@
 
 .artwork-new {
   @media(max-width: 767px) {
+    &__form {
+      position: fixed;
+      top: 56px;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      overflow: scroll;
+    }
     &__step {
       opacity: 0;
       visibility: hidden;
