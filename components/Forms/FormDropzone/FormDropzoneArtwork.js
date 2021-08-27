@@ -3,6 +3,7 @@ import ImagePreview from 'components/ImagePreview';
 import VideoPreview from 'components/VideoPreview';
 
 const FormDropzoneArtwork = ({ setFieldValue, value, fieldName, thumb, errors, touched, className, type, msg }) => {
+  let fileRejectionItems = null;
   const {getRootProps, getInputProps} = useDropzone({
      accept: type === 'image' ? '.jpg,.jpeg,.png,.gif' : '.jpg,.jpeg,.png,.gif,.mp4',
      maxFiles: 1,
@@ -10,6 +11,16 @@ const FormDropzoneArtwork = ({ setFieldValue, value, fieldName, thumb, errors, t
      multiple: false,
      onDrop: (acceptedFiles, fileRejections, event) => {
        setFieldValue(fieldName, acceptedFiles);
+       fileRejectionItems = fileRejections.map(({ file, errors }) => (
+        <li key={file.path}>
+          {file.path} - {file.size} bytes
+          <ul>
+            {errors.map(e => (
+              <li key={e.code}>{e.message}</li>
+            ))}
+          </ul>
+        </li>
+      ));
      }
   });
   return (
@@ -17,6 +28,7 @@ const FormDropzoneArtwork = ({ setFieldValue, value, fieldName, thumb, errors, t
       <div {...getRootProps({
           className: `form-dropzone ${className} ${errors[fieldName] && touched[fieldName] && (className + "--error")}`
         })}>
+        {fileRejectionItems}
         <input {...getInputProps()} />
         {
           type === 'image' ?
