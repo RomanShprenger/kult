@@ -1,7 +1,8 @@
 import PostTags from 'components/PostTags';
 
 const FormArtworkStepThree = ({ values }) => {
-  const { owner, preview: [file], title, price, description, tags, unlockStatus } = values;
+  const { owner, content, preview, title, price, description, tags, unlockStatus } = values;
+  const file = content[0] ? (content[0].type.indexOf('image') >= 0 ? content[0] : preview[0]) : null;
   const imgUrl = file && URL.createObjectURL(file);
   return <>
     <div className="artwork-new__preview">
@@ -17,7 +18,7 @@ const FormArtworkStepThree = ({ values }) => {
       <div className="artwork-new__preview-body">
         <div className="artwork-new__preview-body-img">
           {
-            file ? <img src={imgUrl} alt="Artwork preview image" /> : <span>No image yet</span>
+            imgUrl ? <img src={imgUrl} alt="Artwork preview image" /> : <span>No image yet</span>
           }
         </div>
         <div className="artwork-new__preview-body-title">

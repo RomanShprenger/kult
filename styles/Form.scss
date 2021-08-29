@@ -359,6 +359,7 @@
       text-align: center;
       @media(max-width: 767px) {
         padding: 0;
+        max-width: 100%;
       }
       &--image {
         padding: 0;
@@ -370,6 +371,40 @@
         @media(max-width: 767px) {
           padding-bottom: 0;
         }
+      }
+      &--loaded {
+        padding-bottom: 24px;
+      }
+    }
+    &__file {
+      display: inline-flex;
+      width: 140px;
+      height: 185px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      position: relative;
+      &-format {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        text-transform: uppercase;
+        font-family: NeueMachinaBold;
+        color: #383838;
+        @media(max-width: 1023px) {
+          font-size: 24px;
+        }
+      }
+      @media(max-width: 1023px) {
+        width: 91px;
+        height: 120px;
+      }
+      img {
+        display: block;
+        width: 100%;
       }
     }
     &__icon {
@@ -394,6 +429,35 @@
         }
       }
     }
+    &__name {
+      font-family: NeueMachinaBold;
+      font-size: 48px;
+      line-height: 98px;
+      text-align: center;
+      letter-spacing: -0.02em;
+      text-transform: lowercase;
+      color: $white;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      @media(max-width: 767px) {
+        font-size: 16px;
+        line-height: 32px;
+      }
+    }
+    &__file-size {
+      font-family: NeueMachina;
+      font-size: 22px;
+      line-height: 35px;
+      letter-spacing: -0.03em;
+      color: $white;
+      opacity: 0.4;
+      @media(max-width: 767px) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
     &__title {
       font-family: NeueMachinaBold;
       font-size: 48px;
@@ -401,9 +465,16 @@
       letter-spacing: -0.02em;
       text-transform: uppercase;
       color: $white;
+      &-mobile {
+        display: none;
+      }
       @media(max-width: 1023px) {
         font-size: 32px;
         line-height: 40px;
+        display: none;
+        &-mobile {
+          display: block;
+        }
       }
     }
     &__subtitle {
@@ -523,6 +594,19 @@
         top: 75%;
         line-height: 32px;
         font-size: 24px;
+      }
+    }
+    &__remove {
+      text-decoration: none;
+      color: $primary;
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      cursor: pointer;
+      .icon {
+        font-size: 24px;
+        line-height: 24px;
+        margin: 0;
       }
     }
   }
