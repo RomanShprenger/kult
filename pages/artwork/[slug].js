@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import Link from 'next/link';
 import Badge from 'components/Badge';
 import BidList from 'components/BidList';
@@ -12,15 +11,7 @@ import {
   Owner
 } from 'components/ArtworkBlocks';
 
-import "swiper/swiper.min.css";
-import "swiper/components/navigation/navigation.min.css"
-
-import SwiperCore, { Pagination } from "swiper/core";
-
-SwiperCore.use([Pagination]);
-
 const Artwork = ({ data }) => {
-  const [swiperRef, setSwiperRef] = useState(null);
   const {
     assets,
     title,
@@ -40,6 +31,9 @@ const Artwork = ({ data }) => {
       hash: creatorHash,
       nickname: creatorNick
     },
+    indexes,
+    prev_slug,
+    next_slug,
     owner,
     owner: {
       photo: ownerPhoto,
@@ -49,43 +43,28 @@ const Artwork = ({ data }) => {
     }
   } = data;
 
-  const slide = (dir) => {
-    dir === "left" ? swiperRef.slidePrev(900) : swiperRef.slideNext(900);
-  }
-
   return <div className="artwork">
     <div className="artwork__slider">
       {/* Background title */}
       <div className="artwork__slider-title">{title}</div>
       {/* Slider */}
-      <Swiper
-        loop={true}
-        pagination={{
-          "type": "fraction",
-          "modifierClass": "slider__pagination-"
-        }}
-        className="artwork__swiper"
-        onSwiper={setSwiperRef}
-      >
-        {
-          assets.map((item, i) => <SwiperSlide key={item}>
-            <div className="swiper-slide__wrapper" style={{
-              backgroundImage: `url(${item})`
-            }}>
-              <img src={item} alt={"Artwork image " + i}/>
-            </div>
-          </SwiperSlide>)
-        }
-      </Swiper>
+      <div className="artwork__slider-item" style={{ backgroundImage: `url(${assets[0]})`}}>
+        <img src={assets[0]} alt={"Artwork image " + [assets[0]]}/>
+      </div>
       {/* Elements at the top right */}
       <div className="artwork__slider-creations">@{creatorNick} / Creations</div>
+      <div className="artwork__slider-pagination">{indexes.current} / {indexes.all}</div>
       <div className="artwork__slider-nav">
-        <button onClick={() => slide("left")} className="artwork__slider-nav-btn artwork__slider-nav-btn--left">
-          <i className="icon icon-arrow-left"></i>
-        </button>
-        <button onClick={() => slide("right")} className="artwork__slider-nav-btn artwork__slider-nav-btn--left">
-          <i className="icon icon-arrow-right"></i>
-        </button>
+        <Link href={`/artwork/${prev_slug}`}>
+          <a className="artwork__slider-nav-btn artwork__slider-nav-btn--left">
+            <i className="icon icon-arrow-left"></i>
+          </a>
+        </Link>
+        <Link href={`/artwork/${next_slug}`}>
+          <a className="artwork__slider-nav-btn artwork__slider-nav-btn--right">
+            <i className="icon icon-arrow-right"></i>
+          </a>
+        </Link>
       </div>
       {/* Text block at the top left */}
       <div className="artwork__slider-info">
@@ -180,6 +159,12 @@ export async function getServerSideProps({ query }) {
       "/assets/artwork-2.png",
       "/assets/artwork-3.png"
     ],
+    indexes: {
+      all: 100,
+      current: 4
+    },
+    prev_slug: "flora_of_my_planet",
+    next_slug: "some_next_project",
     "unlockable": {
       "status": true,
       "content": "The piece of art was created by PPSS group - collaboration between Pavel Pepperstein and Sonya Stereostyrski. <a href='https://en.wikipedia.org/wiki/Pavel_Pepperstein' target='_blank'>https://en.wikipedia.org/wiki/Pavel_Pepperstein</a>"
