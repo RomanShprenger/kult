@@ -2,7 +2,7 @@ import { Field, FieldArray } from 'formik';
 import { FormDropzoneArtwork } from 'components/Forms';
 
 const FormArtworkStepOne = ({ values, errors, touched, setFieldValue }) => {
-  const isVideo = values.content.length > 0 && values.content[0].type === 'video/mp4';
+  const isVideo = values.content.length > 0 && values.content[0].type.indexOf('video') >= 0;
   return <>
     <div className="form__group form__group--image">
       <FormDropzoneArtwork

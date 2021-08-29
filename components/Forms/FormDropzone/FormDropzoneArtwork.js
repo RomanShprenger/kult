@@ -55,7 +55,7 @@ const FormDropzoneArtwork = ({
         </a>
         <div className="form-dropzone__file">
           <img src="/file.svg" alt="File icon"/>
-          <div className="form-dropzone__file-format">{value[0].type.substr(value[0].type.indexOf("/") + 1)}</div>
+        <div className="form-dropzone__file-format">{value[0].name.substr(value[0].name.lastIndexOf('.') + 1)}</div>
         </div>
         <div className="form-dropzone__name">{value[0].name}</div>
         <div className="form-dropzone__file-size">{fileSizeFormat(value[0].size)}</div>
