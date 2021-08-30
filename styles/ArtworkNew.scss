@@ -215,7 +215,7 @@
     margin-bottom: 48px;
     @media(max-width: 767px) {
       padding: 24px;
-      margin-bottom: 128px;
+      margin-bottom: 16px;
     }
     &-header {
       display: flex;
@@ -329,6 +329,23 @@
         margin-top: 24px;
         margin-bottom: 24px;
       }
+    }
+  }
+  &__errors {
+    margin: 16px 0 32px;
+    @media(max-width: 767px) {
+      display: none;
+      &--step-3 {
+        display: block;
+        margin-bottom: 128px;
+      }
+    }
+    &-msg {
+      font-family: NeueMachinaUltraLight;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.03em;
+      color: $error;
     }
   }
   &__actions {

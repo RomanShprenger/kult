@@ -7,14 +7,11 @@ const artworkSchema = Yup.object().shape({
   description: Yup.string()
     .min(80, 'Too short!')
     .required('Required'),
-  content: Yup.mixed().when('type', {
-    is: 'image',
-    then: Yup.mixed().nullable().notRequired().default(null),
-    otherwise: Yup.array().min(1, 'Content is required').required('Required'),
+  content: Yup.array().min(1, 'Content is required').required('Required'),
+  preview: Yup.array().when(['content'], {
+    is: (content) => content.length > 0 && content[0].type.substr(0, content[0].type.lastIndexOf('/')) === 'video',
+    then: Yup.array().min(1).required('Required'),
   }),
-  preview: Yup.array()
-    .min(1, 'Image for preview is required'),
-    // .required('Required'),
   tags: Yup.array()
     .min(1)
     .required('Required'),
@@ -36,8 +33,8 @@ const artworkSchema = Yup.object().shape({
       .required('Required'),
   }),
   unlockStatus: Yup.boolean(),
-  unlockValue: Yup.string().when('unlockStatus', {
-    is: true,
+  unlockValue: Yup.string().when(['sale', 'unlockStatus'], {
+    is: (sale, unlockStatus) => sale && unlockStatus,
     then: Yup.string().required(),
     otherwise: Yup.string().nullable().notRequired().default(null),
   }),

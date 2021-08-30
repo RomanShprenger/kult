@@ -15,6 +15,7 @@ const FormArtworkStepOne = ({ values, errors, touched, setFieldValue }) => {
         className="form__dropzone form__dropzone--artwork"
         msg="Browse to choose a file"
       />
+      { errors.content ? (<div className="form__group-error">{errors.content}</div>) : null }
     </div>
     {
       isVideo && <div className="form__group form__group--preview">
@@ -29,6 +30,7 @@ const FormArtworkStepOne = ({ values, errors, touched, setFieldValue }) => {
           className="form__dropzone form__dropzone--artwork"
           msg="Browse to choose an image file for preview"
         />
+        { errors.preview ? (<div className="form__group-error">{errors.preview}</div>) : null }
       </div>
     }
     <div className="form__group form__group--title">

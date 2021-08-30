@@ -115,7 +115,6 @@ const FormDropzoneArtwork = ({
       }
     </div>
       {
-        errors[fieldName] && touched[fieldName] ? (<div className="form__group-error">{errors[fieldName]}</div>) : null,
         type === 'image' && thumb && value.length > 0 && (
           <div className="form-dropzone__preview">
             <div className="form-dropzone__preview-name">{value[0].name}</div>

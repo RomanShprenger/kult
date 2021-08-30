@@ -39,6 +39,11 @@ const FormNewArtwork = ({ initialValues, action }) => {
           </div>
         </div>
         <div className="artwork-new__step-container">
+          <div className={`artwork-new__errors artwork-new__errors--step-${values.step}`}>
+            {
+              Object.keys(errors).length > 0 && <div className="artwork-new__errors-msg">Some fields have validation errors. Fix them before submit</div>
+            }
+          </div>
           <div className="artwork-new__actions">
             <button
               type="reset"
