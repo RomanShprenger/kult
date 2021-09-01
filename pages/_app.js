@@ -24,6 +24,7 @@ import "styles/ChainInfo.scss";
 import "styles/Home.scss";
 import "styles/User.scss";
 import "styles/Connect.scss";
+import "styles/Explore.scss";
 import "styles/Artwork.scss";
 import "styles/ArtworkNew.scss";
 import "styles/Post.scss";

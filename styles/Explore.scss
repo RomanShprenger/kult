@@ -1,0 +1,206 @@
+@import 'variables';
+
+.explore {
+  &__artists {
+    font-family: NeueMachinaBold;
+    font-size: 16px;
+    line-height: 15px;
+    letter-spacing: 0.06em;
+    color: $white;
+  }
+  &__creators {
+    padding: 80px 0;
+    border-bottom: 1px solid $border;
+    &-list {
+      padding: 0;
+      margin: 24px 0 0;
+      list-style: none;
+      display: -webkit-box;
+      max-width: 100%;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-family: NeueMachina;
+      font-size: 58px;
+      line-height: 94px;
+      letter-spacing: -0.03em;
+      color: #8F8F8F;
+    }
+    &-item {
+      display: inline;
+    }
+    &-link {
+      text-decoration: none;
+      color: $white;
+      font-family: NeueMachina;
+      font-size: 58px;
+      line-height: 94px;
+      letter-spacing: -0.03em;
+      color: #8F8F8F;
+      &:hover {
+        color: $primary;
+        text-decoration: underline;
+      }
+    }
+    &-comma {
+      margin-right: 8px;
+    }
+  }
+  &__artworks {
+    border-bottom: 1px solid $border;
+    position: relative;
+    .swiper-container {
+      border-left: 1px solid $border;
+      border-right: 1px solid $border;
+    }
+    &:after {
+      content: '';
+      bottom: 32px;
+      right: 0;
+      left: 0;
+      display: block;
+      position: absolute;
+      border-bottom: 1px solid $border;
+    }
+    &-item {
+      display: flex;
+      flex-direction: column;
+      padding: 0 48px 48px;
+      margin-bottom: 32px;
+      position: relative;
+      &:before {
+        content: '';
+        bottom: -32px;
+        left: 0;
+        top: 0;
+        display: block;
+        position: absolute;
+        border-left: 1px solid $border;
+      }
+      &:after {
+        content: '';
+        bottom: -32px;
+        right: 0;
+        top: 0;
+        display: block;
+        position: absolute;
+        border-right: 1px solid $border;
+      }
+      &-header {
+        display: flex;
+        flex-direction: row;
+        padding: 24px 0;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &-avatar {
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          width: 100%;
+        }
+      }
+      &-user {
+        margin-left: 8px;
+        margin-right: auto;
+      }
+      &-name {
+        font-family: NeueMachinaBold;
+        font-size: 24px;
+        line-height: 23px;
+        letter-spacing: -0.02em;
+        text-transform: capitalize;
+        color: $white;
+        text-decoration: none;
+        margin-bottom: 4px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &-artworks {
+        font-family: NeueMachina;
+        font-size: 14px;
+        line-height: 14px;
+        color: #C4C4C4;
+      }
+      &-btn {
+        background-color: #272727;
+        color: $white;
+        font-family: NeueMachinaBold;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+        border: none;
+        border-radius: 200px;
+        text-transform: uppercase;
+        padding: 8px 20px;
+        margin-bottom: 16px;
+        &--following {
+          pointer-events: none;
+          padding: 8px;
+          font-size: 16px;
+        }
+      }
+      &-link {
+        background-position: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: block;
+        width: 100%;
+        padding-top: 100%;
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+  &__tags {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 80px 0;
+    width: 100%;
+    &-col {
+      flex: 1 0 50%;
+      max-width: 50%;
+    }
+    &-title {
+      font-family: NeueMachinaBold;
+      font-size: 72px;
+      line-height: 72px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: $white;
+      margin-bottom: 12px;
+    }
+    &-subtitle {
+      font-family: NeueMachinaBold;
+      font-size: 12px;
+      line-height: 12px;
+      letter-spacing: 0.06em;
+      color: $white;
+      margin-bottom: 16px;
+    }
+    &-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &-link {
+      text-decoration: none;
+      font-family: NeueMachina;
+      font-size: 34px;
+      line-height: 56px;
+      letter-spacing: -0.03em;
+      color: #4E4E4E;
+      margin-right: 12px;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}

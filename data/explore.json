@@ -1,0 +1,276 @@
+{
+  "creators": {
+    "count": 260,
+    "list": [{
+        "name": "Damien Hirst",
+        "nick": "damienhirst"
+      },
+      {
+        "name": "Maximilian Voss",
+        "nick": "maximilianvoss"
+      },
+      {
+        "name": "Damien Hirst",
+        "nick": "damienhirst"
+      },
+      {
+        "name": "Maximilian Voss",
+        "nick": "maximilianvoss"
+      },
+      {
+        "name": "Damien Hirst",
+        "nick": "damienhirst"
+      },
+      {
+        "name": "Maximilian Voss",
+        "nick": "maximilianvoss"
+      },
+      {
+        "name": "Damien Hirst",
+        "nick": "damienhirst"
+      },
+      {
+        "name": "Maximilian Voss",
+        "nick": "maximilianvoss"
+      },
+      {
+        "name": "Damien Hirst",
+        "nick": "damienhirst"
+      },
+      {
+        "name": "Maximilian Voss",
+        "nick": "maximilianvoss"
+      },
+      {
+        "name": "Damien Hirst",
+        "nick": "damienhirst"
+      },
+      {
+        "name": "Maximilian Voss",
+        "nick": "maximilianvoss"
+      },
+      {
+        "name": "Damien Hirst",
+        "nick": "damienhirst"
+      },
+      {
+        "name": "Maximilian Voss",
+        "nick": "maximilianvoss"
+      },
+      {
+        "name": "Damien Hirst",
+        "nick": "damienhirst"
+      },
+      {
+        "name": "Maximilian Voss",
+        "nick": "maximilianvoss"
+      },
+      {
+        "name": "Damien Hirst",
+        "nick": "damienhirst"
+      },
+      {
+        "name": "Maximilian Voss",
+        "nick": "maximilianvoss"
+      }
+    ]
+  },
+  "posts": [{
+      "author": {
+        "avatar": "/assets/owner1.png",
+        "name": "Damien Hirst",
+        "nick": "damienhirst",
+        "artworks": 25
+      },
+      "post": {
+        "slug": "some-beauty",
+        "image": "/assets/artwork-2.png"
+      }
+    },
+    {
+      "author": {
+        "avatar": "/assets/owner1.png",
+        "name": "Damien Hirst",
+        "nick": "damienhirst",
+        "artworks": 25
+      },
+      "post": {
+        "slug": "some-beauty",
+        "image": "/assets/artwork-2.png"
+      }
+    },
+    {
+      "author": {
+        "avatar": "/assets/owner1.png",
+        "name": "Damien Hirst",
+        "nick": "damienhirst",
+        "artworks": 25
+      },
+      "post": {
+        "slug": "some-beauty",
+        "image": "/assets/artwork-2.png"
+      }
+    },
+    {
+      "author": {
+        "avatar": "/assets/owner1.png",
+        "name": "Damien Hirst",
+        "nick": "damienhirst",
+        "artworks": 25
+      },
+      "post": {
+        "slug": "some-beauty",
+        "image": "/assets/artwork-2.png"
+      }
+    },
+    {
+      "author": {
+        "avatar": "/assets/owner1.png",
+        "name": "Damien Hirst",
+        "nick": "damienhirst",
+        "artworks": 25
+      },
+      "post": {
+        "slug": "some-beauty",
+        "image": "/assets/artwork-2.png"
+      }
+    }
+  ],
+  "popular": [{
+      "author": {
+        "avatar": "",
+        "name": "",
+        "nick": "",
+        "hash": "",
+        "verified": true,
+        "stats": {
+          "posts": 133,
+          "followers": 3200,
+          "following": 277
+        }
+      },
+      "posts": [{
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        }
+      ]
+    },
+    {
+      "author": {
+        "avatar": "",
+        "name": "",
+        "nick": "",
+        "hash": "",
+        "verified": true,
+        "stats": {
+          "posts": 133,
+          "followers": 3200,
+          "following": 277
+        }
+      },
+      "posts": [{
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        }
+      ]
+    },
+    {
+      "author": {
+        "avatar": "",
+        "name": "",
+        "nick": "",
+        "hash": "",
+        "verified": true,
+        "stats": {
+          "posts": 133,
+          "followers": 3200,
+          "following": 277
+        }
+      },
+      "posts": [{
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        },
+        {
+          "slug": "",
+          "image": "",
+          "name": "",
+          "price": 0.3
+        }
+      ]
+    }
+  ],
+  "tags": ["visual", "3D", "contemporary", "graphicdesign", "objects", "collectible", "network", "neon", "installations", "gif", "motion", "interactive"]
+}

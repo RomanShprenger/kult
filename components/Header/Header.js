@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const links = [
   { href: "/artwork/new", text: "Create", type: "bordered" },
-  { href: "#", text: "Explore", type: "bordered" },
+  { href: "/explore", text: "Explore", type: "bordered" },
   { href: "/connect", text: "Connect" }
 ]
 
