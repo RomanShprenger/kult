@@ -222,6 +222,10 @@
       font-family: NeueMachina;
       color: $white;
       margin: 0 8px;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       &-at {
         color: #666666;
       }
@@ -233,6 +237,10 @@
       color: $white;
       opacity: 0.4;
       cursor: pointer;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
   &__stats {
@@ -428,20 +436,34 @@
   }
   &--demo {
     justify-content: center;
+    width: 100%;
+    padding: 0 12px;
   }
   &--demo & {
     &__top {
       margin: 0;
     }
     &__avatar {
+      margin-bottom: 24px;
       &-img {
         height: 156px;
         width: 156px;
+        @media(max-width: 1919px) {
+          height: 104px;
+          width: 104px;
+        }
       }
+    }
+    &__links {
+      margin-bottom: 24px;
     }
     &__name {
       font-size: 48px;
       line-height: 48px;
+      @media(max-width: 1919px) {
+        font-size: 32px;
+        line-height: 32px;
+      }
     }
     &__ids {
       margin-top: 16px;
@@ -458,6 +480,9 @@
       }
       &-value {
         font-size: 34px;
+        @media(max-width: 1919px) {
+          font-size: 24px;
+        }
       }
       &-param {
         font-size: 14px;

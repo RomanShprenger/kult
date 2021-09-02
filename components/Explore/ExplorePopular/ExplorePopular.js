@@ -18,7 +18,7 @@ const ExplorePopular = ({ data }) => {
 
   const followHandler = (e) => {
     console.log(e);
-    setFollowed(true);
+    setFollowed(!followed);
   }
 
   return (

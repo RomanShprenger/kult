@@ -40,8 +40,9 @@ const Profile = ({ type, followHandler, avatar, verified, owner = false, followe
     contentEditable.current.focus();
   }
 
+  !owner && links.push(<a href="#" className="profile__links-item profile__links-item--follow" key="follow" onClick={handler}>{ follower ? "Unfollow" : "Follow" }</a>);
+
   if (!owner && socials.length >= 2) {
-    links.push(<a href="#" className="profile__links-item profile__links-item--follow" key="follow" onClick={handler}>{ follower ? "Unfollow" : "Follow" }</a>)
     hiddenLinks = socials.slice(2, socials.length);
     shownLinks = shownLinks.concat(socials.slice(0, 2));
   } else if (socials.length >= 3) {
