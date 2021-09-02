@@ -1,0 +1,16 @@
+{
+  "fields": [
+    {
+      "title": "Contempopary",
+      "value": "contemporary"
+    },
+    {
+      "title": "Digital",
+      "value": "digital"
+    },
+    {
+      "title": "Classic",
+      "value": "classic"
+    }
+  ]
+}

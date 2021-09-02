@@ -5,7 +5,7 @@ import copyClipboard from 'utils/copyClipboard';
 import {useDropzone} from 'react-dropzone';
 import { useState, useRef } from 'react';
 
-const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickname, name, hash, description, created, stats, socials, editable, dispatchChanges }) => {
+const Profile = ({ type, followHandler, avatar, verified, owner = false, follower, nickname, name, hash, description, created, stats, socials = [], editable = false, dispatchChanges }) => {
   let links = [];
   let shownLinks = [];
   let hiddenLinks = [];
@@ -104,20 +104,22 @@ const Profile = ({ type, followHandler, avatar, verified, owner, follower, nickn
         </div>
       </div>
     </div>
-    <div className="profile__bottom" onClick={event => event.stopPropagation()}>
-      { editable && <div className="profile__bottom-edit" onClick={changeDescription}>Edit</div> }
-      <ContentEditable
-        className="profile__description"
-        innerRef={contentEditable}
-        html={desc.html}
-        disabled={!editable}
-        onChange={(evt) => dispatchChanges({
-          type: "DESCRIPTION",
-          value: evt.target.value
-        })}
-      />
-      <div className="profile__created">Joined {moment(created).format("MMMM YYYY")}</div>
-    </div>
+    {
+      type !== 'demo' && <div className="profile__bottom" onClick={event => event.stopPropagation()}>
+        { editable && <div className="profile__bottom-edit" onClick={changeDescription}>Edit</div> }
+        <ContentEditable
+          className="profile__description"
+          innerRef={contentEditable}
+          html={desc.html}
+          disabled={!editable}
+          onChange={(evt) => dispatchChanges({
+            type: "DESCRIPTION",
+            value: evt.target.value
+          })}
+        />
+        <div className="profile__created">Joined {moment(created).format("MMMM YYYY")}</div>
+      </div>
+    }
   </div>
 }
 

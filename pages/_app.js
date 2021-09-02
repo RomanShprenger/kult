@@ -7,6 +7,7 @@ import "styles/BidList.scss";
 import "styles/Header.scss";
 import "styles/Form.scss";
 import "styles/Dropdown.scss";
+import "styles/SelectDropdown.scss";
 import "styles/Modal.scss";
 import "styles/PostActions.scss";
 import "styles/PostHeader.scss";

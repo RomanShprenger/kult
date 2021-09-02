@@ -1,6 +1,92 @@
 @import 'variables';
 
 .explore {
+  &__form {
+    border-bottom: 1px solid $border;
+    padding: 40px 0 8px;
+    &-title {
+      font-family: NeueMachinaBold;
+      font-size: 16px;
+      line-height: 15px;
+      letter-spacing: 0.06em;
+      color: $white;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    &-field {
+      border-bottom: 1px solid $border;
+      position: relative;
+      padding-left: 68px;
+      margin-bottom: 24px;
+      &-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #00FF00;
+        font-size: 56px;
+        line-height: 82px;
+      }
+    }
+    &-input {
+      font-family: NeueMachinaBold;
+      font-size: 72px;
+      line-height: 98px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: $white;
+      background-color: transparent;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: $white;
+        opacity: 0.1;
+      }
+    }
+    &-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    &-filter {
+      margin-right: 16px;
+      margin-bottom: 16px;
+    }
+    &-tags {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 16px;
+      &-label {
+        text-transform: uppercase;
+        font-family: NeueMachinaBold;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: 0.06em;
+        margin-right: 16px;
+      }
+      &-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      &-link {
+        border: 1px solid $border;
+        border-radius: 200px;
+        color: $white;
+        padding: 8px 24px 6px;
+        text-transform: uppercase;
+        font-family: NeueMachinaBold;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        margin-right: 16px;
+      }
+    }
+  }
   &__artists {
     font-family: NeueMachinaBold;
     font-size: 16px;
@@ -8,9 +94,27 @@
     letter-spacing: 0.06em;
     color: $white;
   }
+  &__title {
+    margin: 32px 0;
+  }
+  &__toggle {
+    margin: 16px 0 64px;
+    &-btn {
+      border: 1px solid #383838;
+      background-color: $black;
+      padding: 8px 24px;
+      text-transform: uppercase;
+      color: $white;
+      border-radius: 200px;
+      font-family: NeueMachinaBold;
+      font-size: 12px;
+      line-height: 12px;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+    }
+  }
   &__creators {
-    padding: 80px 0;
-    border-bottom: 1px solid $border;
+    padding-top: 80px;
     &-list {
       padding: 0;
       margin: 24px 0 0;
@@ -47,6 +151,7 @@
     }
   }
   &__artworks {
+    border-top: 1px solid $border;
     border-bottom: 1px solid $border;
     position: relative;
     .swiper-container {
@@ -155,6 +260,106 @@
         img {
           display: none;
         }
+      }
+    }
+  }
+  &__popular {
+    &-title {
+      font-family: NeueMachinaBold;
+      font-size: 72px;
+      line-height: 72px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: $white;
+      margin-bottom: 12px;
+    }
+    &-list {
+      border-top: 1px solid $border;
+      border-bottom: 1px solid $border;
+      position: relative;
+      &:before {
+        content: '';
+        bottom: 0;
+        left: 36px;
+        top: 0;
+        display: block;
+        position: absolute;
+        border-left: 1px solid $border;
+      }
+      &:after {
+        content: '';
+        bottom: 0;
+        right: 36px;
+        top: 0;
+        display: block;
+        position: absolute;
+        border-right: 1px solid $border;
+      }
+    }
+    &-item {
+      display: flex;
+      flex-direction: row;
+      &-wrapper {
+        border-top: 1px solid $border;
+        border-bottom: 1px solid $border;
+        margin: 36px 0;
+        position: relative;
+        &:before {
+          content: '';
+          left: 25%;
+          top: -36px;
+          bottom: -36px;
+          position: absolute;
+          border-left: 1px solid $border;
+        }
+      }
+    }
+    &-author {
+      flex: 1 0 25%;
+      max-width: 25%;
+    }
+    &-works {
+      flex: 1 0 75%;
+      max-width: 75%;
+    }
+    &-artwork {
+      padding: 36px 18px;
+      &-link {
+        display: block;
+        text-decoration: none;
+      }
+      &-image {
+        display: block;
+        padding-top: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        margin-bottom: 32px;
+        img {
+          display: none;
+        }
+      }
+      &-name {
+        display: block;
+        font-family: NeueMachinaBold;
+        font-size: 34px;
+        line-height: 33px;
+        letter-spacing: -0.02em;
+        text-transform: capitalize;
+        color: $white;
+        margin-bottom: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      &-price {
+        display: block;
+        font-family: NeueMachinaUltraLight;
+        font-size: 20px;
+        line-height: 19px;
+        letter-spacing: -0.05em;
+        color: $white;
+        opacity: 0.5;
       }
     }
   }

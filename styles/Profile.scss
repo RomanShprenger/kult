@@ -426,4 +426,42 @@
       }
     }
   }
+  &--demo {
+    justify-content: center;
+  }
+  &--demo & {
+    &__top {
+      margin: 0;
+    }
+    &__avatar {
+      &-img {
+        height: 156px;
+        width: 156px;
+      }
+    }
+    &__name {
+      font-size: 48px;
+      line-height: 48px;
+    }
+    &__ids {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      &-nickname, &-hash {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+    }
+    &__stats {
+      &-item {
+        margin: 0 16px;
+      }
+      &-value {
+        font-size: 34px;
+      }
+      &-param {
+        font-size: 14px;
+      }
+    }
+  }
 }

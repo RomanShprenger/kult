@@ -1,9 +1,6 @@
-import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 
 const Dropdown = ({ list = [], classList, wrapperClasses, title }) => {
-  // list = [{ name: '', link: '' }]
-
   const dropdownRef = useRef(null);
   const [open, setOpen] = useState(false);
 
