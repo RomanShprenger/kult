@@ -16,11 +16,21 @@
     font-size: 12px;
     line-height: 12px;
     letter-spacing: 0.06em;
+    @media(max-width: 1023px) {
+      padding: 8px 32px 6px 16px;
+    }
+    @media(max-width: 767px) {
+      width: 100%;
+      text-align: left;
+    }
     .icon {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       right: 16px;
+      @media(max-width: 1023px) {
+        right: 12px;
+      }
     }
   }
   &__list {
@@ -36,6 +46,7 @@
     background-color: $black;
     border-radius: 15px;
     border: 1px solid $border;
+    z-index: 1;
     &-item {
       padding: 12px;
       text-align: center;

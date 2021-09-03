@@ -46,7 +46,7 @@ function Explore({ creators, posts, popular, tags }) {
             <div className="explore__popular-list">
               {
                 popular.slice(0,2).map((item, i) => (
-                  <ExplorePopular data={item} key={i} />
+                  <ExplorePopular data={item} index={i} key={i} />
                 ))
               }
             </div>
@@ -58,7 +58,7 @@ function Explore({ creators, posts, popular, tags }) {
             <div className="explore__popular-list">
               {
                 popular.slice(2).map((item, i) => (
-                  <ExplorePopular data={item} key={i} />
+                  <ExplorePopular data={item} index={i + 2} key={i} />
                 ))
               }
             </div>

@@ -438,13 +438,25 @@
     justify-content: center;
     width: 100%;
     padding: 0 12px;
+    @media(max-width: 1365px) {
+      padding: 24px 12px;
+    }
   }
   &--demo & {
     &__top {
       margin: 0;
     }
+    &__middle {
+      width: 100%;
+    }
     &__avatar {
       margin-bottom: 24px;
+      @media(max-width: 1365px) {
+        margin-bottom: 18px;
+      }
+      @media(max-width: 767px) {
+        margin-bottom: 32px;
+      }
       &-img {
         height: 156px;
         width: 156px;
@@ -456,6 +468,12 @@
     }
     &__links {
       margin-bottom: 24px;
+      @media(max-width: 1365px) {
+        margin-bottom: 18px;
+      }
+      @media(max-width: 767px) {
+        margin-bottom: 36px;
+      }
     }
     &__name {
       font-size: 48px;
@@ -464,28 +482,61 @@
         font-size: 32px;
         line-height: 32px;
       }
+      @media(min-width: 767px) and (max-width: 1365px) {
+        font-size: 24px;
+        line-height: 24px;
+      }
     }
     &__ids {
       margin-top: 16px;
       margin-bottom: 16px;
       flex-wrap: wrap;
+      @media(max-width: 1365px) {
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+      @media(max-width: 767px) {
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
       &-nickname, &-hash {
         font-size: 20px;
         margin-bottom: 8px;
+        @media(max-width: 1919px) {
+          font-size: 16px;
+        }
       }
     }
     &__stats {
+      @media(min-width: 768px) and (max-width: 1365px) {
+        flex-wrap: wrap;
+      }
+      @media(max-width: 767px) {
+        margin-bottom: 40px;
+      }
       &-item {
         margin: 0 16px;
+        @media(max-width: 1365px) {
+          margin: 0 8px 8px;
+        }
+        @media(max-width: 767px) {
+          margin: 0 8px;
+        }
       }
       &-value {
         font-size: 34px;
         @media(max-width: 1919px) {
           font-size: 24px;
         }
+        @media(max-width: 767px) {
+          margin-bottom: 8px;
+        }
       }
       &-param {
         font-size: 14px;
+        @media(max-width: 767px) {
+          font-size: 12px;
+        }
       }
     }
   }
