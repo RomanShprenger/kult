@@ -10,7 +10,7 @@ import SwiperCore, { Pagination } from "swiper/core";
 
 SwiperCore.use([Pagination]);
 
-const ExploreArtworks = ({ posts }) => {
+const ExploreArtworks = ({ posts, showHelper }) => {
   const [swiperRef, setSwiperRef] = useState(null);
 
   const pagination = {
@@ -47,7 +47,7 @@ const ExploreArtworks = ({ posts }) => {
         {
           posts.map(({ author, post }, i) => (
             <SwiperSlide key={i}>
-              <ExploreArtworksItem author={author} post={post} />
+              <ExploreArtworksItem author={author} post={post} showHelper={i === 2 && showHelper} />
             </SwiperSlide>
           ))
         }

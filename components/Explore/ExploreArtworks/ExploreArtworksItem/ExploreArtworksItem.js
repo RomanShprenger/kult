@@ -1,7 +1,8 @@
 import { useState } from "react";
+import ExploreDragHelper from 'components/Explore/ExploreDragHelper';
 import Link from 'next/link';
 
-const ExploreArtworksItem = ({ author, post }) => {
+const ExploreArtworksItem = ({ author, post, showHelper }) => {
   const [follow, setFollow] = useState(false);
 
   const action = (nick) => {
@@ -36,6 +37,7 @@ const ExploreArtworksItem = ({ author, post }) => {
           </a>
         </Link>
       </div>
+      {showHelper && <ExploreDragHelper className="explore__artworks-item-drag" />}
     </div>
   )
 }

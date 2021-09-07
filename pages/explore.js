@@ -36,7 +36,7 @@ function Explore({ creators, posts, popular, tags }) {
       ) : (
         <>
           {/* Artworks */}
-          <ExploreArtworks posts={posts} />
+          <ExploreArtworks posts={posts} showHelper={true} />
           {/* Popular */}
           <div className="explore__title">
             <div className="container">
@@ -48,7 +48,7 @@ function Explore({ creators, posts, popular, tags }) {
             <div className="explore__popular-list">
               {
                 popular.slice(0,2).map((item, i) => (
-                  <ExplorePopular data={item} index={i} key={i} />
+                  <ExplorePopular data={item} index={i} key={i} showHelper={i === 0 && true} />
                 ))
               }
             </div>

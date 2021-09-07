@@ -11,7 +11,7 @@ import SwiperCore, { Pagination } from "swiper/core";
 
 SwiperCore.use([Pagination]);
 
-const ExplorePopular = ({ data, index }) => {
+const ExplorePopular = ({ data, index, showHelper }) => {
   const { author, posts } = data;
 
   const [swiperRef, setSwiperRef] = useState(null);
@@ -71,7 +71,7 @@ const ExplorePopular = ({ data, index }) => {
             {
               posts.map((post, i) => (
                 <SwiperSlide key={i}>
-                  <ExplorePopularArtwork post={post} />
+                  <ExplorePopularArtwork post={post} showHelper={i === 0 && showHelper} />
                 </SwiperSlide>
               ))
             }
