@@ -737,9 +737,11 @@
     }
     &-item {
       position: relative;
-      padding: 8px 0 8px 80px;
+      padding-left: 80px;
+      margin-bottom: 16px;
       @media(max-width: 767px) {
-        padding: 8px 0;
+        padding: 0;
+        margin-bottom: 16px;
         &[data-letter] {
           padding-top: 64px;
         }
