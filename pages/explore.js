@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExploreArtworks, ExploreTags, ExplorePopular, ExploreCreators } from "components/Explore";
+import { ExploreArtworks, ExploreTags, ExplorePopular, ExploreCreators, ExploreAlphabet } from "components/Explore";
 import { FormExplore } from 'components/Forms';
 import exploreData from 'data/explore.json';
 
@@ -30,7 +30,9 @@ function Explore({ creators, posts, popular, tags }) {
     </div>
     {
       showCreators ? (
-        <></>
+        <>
+          <ExploreAlphabet />
+        </>
       ) : (
         <>
           {/* Artworks */}
