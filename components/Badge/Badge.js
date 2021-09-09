@@ -16,6 +16,20 @@ const Badge = ({ imgUrl = '', nick = '', hash = '', text = '', bid = "", type = 
           </a>
         </Link>
       )
+    case "heading-hash":
+      return (
+        <Link href={`/user/${nick}`}>
+          <a className="badge badge--heading-nick">
+            <span className="badge__photo">
+              <img src={imgUrl} alt="author photo" />
+            </span>
+            <span className="badge__text">
+              <span className="badge__heading">{text}</span>
+            <span className="badge__nickname"><span className="at">@</span>{hash}</span>
+            </span>
+          </a>
+        </Link>
+      )
     case "nick-hash":
       return (
         <Link href={`/user/${nick}`}>
@@ -40,6 +54,20 @@ const Badge = ({ imgUrl = '', nick = '', hash = '', text = '', bid = "", type = 
             <span className="badge__text">
               <span className="badge__hash"><span className="at">@</span>{hash}</span>
               <span className="badge__bid">{bid}</span>
+            </span>
+          </a>
+        </Link>
+      )
+    case "hash-date":
+      return (
+        <Link href={`/user/${nick}`}>
+          <a className="badge badge--hash-date">
+            <span className="badge__photo">
+              <img src={imgUrl} alt="author photo" />
+            </span>
+            <span className="badge__text">
+              <span className="badge__hash"><span className="at">@</span>{hash}</span>
+              <span className="badge__date">{text}</span>
             </span>
           </a>
         </Link>

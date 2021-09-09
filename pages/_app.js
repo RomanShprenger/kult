@@ -28,6 +28,7 @@ import "styles/Connect.scss";
 import "styles/Explore.scss";
 import "styles/Artwork.scss";
 import "styles/ArtworkNew.scss";
+import "styles/BidNew.scss";
 import "styles/Post.scss";
 
 export default function MyApp({ Component, pageProps }) {

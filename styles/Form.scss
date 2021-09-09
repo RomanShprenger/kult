@@ -81,7 +81,39 @@
         padding-bottom: 128px;
       }
     }
-
+    &--bid {
+      &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 32px;
+        height: 84px;
+        border-left: 2px solid $border;
+        @media(max-width: 767px) {
+          top: 21px;
+          height: 58px;
+        }
+      }
+      &:after {
+        content: 'ETH';
+        position: absolute;
+        left: calc(50% + 32px);
+        top: 44px;
+        font-family: NeueMachinaBold;
+        font-size: 80px;
+        line-height: 77px;
+        letter-spacing: -0.05em;
+        color: $border;
+        @media(max-width: 767px) {
+          font-size: 36px;
+          line-height: 35px;
+          top: 36px;
+        }
+      }
+    }
+    &--bid &-error {
+      text-align: center;
+    }
     &-sale {
       margin-bottom: 0;
     }
@@ -231,6 +263,23 @@
       }
       &--currency {
         width: 100px;
+      }
+    }
+    &--bid {
+      padding-right: calc(50% + 32px);
+      padding-top: 24px;
+      height: 150px;
+      text-align: right;
+      font-family: NeueMachinaBold;
+      font-size: 80px;
+      line-height: 77px;
+      letter-spacing: -0.05em;
+      color: $primary;
+      @media(max-width: 767px) {
+        height: 104px;
+        font-size: 36px;
+        line-height: 35px;
+        padding-top: 12px;
       }
     }
   }

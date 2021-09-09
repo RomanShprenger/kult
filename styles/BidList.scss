@@ -1,3 +1,5 @@
+@import 'variables';
+
 .bid-list {
   margin: 0;
   list-style: none;
@@ -13,5 +15,36 @@
     &:last-child {
       margin-bottom: 0;
     }
+    &-price {
+      text-align: right;
+      &-eth {
+        font-family: NeueMachinaBold;
+        font-size: 16px;
+        line-height: 15px;
+        letter-spacing: -0.05em;
+        color: $white;
+        margin-bottom: 4px;
+      }
+      &-usd {
+        font-family: NeueMachina;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: -0.05em;
+        color: $white;
+        opacity: 0.4;
+      }
+    }
+  }
+  &--bid {
+    border-top: 1px solid $border;
+  }
+  &--bid &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 24px 0;
+    border-bottom: 1px solid $border;
   }
 }

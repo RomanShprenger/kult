@@ -30,7 +30,9 @@ const renderArt = (data) => (
           <PostActions type="small" cbLike={() => console.log("Like")} cbComment={() => console.log("Comment")} cbShare={() => console.log("Share")} />
           <div className="grid__item-bidin">
             <div className="grid__item-price">{priceFormat(data.price)} ETH</div>
-            <button className="grid__item-btn grid__item-btn--bid">Bid in</button>
+            <Link href={`/bid/new?id=${data.slug}`}>
+              <a className="grid__item-btn grid__item-btn--bid">Bid in</a>
+            </Link>
           </div>
         </div>
         <div className="grid__item-post">

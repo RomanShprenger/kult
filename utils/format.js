@@ -1,5 +1,5 @@
 export function priceFormat (price) {
-  return new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2 }).format(price)
+  return new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(price)
 }
 
 export function fileSizeFormat (fileSize) {

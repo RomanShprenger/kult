@@ -35,7 +35,7 @@ const UserBidsItem = ({ owner, others, min_bid: minBid, last_bid: lastBid, image
               <div className="user-bids__item-footer-bid-usd">${priceFormat(lastBid.bid.usd)}</div>
               <div className="user-bids__item-footer-bid-user">
                 <div className="user-bids__item-footer-bid-avatar">
-                  <img src={lastBid.avatar} alt="Last bid user photo"/>
+                  <img src={lastBid.avatar} alt="Last bid user photo" />
                 </div>
                 <div className="user-bids__item-footer-bid-hash"><span className="at">@</span> {lastBid.hash}</div>
               </div>
@@ -50,7 +50,9 @@ const UserBidsItem = ({ owner, others, min_bid: minBid, last_bid: lastBid, image
               </>
               :
               <>
-                <button className="user-bids__item-footer-btn" onClick={() => {console.log("BID")}}>Bid In</button>
+                <Link href={`/bid/new?id=${slug}`}>
+                  <a className="user-bids__item-footer-btn">Bid In</a>
+                </Link>
                 <span className="user-bids__item-footer-note">Minimum bid: {bid.eth} ETH</span>
               </>
             }

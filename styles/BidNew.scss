@@ -1,0 +1,172 @@
+@import 'variables';
+
+.bid-new {
+  max-width: 768px;
+  margin: 80px auto;
+  padding: 0 16px;
+  @media(max-width: 767px) {
+    margin: 16px auto 80px;
+  }
+  &__heading {
+    font-family: NeueMachinaBold;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.06em;
+    color: $white;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  &__title {
+    font-family: NeueMachinaBold;
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: $primary;
+    margin-bottom: 48px;
+    @media(max-width: 767px) {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+  &__artwork {
+    padding: 0 36px;
+    border: 1px solid #1E1E1E;
+    margin-bottom: 56px;
+    @media(max-width: 767px) {
+      padding: 0 16px;
+      margin-bottom: 32px;
+    }
+    &-header {
+      margin: 16px 0;
+    }
+    &-img {
+      padding-top: 37%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      @media(max-width: 767px) {
+        padding-top: 51%;
+      }
+      img {
+        display: none;
+      }
+    }
+    &-title {
+      font-family: NeueMachinaBold;
+      font-size: 50px;
+      line-height: 50px;
+      color: $white;
+      margin: 24px 0 48px;
+      @media(max-width: 767px) {
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
+  }
+  &__form {
+    margin-bottom: 80px;
+    &-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      @media(max-width: 767px) {
+        flex-direction: column;
+      }
+    }
+    &-col {
+      display: flex;
+      flex-direction: column;
+    }
+    &-note {
+      font-family: NeueMachinaBold;
+      font-size: 12px;
+      line-height: 12px;
+      letter-spacing: 0.06em;
+      color: $white;
+      margin-bottom: 12px;
+      span {
+        opacity: 0.4;
+      }
+    }
+    &-rate {
+      font-family: NeueMachinaUltraLight;
+      font-size: 24px;
+      line-height: 23px;
+      text-align: right;
+      letter-spacing: -0.05em;
+      color: $white;
+      opacity: 0.5;
+      margin-bottom: 16px;
+      @media(max-width: 767px) {
+        text-align: center;
+      }
+      &-wrapper {
+        @media(max-width: 767px) {
+          margin-top: 48px;
+          padding: 24px 12px;
+          background-color: #0D0D0D;
+        }
+      }
+    }
+    &-instruction {
+      font-family: NeueMachina;
+      font-size: 12px;
+      line-height: 12px;
+      text-align: right;
+      letter-spacing: 0.06em;
+      color: $white;
+      @media(max-width: 767px) {
+        text-align: center;
+      }
+      &-link {
+        margin-top: 8px;
+        text-decoration: none;
+        color: $primary;
+        display: inline-block;
+      }
+    }
+  }
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    margin: 48px -16px 0;
+    @media(max-width: 767px) {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0 -8px;
+      padding: 16px;
+      background-color: $black;
+      border-top: 1px solid $border;
+      z-index: 1;
+    }
+    &-btn {
+      flex: 1 0;
+      margin: 0 16px;
+      border: 1px solid #595959;
+      box-sizing: border-box;
+      border-radius: 200px;
+      padding: 14px 12px 10px;
+      font-family: NeueMachinaBold;
+      font-size: 24px;
+      line-height: 23px;
+      text-align: center;
+      letter-spacing: 0.06em;
+      color: $white;
+      background-color: transparent;
+      cursor: pointer;
+      @media(max-width: 767px) {
+        margin: 0 8px;
+        font-size: 12px;
+        line-height: 11px;
+        padding: 8px 0 6px;
+      }
+      &--submit {
+        color: $black;
+        background-color: $primary;
+      }
+    }
+  }
+}

@@ -246,6 +246,14 @@
       @media(max-width: 1023px) {
         width: 36px;
         height: 36px;
+        position: absolute;
+        top: -36px;
+        &--left {
+          left: 0;
+        }
+        &--right {
+          right: 0;
+        }
       }
     }
   }
@@ -350,6 +358,7 @@
       text-transform: uppercase;
       border: none;
       cursor: pointer;
+      text-decoration: none;
       @media(max-width: 767px) {
         height: 36px;
         font-size: 14px;

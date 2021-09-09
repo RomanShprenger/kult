@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Badge from 'components/Badge';
 import { priceFormat } from "utils/format";
 
-const Owner = ({ price, auction, owner }) => {
+const Owner = ({ price, auction, owner, slug }) => {
 
   const columnOne = (title, price) => {
     return <>
@@ -24,7 +24,7 @@ const Owner = ({ price, auction, owner }) => {
      {
         auction.active ? (
           <div className="owner__auction">
-            <Link href={`/bidin`}>
+            <Link href={`/bid/new?id=${slug}`}>
               <a className="btn btn--bid owner__auction-btn">Bid in</a>
             </Link>
             <div className="owner__auction-min">Minimum bid {priceFormat(auction.min_bid)} ETH</div>

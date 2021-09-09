@@ -36,7 +36,9 @@ const UserFeedArtwork= ({ owner, name, nickname, hash, avatar, title, imageUrl, 
         <div className="user-feed-item__footer-actions">
           {
             feedType !== 'collection' &&
-            <button className="user-feed-item__footer-btn" onClick={() => {console.log("BID")}}>Bid now</button>
+            <Link href={`/bid/new?id=${slug}`}>
+              <a className="user-feed-item__footer-btn">Bid now</a>
+            </Link>
           }
           <div className="user-feed-item__footer-actions-wrapper">
             <PostActions cbLike={() => console.log("like")} liked={liked} />
@@ -58,6 +60,7 @@ const UserFeedArtwork= ({ owner, name, nickname, hash, avatar, title, imageUrl, 
             photo: avatar,
             hash: hash
           }}
+          slug={slug}
         />
       </div>
     }

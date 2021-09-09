@@ -123,7 +123,9 @@ export default function Slider({ data }) {
                       </Link>
                       <div className="slider__item-buy item__buy">
                         <div className="item__buy-price">{price}</div>
-                        <button type="button" className="item__buy-btn">bid in</button>
+                        <Link href={`/bid/new?id=${slug}`}>
+                          <a className="item__buy-btn">bid in</a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -138,7 +140,7 @@ export default function Slider({ data }) {
         <button onClick={() => slide("left")} className="slider__nav-btn slider__nav-btn--left">
           <i className="icon icon-arrow-left"></i>
         </button>
-        <button onClick={() => slide("right")} className="slider__nav-btn slider__nav-btn--left">
+        <button onClick={() => slide("right")} className="slider__nav-btn slider__nav-btn--right">
           <i className="icon icon-arrow-right"></i>
         </button>
       </div>

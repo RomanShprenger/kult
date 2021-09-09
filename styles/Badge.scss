@@ -67,4 +67,12 @@
     letter-spacing: -0.05em;
     color: $white;
   }
+  &__date {
+    margin-top: 8px;
+    font-family: NeueMachina;
+    font-size: 10px;
+    line-height: 10px;letter-spacing: -0.05em;
+    color: $white;
+    opacity: 0.4;
+  }
 }

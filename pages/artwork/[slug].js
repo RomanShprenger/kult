@@ -11,7 +11,9 @@ import {
   Owner
 } from 'components/ArtworkBlocks';
 
-const Artwork = ({ data }) => {
+import artworkData from 'data/artwork.json';
+
+const Artwork = ({ data, slug }) => {
   const {
     assets,
     title,
@@ -96,7 +98,7 @@ const Artwork = ({ data }) => {
         { auction.active ? (
           <>
             <div className="artwork__slider-auction-title">Current bids</div>
-            <BidList data={bids} />
+            <BidList data={bids} type="hash-bid"/>
           </>
         ) : (
           <>
@@ -115,7 +117,9 @@ const Artwork = ({ data }) => {
           { auction.active === false ? priceFormat(price.eth) : priceFormat(auction.last_bid.eth) } ETH
         </div>
         {
-          auction.active && (<button className="btn btn--bid artwork__slider-price-btn">Bid in</button>)
+          auction.active && (<Link href={`/bid/new?id=${slug}`}>
+            <a className="btn btn--bid artwork__slider-price-btn">Bid in</a>
+          </Link>)
         }
       </div>
     </div>
@@ -151,131 +155,7 @@ export async function getServerSideProps({ query }) {
   // const data = await res.json()
 
   // Схема запроса
-  const data = {
-    "title": "abstract horizons sunset on the mountains",
-    "description": 'The "New World" is a map of the world, and, apparently, it is a version of an entirely new world with incomprehensible borders, where all the territories are covered with flowers.',
-    "assets": [
-      "/assets/artwork-1.png",
-      "/assets/artwork-2.png",
-      "/assets/artwork-3.png"
-    ],
-    indexes: {
-      all: 100,
-      current: 4
-    },
-    prev_slug: "flora_of_my_planet",
-    next_slug: "some_next_project",
-    "unlockable": {
-      "status": true,
-      "content": "The piece of art was created by PPSS group - collaboration between Pavel Pepperstein and Sonya Stereostyrski. <a href='https://en.wikipedia.org/wiki/Pavel_Pepperstein' target='_blank'>https://en.wikipedia.org/wiki/Pavel_Pepperstein</a>"
-    },
-    "tags": ["Visual", "3D", "Contemporary", "GraphicDesign", "Objects", "Collectible", "Network", "Neon", "Installations", "GIF", "Motion", "Interactive"],
-    "categories": ["visual design"],
-    "auction": {
-      "active": true,
-      "last_bid": {
-        "eth": 2,
-        "usd": 1464.26
-      },
-      "min_bid": 2.1
-    },
-    "activity": [
-      {
-        "event": "Bid placed",
-        "hash": "0x3d816...a35c",
-        "photo": "/assets/author-1x1.png",
-        "date": 1621430820, // timestamp
-        "bid": {
-          "eth": 2,
-          "usd": 1464.26
-        }
-      },
-      {
-        "event": "Listed by",
-        "hash": "0x3d816...a35c",
-        "photo": "/assets/author-1x1.png",
-        "date": 1621430820,
-        "bid": {
-          "eth": 2,
-          "usd": 1464.26
-        }
-      },
-      {
-        "event": "Reserve Changed",
-        "hash": "0x3d816...a35c",
-        "photo": "/assets/author-1x1.png",
-        "date": 1621430820,
-        "bid": {
-          "eth": 2,
-          "usd": 1464.26
-        }
-      },
-      {
-        "event": "Bid placed",
-        "hash": "0x3d816...a35c",
-        "photo": "/assets/author-1x1.png",
-        "date": 1621430820,
-        "bid": {
-          "eth": 0.5,
-          "usd": 366.07
-        }
-      }
-    ],
-    "creator": {
-      "photo": "/assets/author-1x1.png",
-      "hash": "0x3d816...a34c",
-      "nickname": "Solitude"
-    },
-    "owner": {
-      "photo": "/assets/author-1x1.png",
-      "hash": "0x3d816...a35c",
-      "nickname": "Kult_Collection",
-      "date": 1621430820, // timestamp, когда работа была куплена
-      "bid": { // цена, за которую работа была куплена
-        "eth": 3,
-        "usd": 1464.26
-      },
-    },
-    "price": {
-      "eth": 3,
-      "usd": 1464.26
-    },
-    "chainInfo": [
-      {
-        "key": "etherscan",
-        "text": "View on Etherscan",
-      },
-      {
-        "key": "ipfs",
-        "text": "View on IPFS",
-      },
-      {
-        "key": "opensea",
-        "text": "View on Opensea",
-      }
-    ],
-    "bids": [
-      {
-        "nickname": "/",
-        "photo": "/assets/author-1x1.png",
-        "hash": "M329X...0X531",
-        "bid": 0.5,
-      },
-      {
-        "nickname": "/",
-        "photo": "/assets/author-1x1.png",
-        "hash": "M329X...0X532",
-        "bid": 2,
-      },
-      {
-        "nickname": "/",
-        "photo": "/assets/author-1x1.png",
-        "hash": "M329X...0X533",
-        "bid": 1,
-      }
-    ],
-    "meta": `{"name":"Bitwise Archetypes: CHILD ","description":"ESFP\n\n#1 in a series of 16 Archetypes\n\n“77. Even a highly differentiated consciousness has not by any means finished with CHILDISH things”\n\nA collaboration between IX SHELLS and KAI. Drawing on a lifetime of influences, from Carl Jung to the I CHING.  From Afro-Caribbean masks to Goethe's Theory of Colors. The Archetypes represent the conscious architectures that unite us as a single being of many people.\n\nSound design remixed from ByteBeat #169\n\nCollection also found at: foundation.app/kaigani\n","image":"ipfs://QmbENPncVeBBfxW2UEQdU5DUQdhtm6aR58ps1kEEJrqJZn/nft.mp4"}`
-  }
+  const data = artworkData;
 
   if (!data) {
     return {
@@ -285,7 +165,8 @@ export async function getServerSideProps({ query }) {
 
   return {
     props: {
-      data
+      data,
+      slug
     },
   }
 }
