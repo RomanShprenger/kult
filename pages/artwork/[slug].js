@@ -129,7 +129,7 @@ const Artwork = ({ data, slug }) => {
           <Info creator={creator} title={title} description={description} unlockable={unlockable} tags={tags} categories={categories} />
         </div>
         <div className="artwork__grid-cell">
-          <Owner price={price} auction={auction} owner={owner} />
+          <Owner price={price} auction={auction} owner={owner} slug={slug} />
         </div>
       </div>
       <div className="artwork__grid-column">

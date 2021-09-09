@@ -16,7 +16,6 @@ const BidList = ({ data, format='default', type, rate }) => {
 
   const badge = (type, item) => {
     let res = null;
-    console.log(item);
     switch (type) {
       case "hash-date":
         res = <Badge type="hash-date" nick={item.nickname} imgUrl={item.photo} hash={item.hash} text={moment(item.date).format("MMM DD, YYYY [at] LT")} />

@@ -109,14 +109,14 @@ const renderTags = (data) => (
     <div className="grid__item-title">Popular tags</div>
     <div className="grid__item-tags">
       { data.tags.map(tag => (
-        <Link href="/" key={tag}>
+        <Link href={`/explore?tag=${tag}`} key={tag}>
           <a className="grid__item-tag-link">
             {"#" + tag.charAt(0).toUpperCase() + tag.slice(1)}
           </a>
         </Link>
       ))}
     </div>
-    <Link href="/">
+    <Link href="/explore">
       <a className="grid__item-explore"><i className="icon icon-explore"></i> Explore</a>
     </Link>
   </div>

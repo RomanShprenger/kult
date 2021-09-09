@@ -19,7 +19,7 @@
     }
   }
   &__categroies {
-    margin: 0 0 2.5vw;
+    margin: 0 0 36px;
     padding: 0;
     list-style: none;
     @media(max-width: 767px) {
@@ -27,17 +27,18 @@
     }
     &-item {
       font-family: NeueMachinaBold;
-      font-size: 0.625vw;
-      line-height: 0.625vw;
+      font-size: 12px;
+      line-height: 11px;
       letter-spacing: 0.06em;
       color: $white;
       text-transform: uppercase;
       display: inline-block;
-      padding: 0.416vw 0.625vw;
+      padding: 11px 16px 6px;
       border: 1px solid $border;
       border-radius: 200px;
       margin-right: 8px;
-      height: 1.4vw;
+      height: 32px;
+      margin-bottom: 12px;
       @media(max-width: 767px) {
         height: 27px;
         font-size: 12px;
@@ -47,8 +48,13 @@
       }
       &--unlockable {
         position: relative;
+        padding-left: 36px;
         .icon {
-          color: $primary
+          color: $primary;
+          position: absolute;
+          left: 16px;
+          top: 50%;
+          transform: translateY(-50%);
         }
       }
     }
