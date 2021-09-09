@@ -73,6 +73,7 @@
     @media(max-width: 767px) {
       height: calc(80vw - 36px) !important;
       margin-bottom: 20px;
+      display: block;
     }
     img {
       transition: transform 0.7s ease;
