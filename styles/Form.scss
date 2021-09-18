@@ -282,6 +282,25 @@
         padding-top: 12px;
       }
     }
+    &--payment {
+      padding-top: 24px;
+      height: 150px;
+      font-family: NeueMachinaBold;
+      font-size: 80px;
+      line-height: 112px;
+      letter-spacing: -0.05em;
+      color: $primary;
+      text-align: center;
+      span {
+        color: #484848;
+      }
+      @media(max-width: 767px) {
+        height: 104px;
+        font-size: 36px;
+        line-height: 84px;
+        padding-top: 12px;
+      }
+    }
   }
   &__dropzone {
     padding: 24px 20px;
