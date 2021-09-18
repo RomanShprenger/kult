@@ -29,7 +29,7 @@ function BuyArtwork({ balance, owner, title, slug, price, assets }) {
     </div>
 
     <div className="bid-new__heading">Paying now</div>
-  <FormPurchase balance={balance} price={4} submit={submit} />
+    <FormPurchase balance={balance} price={4} submit={submit} />
   </div>
 }
 

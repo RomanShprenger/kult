@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Formik, Field, Form } from 'formik';
 import { useRouter } from 'next/router'
 import { priceFormat } from "utils/format";
@@ -55,7 +56,9 @@ const FormNewBid = ({ balance, minBid, submit }) => {
                 </div>
                 <div className="bid-new__form-instruction">
                   You can withdraw your bid anytime <br/>
-                  <a href="#" target="_blank" className="bid-new__form-instruction-link">Learn how our auctions work</a>
+                  <Link href="/faq">
+                    <a className="bid-new__form-instruction-link">Learn how our auctions work</a>
+                  </Link>
                 </div>
               </div>
             </div>

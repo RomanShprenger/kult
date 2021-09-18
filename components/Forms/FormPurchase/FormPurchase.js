@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Formik, Field, Form } from 'formik';
 import { useRouter } from 'next/router'
 import { priceFormat } from "utils/format";
@@ -53,7 +54,9 @@ const FormPurchase = ({ balance, price, submit }) => {
                   ~ ${values.payment ? priceFormat(+values.payment * balance.eth_rate) : 0}
                 </div>
                 <div className="bid-new__form-instruction">
-                  <a href="#" target="_blank" className="bid-new__form-instruction-link">Learn more about your purchase</a>
+                  <Link href="/faq">
+                    <a className="bid-new__form-instruction-link">Learn more about your purchase</a>
+                  </Link>
                 </div>
               </div>
             </div>
