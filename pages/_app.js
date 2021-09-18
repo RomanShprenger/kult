@@ -30,6 +30,7 @@ import "styles/Artwork.scss";
 import "styles/ArtworkNew.scss";
 import "styles/BidNew.scss";
 import "styles/Post.scss";
+import "styles/Faq.scss";
 
 export default function MyApp({ Component, pageProps }) {
   return (

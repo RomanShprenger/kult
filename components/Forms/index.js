@@ -5,6 +5,7 @@ import { FormNewArtwork, FormArtworkStepZero, FormArtworkStepOne, FormArtworkSte
 import { FormDropzonePost, FormDropzoneArtwork } from './FormDropzone';
 import FormCheckbox from './FormCheckbox';
 import FormExplore from './FormExplore';
+import FormFaq from './FormFaq';
 
 export {
   FormNewPost,
@@ -12,6 +13,7 @@ export {
   FormPurchase,
   FormNewArtwork,
   FormExplore,
+  FormFaq,
   FormArtworkStepZero,
   FormArtworkStepOne,
   FormArtworkStepTwo,
